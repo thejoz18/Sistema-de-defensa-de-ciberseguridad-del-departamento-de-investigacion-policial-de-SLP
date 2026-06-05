@@ -1,0 +1,491 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+2 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+4 0 obj
+<< /Length 2540 >>
+stream
+BT /F2 18 Tf 54 730 Td (Analisis Fundamentos) Tj ET
+BT /F2 14 Tf 54 682 Td (Analisis de Trafico) Tj ET
+BT /F1 10 Tf 54 644 Td (En este apartado se analiza como se generan los datos base del trafico digital.) Tj ET
+BT /F1 10 Tf 54 630 Td (El procedimiento consiste en simular un valor por cada segundo, guardar variables) Tj ET
+BT /F1 10 Tf 54 616 Td (como paquetes, login y salida de datos, y despues revisar si ese comportamiento) Tj ET
+BT /F1 10 Tf 54 602 Td (sigue siendo normal o si fue alterado por un ataque.) Tj ET
+BT /F3 8 Tf 54 560 Td (Dato por segundo = trafico normal + posible alteracion por ataque) Tj ET
+BT /F3 8 Tf 54 507 Td (for segundo in range\(1, 61\):) Tj ET
+BT /F3 8 Tf 54 496 Td (    paquete = trafico.generar_trafico_normal\(segundo\)) Tj ET
+BT /F1 10 Tf 54 457 Td (Este bloque es donde empieza la simulacion del trafico. El ciclo recorre 60) Tj ET
+BT /F1 10 Tf 54 443 Td (segundos y en cada vuelta se genera un paquete normal con informacion del) Tj ET
+BT /F1 10 Tf 54 429 Td (sistema.) Tj ET
+BT /F3 8 Tf 54 387 Td (def generar_trafico_normal\(segundo\):) Tj ET
+BT /F3 8 Tf 54 376 Td (    central = srv.centrales[random.randint\(0, 2\)]) Tj ET
+BT /F3 8 Tf 54 365 Td (    ...) Tj ET
+BT /F3 8 Tf 54 354 Td (    paquete = {) Tj ET
+BT /F3 8 Tf 54 343 Td (        "segundo": segundo,) Tj ET
+BT /F3 8 Tf 54 332 Td (        "paquetes": random.randint\(80, 420\),) Tj ET
+BT /F3 8 Tf 54 321 Td (        "intentos_login": random.randint\(0, 2\),) Tj ET
+BT /F3 8 Tf 54 310 Td (        "cambios_archivos": random.randint\(0, 3\),) Tj ET
+BT /F3 8 Tf 54 299 Td (        "salida_datos": random.randint\(1, 12\),) Tj ET
+BT /F3 8 Tf 54 288 Td (        "incidente": False) Tj ET
+BT /F3 8 Tf 54 277 Td (    }) Tj ET
+BT /F3 8 Tf 54 266 Td (    return paquete) Tj ET
+BT /F1 10 Tf 54 227 Td (Aqui se crean los datos normales de la red. El paquete guarda datos como) Tj ET
+BT /F1 10 Tf 54 213 Td (solicitudes, intentos de login, cambios de archivos y salida de datos. Como) Tj ET
+BT /F1 10 Tf 54 199 Td (inicia sin ataque, incidente empieza en False.) Tj ET
+BT /F3 8 Tf 54 157 Td (if random.random\(\) < prob:) Tj ET
+BT /F3 8 Tf 54 146 Td (    paquete = atk.inyectar_ataque\(paquete, segundo\)) Tj ET
+BT /F3 8 Tf 54 135 Td (    total_incidentes = total_incidentes + 1) Tj ET
+BT /F1 10 Tf 54 96 Td (Este bloque decide si el paquete normal se convierte en ataque. Si el numero) Tj ET
+BT /F1 10 Tf 54 82 Td (aleatorio cae dentro de la probabilidad, se alteran los datos del paquete y se) Tj ET
+BT /F1 10 Tf 54 68 Td (suma un incidente.) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 28 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 4 0 R >>
+endobj
+6 0 obj
+<< /Length 2253 >>
+stream
+BT /F3 8 Tf 54 710 Td (estado_actual["historial"].append\({) Tj ET
+BT /F3 8 Tf 54 699 Td (    "segundo": segundo,) Tj ET
+BT /F3 8 Tf 54 688 Td (    "paquetes": paquete["paquetes"],) Tj ET
+BT /F3 8 Tf 54 677 Td (    "intentos_login": paquete["intentos_login"],) Tj ET
+BT /F3 8 Tf 54 666 Td (    "salida_datos": paquete["salida_datos"],) Tj ET
+BT /F3 8 Tf 54 655 Td (    "estado": estado_actual["estado"]) Tj ET
+BT /F3 8 Tf 54 644 Td (}\)) Tj ET
+BT /F1 10 Tf 54 605 Td (El historial es donde se guarda lo que paso en cada segundo. Gracias a esto se) Tj ET
+BT /F1 10 Tf 54 591 Td (puede analizar despues el comportamiento de la red, hacer graficas y generar el) Tj ET
+BT /F1 10 Tf 54 577 Td (CSV.) Tj ET
+BT /F2 14 Tf 54 543 Td (Analisis del comportamiento de la funcion) Tj ET
+BT /F1 10 Tf 54 505 Td (En este apartado se toma el trafico como una funcion del tiempo. La idea no es) Tj ET
+BT /F1 10 Tf 54 491 Td (encontrar una formula exacta, sino observar como cambia el numero de paquetes) Tj ET
+BT /F1 10 Tf 54 477 Td (conforme pasan los segundos.) Tj ET
+BT /F3 8 Tf 54 435 Td (T\(t\) = numero de paquetes en el segundo t) Tj ET
+BT /F1 10 Tf 54 396 Td (Con esta forma se puede ver si el trafico se mantiene estable, sube de forma) Tj ET
+BT /F1 10 Tf 54 382 Td (gradual o tiene cambios bruscos.) Tj ET
+BT /F3 8 Tf 54 340 Td (for segundo in range\(1, 61\):) Tj ET
+BT /F3 8 Tf 54 329 Td (    paquete = trafico.generar_trafico_normal\(segundo\)) Tj ET
+BT /F1 10 Tf 54 290 Td (Aqui segundo funciona como el tiempo. Cada valor representa un momento diferente) Tj ET
+BT /F1 10 Tf 54 276 Td (de la simulacion, por eso el trafico se puede interpretar como una funcion.) Tj ET
+BT /F3 8 Tf 54 234 Td (T\(t\) = numero de paquetes en el segundo t) Tj ET
+BT /F1 10 Tf 54 195 Td (Esta es la forma matematica de leer los datos. No se busca una formula exacta,) Tj ET
+BT /F1 10 Tf 54 181 Td (sino observar como se comportan los paquetes conforme avanza el tiempo.) Tj ET
+BT /F3 8 Tf 54 139 Td (t.append\(h["segundo"]\)) Tj ET
+BT /F3 8 Tf 54 128 Td (paquetes.append\(h["paquetes"]\)) Tj ET
+BT /F1 10 Tf 54 89 Td (En las graficas se separa el historial en listas. t guarda el tiempo y paquetes) Tj ET
+BT /F1 10 Tf 54 75 Td (guarda el valor de trafico de cada segundo.) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 28 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 6 0 R >>
+endobj
+8 0 obj
+<< /Length 2331 >>
+stream
+BT /F1 10 Tf 54 724 Td (Grafica llamada: 01_paquetes_vs_tiempo.png) Tj ET
+BT /F1 10 Tf 54 696 Td (Valores o parametros usados:) Tj ET
+BT /F3 8 Tf 54 668 Td (| Valor | Significado |) Tj ET
+BT /F3 8 Tf 54 657 Td (|---|---|) Tj ET
+BT /F3 8 Tf 54 646 Td (| t | tiempo de la simulacion |) Tj ET
+BT /F3 8 Tf 54 635 Td (| paquetes | paquetes o solicitudes registradas por segundo |) Tj ET
+BT /F3 8 Tf 54 624 Td (| U_PAQUETES_ALERTA | limite para interpretar alerta por paquetes |) Tj ET
+BT /F3 8 Tf 54 613 Td (| U_PAQUETES_CRIT | limite para interpretar trafico critico |) Tj ET
+BT /F1 10 Tf 54 588 Td (Explicacion:) Tj ET
+BT /F1 10 Tf 54 560 Td (Esta grafica representa la funcion principal del trafico. Si la linea sube mucho) Tj ET
+BT /F1 10 Tf 54 546 Td (o cambia de golpe, se puede interpretar como comportamiento irregular o posible) Tj ET
+BT /F1 10 Tf 54 532 Td (ataque.) Tj ET
+BT /F1 10 Tf 54 504 Td (Grafica llamada: 07_analisis_oscilatorio_vs_tiempo.png) Tj ET
+BT /F1 10 Tf 54 476 Td (Valores o parametros usados:) Tj ET
+BT /F3 8 Tf 54 448 Td (| Valor | Significado |) Tj ET
+BT /F3 8 Tf 54 437 Td (|---|---|) Tj ET
+BT /F3 8 Tf 54 426 Td (| t | tiempo de la simulacion |) Tj ET
+BT /F3 8 Tf 54 415 Td (| paquetes | comportamiento real del trafico |) Tj ET
+BT /F3 8 Tf 54 404 Td (| onda_envio | onda regular usada como referencia |) Tj ET
+BT /F3 8 Tf 54 393 Td (| intervalo = 5 | bloque de tiempo usado para construir la onda |) Tj ET
+BT /F1 10 Tf 54 368 Td (Explicacion:) Tj ET
+BT /F1 10 Tf 54 340 Td (Esta grafica compara una onda regular contra los paquetes reales. Sirve para ver) Tj ET
+BT /F1 10 Tf 54 326 Td (si el trafico se parece a un envio normal o si se sale demasiado del) Tj ET
+BT /F1 10 Tf 54 312 Td (comportamiento esperado.) Tj ET
+BT /F2 14 Tf 54 278 Td (Tasa de cambio) Tj ET
+BT /F1 10 Tf 54 240 Td (En este apartado se calcula cuanto cambia el trafico de un segundo al siguiente.) Tj ET
+BT /F1 10 Tf 54 226 Td (Este procedimiento sirve para detectar subidas repentinas, porque no solo se mira) Tj ET
+BT /F1 10 Tf 54 212 Td (cuantos paquetes hay, sino cuanto cambiaron respecto al dato anterior.) Tj ET
+BT /F3 8 Tf 54 170 Td (Delta T = T\(t\) - T\(t - 1\)) Tj ET
+BT /F1 10 Tf 54 131 Td (Tambien se usa la derivada discreta:) Tj ET
+BT /F3 8 Tf 54 89 Td (Derivada = \(valor actual - valor anterior\) / Delta t) Tj ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 28 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 8 0 R >>
+endobj
+10 0 obj
+<< /Length 2356 >>
+stream
+BT /F1 10 Tf 54 724 Td (Como la simulacion avanza de segundo en segundo, Delta t vale 1.) Tj ET
+BT /F3 8 Tf 54 682 Td (metricas_calculo = lm.calcular_metricas_calculo\(paquete, estado_calculo\)) Tj ET
+BT /F3 8 Tf 54 671 Td (tasa = metricas_calculo["tasa"]) Tj ET
+BT /F3 8 Tf 54 660 Td (primera_derivada_sigmoide = metricas_calculo["primera_derivada_sigmoide"]) Tj ET
+BT /F3 8 Tf 54 649 Td (segunda_derivada_sigmoide = metricas_calculo["segunda_derivada_sigmoide"]) Tj ET
+BT /F3 8 Tf 54 638 Td (primera_derivada_paquetes = metricas_calculo["primera_derivada_paquetes"]) Tj ET
+BT /F1 10 Tf 54 599 Td (Este bloque toma las metricas de calculo que vienen del archivo matematico. La) Tj ET
+BT /F1 10 Tf 54 585 Td (tasa y las derivadas se separan para poder usarlas en alertas, graficas e) Tj ET
+BT /F1 10 Tf 54 571 Td (historial.) Tj ET
+BT /F3 8 Tf 54 529 Td (def calcular_tasa\(actual, anterior\):) Tj ET
+BT /F3 8 Tf 54 518 Td (    return actual - anterior) Tj ET
+BT /F1 10 Tf 54 479 Td (La tasa se calcula restando los paquetes anteriores a los paquetes actuales. Esto) Tj ET
+BT /F1 10 Tf 54 465 Td (representa:) Tj ET
+BT /F3 8 Tf 54 423 Td (Delta T = T\(t\) - T\(t - 1\)) Tj ET
+BT /F1 10 Tf 54 384 Td (Si el resultado es muy alto, significa que el trafico subio de golpe.) Tj ET
+BT /F3 8 Tf 54 342 Td (def calcular_derivada_discreta\(actual, anterior, delta_t=1\):) Tj ET
+BT /F3 8 Tf 54 331 Td (    if delta_t == 0:) Tj ET
+BT /F3 8 Tf 54 320 Td (        return 0) Tj ET
+BT /F3 8 Tf 54 309 Td (    return round\(\(actual - anterior\) / delta_t, 2\)) Tj ET
+BT /F1 10 Tf 54 270 Td (Esta funcion calcula el cambio considerando el tiempo. Como el programa avanza de) Tj ET
+BT /F1 10 Tf 54 256 Td (segundo en segundo, delta_t vale 1.) Tj ET
+BT /F3 8 Tf 54 214 Td (if tasa > srv.U_TASA:) Tj ET
+BT /F3 8 Tf 54 203 Td (    print\("  [!!] CRECIMIENTO ABRUPTO DEL TRAFICO  tasa=" + str\(tasa\)\)) Tj ET
+BT /F3 8 Tf 54 192 Td (if segunda_derivada_sigmoide > srv.U_TASA:) Tj ET
+BT /F3 8 Tf 54 181 Td (    print\("  [!!] ACELERACION DEL TRAFICO DETECTADA  d2=" + str\(segunda_derivada_sigmoide\)\)) Tj ET
+BT /F1 10 Tf 54 142 Td (Aqui la tasa y la segunda derivada ya se usan como criterio de alerta. Si pasan) Tj ET
+BT /F1 10 Tf 54 128 Td (el umbral, el sistema avisa que hubo un cambio fuerte en el trafico.) Tj ET
+BT /F2 14 Tf 54 94 Td (Reglas logicas de decision) Tj ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 28 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 10 0 R >>
+endobj
+12 0 obj
+<< /Length 2460 >>
+stream
+BT /F1 10 Tf 54 738 Td (En este apartado se usan reglas logicas para decidir el estado del sistema. El) Tj ET
+BT /F1 10 Tf 54 724 Td (procedimiento consiste en comparar los datos contra umbrales y combinar) Tj ET
+BT /F1 10 Tf 54 710 Td (condiciones con and y or.) Tj ET
+BT /F3 8 Tf 54 668 Td (p = trafico elevado) Tj ET
+BT /F3 8 Tf 54 657 Td (q = intentos de login altos) Tj ET
+BT /F3 8 Tf 54 646 Td (r = flujo critico) Tj ET
+BT /F3 8 Tf 54 635 Td () Tj ET
+BT /F3 8 Tf 54 624 Td (\(p AND q\) -> ALERTA) Tj ET
+BT /F3 8 Tf 54 613 Td (\(p OR r\) -> CRITICO) Tj ET
+BT /F1 10 Tf 54 574 Td (Estas reglas convierten los datos numericos en decisiones del sistema.) Tj ET
+BT /F3 8 Tf 54 532 Td (def evaluar_estado\(paquete, flujo, temperatura, cifrado_actual, indice_oscilatorio\):) Tj ET
+BT /F3 8 Tf 54 521 Td (    alertas = []) Tj ET
+BT /F3 8 Tf 54 510 Td (    protecciones = []) Tj ET
+BT /F3 8 Tf 54 499 Td (    estado = "NORMAL") Tj ET
+BT /F3 8 Tf 54 488 Td (    cifrado = cifrado_actual) Tj ET
+BT /F3 8 Tf 54 477 Td (    refrigeracion = False) Tj ET
+BT /F1 10 Tf 54 438 Td (Esta funcion es donde el sistema decide si sigue normal o si pasa a sospechoso,) Tj ET
+BT /F1 10 Tf 54 424 Td (alerta o critico. Primero inicia todo en normal y sin nuevas protecciones.) Tj ET
+BT /F3 8 Tf 54 382 Td (if paquete["paquetes"] > srv.U_PAQUETES_ALERTA and paquete["intentos_login"] > srv.U_LOGIN_ALERTA:) Tj ET
+BT /F3 8 Tf 54 371 Td (    alertas.append\("TRAFICO MASIVO + FUERZA BRUTA"\)) Tj ET
+BT /F3 8 Tf 54 360 Td (    estado = "ALERTA") Tj ET
+BT /F1 10 Tf 54 321 Td (Esta regla usa and, o sea que las dos condiciones deben cumplirse. Si hay muchos) Tj ET
+BT /F1 10 Tf 54 307 Td (paquetes y tambien muchos intentos de login, el sistema lo toma como alerta.) Tj ET
+BT /F3 8 Tf 54 265 Td (\(p AND q\) -> ALERTA) Tj ET
+BT /F1 10 Tf 54 226 Td (Esta es la misma idea escrita en forma logica. p seria trafico elevado y q seria) Tj ET
+BT /F1 10 Tf 54 212 Td (errores o intentos de login excesivos.) Tj ET
+BT /F3 8 Tf 54 170 Td (if paquete["paquetes"] > srv.U_PAQUETES_CRIT or flujo > srv.U_FLUJO_CRITICO:) Tj ET
+BT /F3 8 Tf 54 159 Td (    estado = "CRITICO") Tj ET
+BT /F3 8 Tf 54 148 Td (    cifrado = "REFORZADO") Tj ET
+BT /F1 10 Tf 54 109 Td (Esta regla usa or, entonces basta con que una condicion sea critica para subir el) Tj ET
+BT /F1 10 Tf 54 95 Td (estado. Si el trafico o el flujo digital se salen demasiado, se activa el modo) Tj ET
+BT /F1 10 Tf 54 81 Td (reforzado.) Tj ET
+endstream
+endobj
+13 0 obj
+<< /Type /Page /Parent 28 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 12 0 R >>
+endobj
+14 0 obj
+<< /Length 2278 >>
+stream
+BT /F3 8 Tf 54 710 Td (if temperatura >= srv.U_TEMP_CRITICA:) Tj ET
+BT /F3 8 Tf 54 699 Td (    estado = "CRITICO") Tj ET
+BT /F3 8 Tf 54 688 Td (    refrigeracion = True) Tj ET
+BT /F3 8 Tf 54 677 Td (    protecciones.append\("REFRIGERACION ACTIVADA"\)) Tj ET
+BT /F1 10 Tf 54 638 Td (Esta condicion conecta el analisis con la proteccion fisica. Si la temperatura es) Tj ET
+BT /F1 10 Tf 54 624 Td (critica, el sistema activa refrigeracion.) Tj ET
+BT /F3 8 Tf 54 582 Td (return estado, alertas, protecciones, cifrado, refrigeracion) Tj ET
+BT /F1 10 Tf 54 543 Td (Al final la funcion regresa las decisiones tomadas. El archivo principal usa esos) Tj ET
+BT /F1 10 Tf 54 529 Td (datos para actualizar el sistema.) Tj ET
+BT /F2 14 Tf 54 495 Td (Adaptacion del simulador) Tj ET
+BT /F1 10 Tf 54 457 Td (En este apartado se muestra como el simulador se adapto para que no solo genere) Tj ET
+BT /F1 10 Tf 54 443 Td (datos, sino que tambien tome decisiones y produzca resultados. El procedimiento) Tj ET
+BT /F1 10 Tf 54 429 Td (general es: generar paquete, analizarlo, cambiar el estado, activar protecciones) Tj ET
+BT /F1 10 Tf 54 415 Td (y guardar los datos.) Tj ET
+BT /F3 8 Tf 54 373 Td (Paquete -> metricas -> reglas -> estado -> protecciones -> historial -> graficas y CSV) Tj ET
+BT /F3 8 Tf 54 320 Td (estado_actual["estado"] = est) Tj ET
+BT /F3 8 Tf 54 309 Td (estado_actual["cifrado"] = cifrado) Tj ET
+BT /F3 8 Tf 54 298 Td (estado_actual["refrigeracion"] = refrig) Tj ET
+BT /F1 10 Tf 54 259 Td (Aqui el programa actualiza el estado real del sistema con lo que decidieron las) Tj ET
+BT /F1 10 Tf 54 245 Td (reglas logicas.) Tj ET
+BT /F3 8 Tf 54 203 Td (paquete["direccion_registro"] = lm.generar_direccion_registro\() Tj ET
+BT /F3 8 Tf 54 192 Td (    paquete, estado_actual["estado"], estado_actual["cifrado"], segundo) Tj ET
+BT /F3 8 Tf 54 181 Td (\)) Tj ET
+BT /F3 8 Tf 54 170 Td (paquete["direccion_servidor"] = lm.descifrar_direccion_registro\() Tj ET
+BT /F3 8 Tf 54 159 Td (    paquete["direccion_registro"], estado_actual["cifrado"]) Tj ET
+BT /F3 8 Tf 54 148 Td (\)) Tj ET
+BT /F1 10 Tf 54 109 Td (Esta parte adapta el simulador para guardar registros con cifrado y tambien) Tj ET
+BT /F1 10 Tf 54 95 Td (recuperar la ruta original como si la leyera el servidor autorizado.) Tj ET
+endstream
+endobj
+15 0 obj
+<< /Type /Page /Parent 28 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 14 0 R >>
+endobj
+16 0 obj
+<< /Length 2482 >>
+stream
+BT /F3 8 Tf 54 724 Td (if estado_actual["refrigeracion"]:) Tj ET
+BT /F3 8 Tf 54 713 Td (    paquete["temperatura"] = lm.aplicar_enfriamiento\() Tj ET
+BT /F3 8 Tf 54 702 Td (        paquete["temperatura"], v2, lm.P1_REFRIGERANTE, P2, objetivo_termico) Tj ET
+BT /F3 8 Tf 54 691 Td (    \)) Tj ET
+BT /F3 8 Tf 54 680 Td (else:) Tj ET
+BT /F3 8 Tf 54 669 Td (    paquete["temperatura"] = lm.aplicar_enfriamiento_pasivo\() Tj ET
+BT /F3 8 Tf 54 658 Td (        paquete["temperatura"], segundo) Tj ET
+BT /F3 8 Tf 54 647 Td (    \)) Tj ET
+BT /F1 10 Tf 54 608 Td (Aqui se adapta la simulacion para incluir enfriamiento. Si el sistema esta en) Tj ET
+BT /F1 10 Tf 54 594 Td (riesgo, se aplica enfriamiento activo; si no, solo baja de forma pasiva en) Tj ET
+BT /F1 10 Tf 54 580 Td (ciertos intervalos.) Tj ET
+BT /F1 10 Tf 54 552 Td (Salidas generadas al final de la simulacion:) Tj ET
+BT /F3 8 Tf 54 524 Td (| Salida | Que contiene |) Tj ET
+BT /F3 8 Tf 54 513 Td (|---|---|) Tj ET
+BT /F3 8 Tf 54 502 Td (| Graficas PNG | imagenes individuales con paquetes, login, temperatura, estados, flujo, derivadas y oscilac) Tj ET
+BT /F3 8 Tf 54 491 Td (ion |) Tj ET
+BT /F3 8 Tf 54 480 Td (| Reporte CSV | tabla con el historial completo de los 60 segundos |) Tj ET
+BT /F1 10 Tf 54 455 Td (Al terminar la simulacion, el historial se convierte en graficas y en un reporte) Tj ET
+BT /F1 10 Tf 54 441 Td (CSV. Esto permite revisar los datos despues de ejecutar el programa sin volver a) Tj ET
+BT /F1 10 Tf 54 427 Td (correr el monitoreo.) Tj ET
+BT /F2 14 Tf 54 393 Td (Cifrado Multiplicativo) Tj ET
+BT /F1 10 Tf 54 355 Td (En este apartado se aplica cifrado para proteger el nombre del registro cuando el) Tj ET
+BT /F1 10 Tf 54 341 Td (sistema ya no esta en estado normal. El procedimiento matematico usa modularidad) Tj ET
+BT /F1 10 Tf 54 327 Td (para que las letras siempre queden dentro del alfabeto y los numeros siempre) Tj ET
+BT /F1 10 Tf 54 313 Td (queden entre 0 y 9.) Tj ET
+BT /F3 8 Tf 54 271 Td (C = aP mod 26) Tj ET
+BT /F1 10 Tf 54 232 Td (Donde P es la posicion original de la letra, a es la clave multiplicativa y C es) Tj ET
+BT /F1 10 Tf 54 218 Td (la posicion cifrada.) Tj ET
+BT /F1 10 Tf 54 190 Td (Para numeros se usa:) Tj ET
+BT /F3 8 Tf 54 148 Td (C = \(aP + b\) mod 10) Tj ET
+BT /F1 10 Tf 54 109 Td (Donde el modulo 10 mantiene el resultado como una cifra del 0 al 9.) Tj ET
+BT /F3 8 Tf 54 67 Td (def cifrado_multiplicativo\(texto, clave_letras=5, clave_numeros=7, ajuste_numeros=3\):) Tj ET
+endstream
+endobj
+17 0 obj
+<< /Type /Page /Parent 28 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 16 0 R >>
+endobj
+18 0 obj
+<< /Length 2461 >>
+stream
+BT /F3 8 Tf 54 738 Td (    resultado = "") Tj ET
+BT /F3 8 Tf 54 727 Td (    for c in texto:) Tj ET
+BT /F3 8 Tf 54 716 Td (        if c.isalpha\(\):) Tj ET
+BT /F3 8 Tf 54 705 Td (            posicion = ord\(c\) - base) Tj ET
+BT /F3 8 Tf 54 694 Td (            nueva_posicion = \(posicion * clave_letras\) % 26) Tj ET
+BT /F3 8 Tf 54 683 Td (        elif c.isdigit\(\):) Tj ET
+BT /F3 8 Tf 54 672 Td (            posicion = int\(c\)) Tj ET
+BT /F3 8 Tf 54 661 Td (            nueva_posicion = \(posicion * clave_numeros + ajuste_numeros\) % 10) Tj ET
+BT /F1 10 Tf 54 622 Td (Este bloque aplica el cifrado multiplicativo. En letras usa modulo 26 porque el) Tj ET
+BT /F1 10 Tf 54 608 Td (alfabeto tiene 26 posiciones. En numeros usa modulo 10 porque las cifras van del) Tj ET
+BT /F1 10 Tf 54 594 Td (0 al 9.) Tj ET
+BT /F3 8 Tf 54 552 Td (C = aP mod 26) Tj ET
+BT /F1 10 Tf 54 513 Td (Esta es la formula del cifrado multiplicativo para letras. P es la posicion) Tj ET
+BT /F1 10 Tf 54 499 Td (original, a es la clave y C es la posicion cifrada.) Tj ET
+BT /F3 8 Tf 54 457 Td (def cifrado_reforzado\(texto\):) Tj ET
+BT /F3 8 Tf 54 446 Td (    paso1 = cifrado_cesar\(texto, 3\)) Tj ET
+BT /F3 8 Tf 54 435 Td (    paso2 = cifrado_multiplicativo\(paso1\)) Tj ET
+BT /F3 8 Tf 54 424 Td (    return paso2) Tj ET
+BT /F1 10 Tf 54 385 Td (El cifrado reforzado primero aplica Cesar y despues aplica el multiplicativo. Por) Tj ET
+BT /F1 10 Tf 54 371 Td (eso el dato queda mas alterado cuando el sistema esta en estado critico.) Tj ET
+BT /F3 8 Tf 54 329 Td (if estado == "CRITICO" or cifrado == "REFORZADO":) Tj ET
+BT /F3 8 Tf 54 318 Td (    nombre_seguro = cifrado_reforzado\(nombre_base\)) Tj ET
+BT /F3 8 Tf 54 307 Td (    return "registro_reforzado://" + central + "/" + carpeta + "/" + nombre_seguro) Tj ET
+BT /F1 10 Tf 54 268 Td (Cuando el sistema esta en critico, el registro se guarda con cifrado reforzado.) Tj ET
+BT /F1 10 Tf 54 254 Td (Asi el nombre del archivo ya no queda visible de forma directa.) Tj ET
+BT /F2 14 Tf 54 220 Td (Interpretacion Matematica) Tj ET
+BT /F1 10 Tf 54 182 Td (En este apartado se explica como el sistema puede recuperar el dato original.) Tj ET
+BT /F1 10 Tf 54 168 Td (Para descifrar un cifrado multiplicativo se necesita el inverso modular de la) Tj ET
+BT /F1 10 Tf 54 154 Td (clave.) Tj ET
+BT /F3 8 Tf 54 112 Td (a * a^-1 = 1 mod m) Tj ET
+BT /F1 10 Tf 54 73 Td (Si existe ese inverso, se puede regresar de la posicion cifrada a la posicion) Tj ET
+endstream
+endobj
+19 0 obj
+<< /Type /Page /Parent 28 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 18 0 R >>
+endobj
+20 0 obj
+<< /Length 2169 >>
+stream
+BT /F1 10 Tf 54 738 Td (original.) Tj ET
+BT /F3 8 Tf 54 696 Td (P = C * a^-1 mod 26) Tj ET
+BT /F1 10 Tf 54 657 Td (En el caso de numeros, primero se quita el ajuste y despues se aplica el inverso:) Tj ET
+BT /F3 8 Tf 54 615 Td (P = \(C - b\) * a^-1 mod 10) Tj ET
+BT /F3 8 Tf 54 562 Td (def obtener_inverso_modular\(clave, modulo\):) Tj ET
+BT /F3 8 Tf 54 551 Td (    for posible in range\(1, modulo\):) Tj ET
+BT /F3 8 Tf 54 540 Td (        if \(clave * posible\) % modulo == 1:) Tj ET
+BT /F3 8 Tf 54 529 Td (            return posible) Tj ET
+BT /F3 8 Tf 54 518 Td (    return None) Tj ET
+BT /F1 10 Tf 54 479 Td (Esta funcion busca el inverso modular. El inverso sirve para poder deshacer el) Tj ET
+BT /F1 10 Tf 54 465 Td (cifrado multiplicativo y recuperar el dato original.) Tj ET
+BT /F3 8 Tf 54 423 Td (def descifrado_multiplicativo\(texto, clave_letras=5, clave_numeros=7, ajuste_numeros=3\):) Tj ET
+BT /F3 8 Tf 54 412 Td (    inverso_letras = obtener_inverso_modular\(clave_letras, 26\)) Tj ET
+BT /F3 8 Tf 54 401 Td (    inverso_numeros = obtener_inverso_modular\(clave_numeros, 10\)) Tj ET
+BT /F1 10 Tf 54 362 Td (Aqui se calculan los inversos que permiten descifrar. Para letras se trabaja) Tj ET
+BT /F1 10 Tf 54 348 Td (modulo 26 y para numeros modulo 10.) Tj ET
+BT /F3 8 Tf 54 306 Td (nueva_posicion = \(posicion * inverso_letras\) % 26) Tj ET
+BT /F3 8 Tf 54 295 Td (nueva_posicion = \(\(posicion - ajuste_numeros\) * inverso_numeros\) % 10) Tj ET
+BT /F1 10 Tf 54 256 Td (Estas operaciones recuperan la posicion original. En numeros primero se quita el) Tj ET
+BT /F1 10 Tf 54 242 Td (ajuste y luego se multiplica por el inverso modular.) Tj ET
+BT /F3 8 Tf 54 200 Td (def descifrado_reforzado\(texto\):) Tj ET
+BT /F3 8 Tf 54 189 Td (    paso1 = descifrado_multiplicativo\(texto\)) Tj ET
+BT /F3 8 Tf 54 178 Td (    paso2 = descifrado_cesar\(paso1, 3\)) Tj ET
+BT /F3 8 Tf 54 167 Td (    return paso2) Tj ET
+BT /F1 10 Tf 54 128 Td (El descifrado reforzado hace el proceso al reves. Primero quita el cifrado) Tj ET
+BT /F1 10 Tf 54 114 Td (multiplicativo y despues quita el cifrado Cesar.) Tj ET
+BT /F3 8 Tf 54 72 Td (datos_05.log -> epghb_38.sht -> datos_05.log) Tj ET
+endstream
+endobj
+21 0 obj
+<< /Type /Page /Parent 28 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 20 0 R >>
+endobj
+22 0 obj
+<< /Length 2647 >>
+stream
+BT /F1 10 Tf 54 710 Td (Este ejemplo muestra que el dato puede cifrarse y despues recuperarse. Esa) Tj ET
+BT /F1 10 Tf 54 696 Td (recuperacion es posible porque las claves usadas tienen inverso modular.) Tj ET
+BT /F2 14 Tf 54 662 Td (Graficas del analisis) Tj ET
+BT /F1 10 Tf 54 624 Td (En fundamentos matematicos las graficas sirven para comprobar visualmente si las) Tj ET
+BT /F1 10 Tf 54 610 Td (reglas del sistema tienen sentido. No solo se usan como imagen final, sino como) Tj ET
+BT /F1 10 Tf 54 596 Td (una forma de verificar si los datos, estados y alertas se relacionan) Tj ET
+BT /F1 10 Tf 54 582 Td (correctamente.) Tj ET
+BT /F3 8 Tf 54 540 Td (Historial -> listas de datos -> graficas -> interpretacion del comportamiento) Tj ET
+BT /F1 10 Tf 54 501 Td (Grafica llamada: 01_paquetes_vs_tiempo.png) Tj ET
+BT /F1 10 Tf 54 473 Td (Valores o parametros usados: tiempo, paquetes, umbral de alerta y umbral critico) Tj ET
+BT /F1 10 Tf 54 459 Td (de paquetes.) Tj ET
+BT /F1 10 Tf 54 431 Td (Explicacion: ayuda a ver si el trafico se mantiene dentro de un comportamiento) Tj ET
+BT /F1 10 Tf 54 417 Td (normal o si tiene subidas fuertes. Para fundamentos, esta grafica se relaciona) Tj ET
+BT /F1 10 Tf 54 403 Td (con la identificacion de datos que pueden pertenecer al conjunto de) Tj ET
+BT /F1 10 Tf 54 389 Td (comportamiento normal o al conjunto de comportamiento sospechoso.) Tj ET
+BT /F1 10 Tf 54 361 Td (Grafica llamada: 02_intentos_login_vs_tiempo.png) Tj ET
+BT /F1 10 Tf 54 333 Td (Valores o parametros usados: tiempo, intentos de login, umbral de alerta y umbral) Tj ET
+BT /F1 10 Tf 54 319 Td (critico de login.) Tj ET
+BT /F1 10 Tf 54 291 Td (Explicacion: permite observar errores o intentos repetidos de acceso. Esta parte) Tj ET
+BT /F1 10 Tf 54 277 Td (apoya las reglas logicas donde los intentos de login altos pueden activar alerta) Tj ET
+BT /F1 10 Tf 54 263 Td (o bloqueo.) Tj ET
+BT /F1 10 Tf 54 235 Td (Grafica llamada: 04_estado_sistema_vs_tiempo.png) Tj ET
+BT /F1 10 Tf 54 207 Td (Valores o parametros usados: tiempo y estado convertido a numero: NORMAL = 0,) Tj ET
+BT /F1 10 Tf 54 193 Td (SOSPECHOSO = 1, ALERTA = 2, CRITICO = 3.) Tj ET
+BT /F1 10 Tf 54 165 Td (Explicacion: muestra como el sistema cambia entre estados. En fundamentos esto se) Tj ET
+BT /F1 10 Tf 54 151 Td (puede explicar como una clasificacion logica: segun las condiciones que se) Tj ET
+BT /F1 10 Tf 54 137 Td (cumplan, el dato cae en una categoria diferente.) Tj ET
+BT /F1 10 Tf 54 109 Td (Grafica llamada: 05_indice_flujo_digital_vs_tiempo.png) Tj ET
+BT /F1 10 Tf 54 81 Td (Valores o parametros usados: tiempo, flujo digital, umbral elevado, umbral de) Tj ET
+endstream
+endobj
+23 0 obj
+<< /Type /Page /Parent 28 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 22 0 R >>
+endobj
+24 0 obj
+<< /Length 3177 >>
+stream
+BT /F1 10 Tf 54 738 Td (riesgo y umbral critico.) Tj ET
+BT /F1 10 Tf 54 710 Td (Explicacion: resume varias variables en un solo indicador. Esto ayuda a) Tj ET
+BT /F1 10 Tf 54 696 Td (justificar que las reglas no dependen de un solo dato, sino de la combinacion de) Tj ET
+BT /F1 10 Tf 54 682 Td (diferentes elementos del paquete.) Tj ET
+BT /F1 10 Tf 54 654 Td (Grafica llamada: 06_derivadas_trafico_vs_tiempo.png) Tj ET
+BT /F1 10 Tf 54 626 Td (Valores o parametros usados: tiempo, primera derivada con sigmoide, segunda) Tj ET
+BT /F1 10 Tf 54 612 Td (derivada con sigmoide y umbral de tasa.) Tj ET
+BT /F1 10 Tf 54 584 Td (Explicacion: aunque esta grafica pertenece principalmente a calculo, en) Tj ET
+BT /F1 10 Tf 54 570 Td (fundamentos tambien ayuda a interpretar reglas de decision. Si el cambio del) Tj ET
+BT /F1 10 Tf 54 556 Td (trafico es demasiado alto, el sistema lo puede tomar como una condicion para) Tj ET
+BT /F1 10 Tf 54 542 Td (emitir alerta.) Tj ET
+BT /F2 14 Tf 54 508 Td (Resultados y analisis) Tj ET
+BT /F1 10 Tf 54 470 Td (El resultado principal en fundamentos matematicos es la construccion de reglas) Tj ET
+BT /F1 10 Tf 54 456 Td (logicas para clasificar el comportamiento del sistema. A partir de datos como) Tj ET
+BT /F1 10 Tf 54 442 Td (paquetes, login, flujo, temperatura e indice oscilatorio, el programa decide si) Tj ET
+BT /F1 10 Tf 54 428 Td (el estado es normal, sospechoso, alerta o critico.) Tj ET
+BT /F1 10 Tf 54 400 Td (Las graficas ayudan a revisar si esas decisiones tienen coherencia. Por ejemplo,) Tj ET
+BT /F1 10 Tf 54 386 Td (si los paquetes suben demasiado y el estado tambien sube a alerta o critico,) Tj ET
+BT /F1 10 Tf 54 372 Td (entonces la regla aplicada se puede justificar visualmente. Si una grafica) Tj ET
+BT /F1 10 Tf 54 358 Td (muestra un cambio fuerte pero el sistema no cambia de estado, eso permite) Tj ET
+BT /F1 10 Tf 54 344 Td (detectar una posible limitacion del modelo.) Tj ET
+BT /F1 10 Tf 54 316 Td (Tambien se observa que el sistema trabaja con conjuntos de datos: usuarios) Tj ET
+BT /F1 10 Tf 54 302 Td (autorizados, usuarios sospechosos, IPs internas, IPs sospechosas e IPs) Tj ET
+BT /F1 10 Tf 54 288 Td (bloqueadas. Esto permite explicar relaciones de pertenencia, clasificacion y) Tj ET
+BT /F1 10 Tf 54 274 Td (reglas de decision.) Tj ET
+BT /F2 14 Tf 54 240 Td (Conclusiones) Tj ET
+BT /F1 10 Tf 54 202 Td (Fundamentos matematicos se refleja en el proyecto mediante el uso de) Tj ET
+BT /F1 10 Tf 54 188 Td (proposiciones, reglas logicas, condiciones, conjuntos y clasificacion de estados.) Tj ET
+BT /F1 10 Tf 54 174 Td (El sistema toma datos simulados y los convierte en decisiones usando estructuras) Tj ET
+BT /F1 10 Tf 54 160 Td (como if, and, or, comparaciones y umbrales.) Tj ET
+BT /F1 10 Tf 54 132 Td (Las graficas complementan el analisis porque permiten ver si las reglas producen) Tj ET
+BT /F1 10 Tf 54 118 Td (resultados coherentes. No solo muestran datos, tambien ayudan a interpretar) Tj ET
+BT /F1 10 Tf 54 104 Td (cuando un comportamiento puede considerarse normal, sospechoso o critico.) Tj ET
+BT /F1 10 Tf 54 76 Td (La principal limitacion es que las reglas dependen de umbrales definidos por el) Tj ET
+endstream
+endobj
+25 0 obj
+<< /Type /Page /Parent 28 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 24 0 R >>
+endobj
+26 0 obj
+<< /Length 396 >>
+stream
+BT /F1 10 Tf 54 738 Td (proyecto. Si se usaran datos reales de una empresa o de un caso como PEMEX, esos) Tj ET
+BT /F1 10 Tf 54 724 Td (umbrales podrian ajustarse mejor. Aun asi, el prototipo cumple con mostrar como) Tj ET
+BT /F1 10 Tf 54 710 Td (una decision matematica y logica puede convertirse en una alerta dentro de un) Tj ET
+BT /F1 10 Tf 54 696 Td (sistema basico de ciberseguridad.) Tj ET
+endstream
+endobj
+27 0 obj
+<< /Type /Page /Parent 28 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 26 0 R >>
+endobj
+28 0 obj
+<< /Type /Pages /Kids [ 5 0 R 7 0 R 9 0 R 11 0 R 13 0 R 15 0 R 17 0 R 19 0 R 21 0 R 23 0 R 25 0 R 27 0 R ] /Count 12 >>
+endobj
+29 0 obj
+<< /Type /Catalog /Pages 28 0 R >>
+endobj
+30 0 obj
+<< /Title (ANALISIS_FUNDAMENTOS) /Producer (Codex minimal PDF generator) >>
+endobj
+xref
+0 31
+0000000000 65535 f 
+0000000015 00000 n 
+0000000085 00000 n 
+0000000160 00000 n 
+0000000228 00000 n 
+0000002820 00000 n 
+0000002967 00000 n 
+0000005272 00000 n 
+0000005419 00000 n 
+0000007802 00000 n 
+0000007949 00000 n 
+0000010358 00000 n 
+0000010507 00000 n 
+0000013020 00000 n 
+0000013169 00000 n 
+0000015500 00000 n 
+0000015649 00000 n 
+0000018184 00000 n 
+0000018333 00000 n 
+0000020847 00000 n 
+0000020996 00000 n 
+0000023218 00000 n 
+0000023367 00000 n 
+0000026067 00000 n 
+0000026216 00000 n 
+0000029446 00000 n 
+0000029595 00000 n 
+0000030043 00000 n 
+0000030192 00000 n 
+0000030328 00000 n 
+0000030379 00000 n 
+trailer
+<< /Size 31 /Root 29 0 R /Info 30 0 R >>
+startxref
+30471
+%%EOF

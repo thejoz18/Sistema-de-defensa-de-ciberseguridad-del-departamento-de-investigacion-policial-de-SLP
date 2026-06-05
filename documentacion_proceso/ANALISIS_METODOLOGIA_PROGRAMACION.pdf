@@ -1,0 +1,276 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+2 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+4 0 obj
+<< /Length 2687 >>
+stream
+BT /F2 18 Tf 54 730 Td (Analisis Metodologia de la Programacion) Tj ET
+BT /F2 14 Tf 54 682 Td (Producto final del programa) Tj ET
+BT /F1 10 Tf 54 644 Td (En metodologia de la programacion se puede justificar el proyecto como un) Tj ET
+BT /F1 10 Tf 54 630 Td (programa ejecutable en Python que evalua el estado de seguridad de un sistema) Tj ET
+BT /F1 10 Tf 54 616 Td (frente a actividad sospechosa.) Tj ET
+BT /F1 10 Tf 54 588 Td (El producto no pide los datos manualmente con input, porque el proyecto trabaja) Tj ET
+BT /F1 10 Tf 54 574 Td (como simulador. En lugar de que el usuario escriba los valores, el programa) Tj ET
+BT /F1 10 Tf 54 560 Td (genera datos automaticamente para simular una red durante 60 segundos.) Tj ET
+BT /F3 8 Tf 54 518 Td (Entrada simulada -> procesamiento -> estado de seguridad -> alertas, graficas y CSV) Tj ET
+BT /F1 10 Tf 54 479 Td (Archivo principal ejecutable: m00_pdi_slp.py) Tj ET
+BT /F1 10 Tf 54 451 Td (Salida principal del sistema:) Tj ET
+BT /F3 8 Tf 54 423 Td (| Salida | Significado |) Tj ET
+BT /F3 8 Tf 54 412 Td (|---|---|) Tj ET
+BT /F3 8 Tf 54 401 Td (| NORMAL | seguridad estable |) Tj ET
+BT /F3 8 Tf 54 390 Td (| SOSPECHOSO | posible comportamiento irregular |) Tj ET
+BT /F3 8 Tf 54 379 Td (| ALERTA | riesgo detectado |) Tj ET
+BT /F3 8 Tf 54 368 Td (| CRITICO | riesgo alto y protecciones reforzadas |) Tj ET
+BT /F1 10 Tf 54 343 Td (El programa tambien muestra mensajes en consola, genera graficas y crea un) Tj ET
+BT /F1 10 Tf 54 329 Td (reporte CSV.) Tj ET
+BT /F2 14 Tf 54 295 Td (Entradas del programa) Tj ET
+BT /F1 10 Tf 54 257 Td (El documento de metodologia pide datos como uso de CPU, intentos fallidos,) Tj ET
+BT /F1 10 Tf 54 243 Td (archivos desconocidos y mensajes sospechosos. En este proyecto esos datos se) Tj ET
+BT /F1 10 Tf 54 229 Td (representan con variables del paquete.) Tj ET
+BT /F1 10 Tf 54 201 Td (Variables de entrada usadas:) Tj ET
+BT /F3 8 Tf 54 173 Td (| Dato pedido | Variable usada en el programa | Tipo de dato |) Tj ET
+BT /F3 8 Tf 54 162 Td (|---|---|---|) Tj ET
+BT /F3 8 Tf 54 151 Td (| uso de CPU | cpu y cpu_base | float / int |) Tj ET
+BT /F3 8 Tf 54 140 Td (| intentos fallidos de acceso | intentos_login | int |) Tj ET
+BT /F3 8 Tf 54 129 Td (| computadoras con fallos | se representa como estado del sistema y central monitoreada | string |) Tj ET
+BT /F3 8 Tf 54 118 Td (| archivos desconocidos | cambios_archivos | int |) Tj ET
+BT /F3 8 Tf 54 107 Td (| mensaje sospechoso | incidente y tipo_incidente | bool / string |) Tj ET
+BT /F3 8 Tf 54 96 Td (| salida de datos | salida_datos | int |) Tj ET
+BT /F3 8 Tf 54 85 Td (| usuario | usuario | string |) Tj ET
+BT /F3 8 Tf 54 74 Td (| IP | ip | string |) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 16 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 4 0 R >>
+endobj
+6 0 obj
+<< /Length 2339 >>
+stream
+BT /F3 8 Tf 54 710 Td (paquete = {) Tj ET
+BT /F3 8 Tf 54 699 Td (    "segundo": segundo,) Tj ET
+BT /F3 8 Tf 54 688 Td (    "central": central,) Tj ET
+BT /F3 8 Tf 54 677 Td (    "usuario": usuario,) Tj ET
+BT /F3 8 Tf 54 666 Td (    "ip": ip,) Tj ET
+BT /F3 8 Tf 54 655 Td (    "paquetes": random.randint\(80, 420\),) Tj ET
+BT /F3 8 Tf 54 644 Td (    "intentos_login": random.randint\(0, 2\),) Tj ET
+BT /F3 8 Tf 54 633 Td (    "cambios_archivos": random.randint\(0, 3\),) Tj ET
+BT /F3 8 Tf 54 622 Td (    "salida_datos": random.randint\(1, 12\),) Tj ET
+BT /F3 8 Tf 54 611 Td (    "incidente": False,) Tj ET
+BT /F3 8 Tf 54 600 Td (    "tipo_incidente": "NINGUNO") Tj ET
+BT /F3 8 Tf 54 589 Td (}) Tj ET
+BT /F1 10 Tf 54 550 Td (Este bloque representa las entradas del programa. Aunque no se escriben) Tj ET
+BT /F1 10 Tf 54 536 Td (manualmente, cumplen la funcion de datos iniciales que el sistema necesita para) Tj ET
+BT /F1 10 Tf 54 522 Td (evaluar la seguridad.) Tj ET
+BT /F2 14 Tf 54 488 Td (Procesamiento del programa) Tj ET
+BT /F1 10 Tf 54 450 Td (El procesamiento consiste en tomar los datos del paquete, calcular metricas y) Tj ET
+BT /F1 10 Tf 54 436 Td (decidir el estado del sistema.) Tj ET
+BT /F3 8 Tf 54 394 Td (Datos del paquete -> calculos -> reglas -> estado final del ciclo) Tj ET
+BT /F3 8 Tf 54 341 Td (flujo = lm.calcular_flujo_digital\() Tj ET
+BT /F3 8 Tf 54 330 Td (    paquete["paquetes"], paquete["intentos_login"],) Tj ET
+BT /F3 8 Tf 54 319 Td (    paquete["cambios_archivos"], paquete["salida_datos"]) Tj ET
+BT /F3 8 Tf 54 308 Td (\)) Tj ET
+BT /F1 10 Tf 54 269 Td (Este bloque procesa los datos principales y los convierte en un indice de flujo) Tj ET
+BT /F1 10 Tf 54 255 Td (digital. Ese valor ayuda a saber si la actividad parece normal o riesgosa.) Tj ET
+BT /F3 8 Tf 54 213 Td (est, alertas, protecciones, cifrado, refrig = lm.evaluar_estado\() Tj ET
+BT /F3 8 Tf 54 202 Td (    paquete, flujo, paquete["temperatura"], estado_actual["cifrado"],) Tj ET
+BT /F3 8 Tf 54 191 Td (    indice_oscilatorio) Tj ET
+BT /F3 8 Tf 54 180 Td (\)) Tj ET
+BT /F1 10 Tf 54 141 Td (Aqui se evalua el paquete. La funcion regresa el estado del sistema, las alertas,) Tj ET
+BT /F1 10 Tf 54 127 Td (las protecciones, el nivel de cifrado y si se debe activar refrigeracion.) Tj ET
+BT /F2 14 Tf 54 93 Td (Condicionales y operadores logicos) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 16 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 6 0 R >>
+endobj
+8 0 obj
+<< /Length 2200 >>
+stream
+BT /F1 10 Tf 54 738 Td (El programa usa condicionales para tomar decisiones. Esto cumple con el requisito) Tj ET
+BT /F1 10 Tf 54 724 Td (de tener bloques if, elif, else y operadores logicos como and, or y not.) Tj ET
+BT /F3 8 Tf 54 682 Td (if paquete["paquetes"] > srv.U_PAQUETES_ALERTA and paquete["intentos_login"] > srv.U_LOGIN_ALERTA:) Tj ET
+BT /F3 8 Tf 54 671 Td (    alertas.append\("TRAFICO MASIVO + FUERZA BRUTA"\)) Tj ET
+BT /F3 8 Tf 54 660 Td (    estado = "ALERTA") Tj ET
+BT /F1 10 Tf 54 621 Td (Este bloque usa and. Significa que se necesita trafico alto y tambien muchos) Tj ET
+BT /F1 10 Tf 54 607 Td (intentos de login para activar esa alerta.) Tj ET
+BT /F3 8 Tf 54 565 Td (if paquete["paquetes"] > srv.U_PAQUETES_CRIT or flujo > srv.U_FLUJO_CRITICO:) Tj ET
+BT /F3 8 Tf 54 554 Td (    estado = "CRITICO") Tj ET
+BT /F3 8 Tf 54 543 Td (    cifrado = "REFORZADO") Tj ET
+BT /F1 10 Tf 54 504 Td (Este bloque usa or. Significa que basta con que una de las dos condiciones sea) Tj ET
+BT /F1 10 Tf 54 490 Td (grave para pasar a estado critico.) Tj ET
+BT /F3 8 Tf 54 448 Td (elif temperatura >= srv.U_TEMP_REFRIG and not refrigeracion:) Tj ET
+BT /F3 8 Tf 54 437 Td (    refrigeracion = True) Tj ET
+BT /F1 10 Tf 54 398 Td (Este bloque usa not. Sirve para activar refrigeracion preventiva solo si todavia) Tj ET
+BT /F1 10 Tf 54 384 Td (no estaba activa.) Tj ET
+BT /F2 14 Tf 54 350 Td (Ciclos iterativos) Tj ET
+BT /F1 10 Tf 54 312 Td (El programa usa ciclos for, que cumplen con el requisito de ciclos iterativos.) Tj ET
+BT /F3 8 Tf 54 270 Td (for segundo in range\(1, 61\):) Tj ET
+BT /F1 10 Tf 54 231 Td (Este ciclo es el principal. Repite la simulacion 60 veces, una por cada segundo.) Tj ET
+BT /F3 8 Tf 54 189 Td (for a in agentes_norte:) Tj ET
+BT /F3 8 Tf 54 178 Td (    agentes_autorizados.append\(a\)) Tj ET
+BT /F3 8 Tf 54 167 Td (for a in agentes_centro:) Tj ET
+BT /F3 8 Tf 54 156 Td (    agentes_autorizados.append\(a\)) Tj ET
+BT /F3 8 Tf 54 145 Td (for a in agentes_sur:) Tj ET
+BT /F3 8 Tf 54 134 Td (    agentes_autorizados.append\(a\)) Tj ET
+BT /F1 10 Tf 54 95 Td (Estos ciclos juntan los agentes autorizados de cada central en una sola lista) Tj ET
+BT /F1 10 Tf 54 81 Td (general.) Tj ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 16 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 8 0 R >>
+endobj
+10 0 obj
+<< /Length 2284 >>
+stream
+BT /F3 8 Tf 54 710 Td (for red in range\(1, 4\):) Tj ET
+BT /F3 8 Tf 54 699 Td (    for host in range\(10, 18\):) Tj ET
+BT /F3 8 Tf 54 688 Td (        ips_internas.append\("192.168." + str\(red\) + "." + str\(host\)\)) Tj ET
+BT /F1 10 Tf 54 649 Td (Este ciclo doble genera IPs internas sin escribirlas una por una.) Tj ET
+BT /F2 14 Tf 54 615 Td (Listas usadas en el programa) Tj ET
+BT /F1 10 Tf 54 577 Td (El requisito pide al menos una lista con minimo 7 elementos. El programa cumple) Tj ET
+BT /F1 10 Tf 54 563 Td (esto con varias listas.) Tj ET
+BT /F1 10 Tf 54 535 Td (Lista con mas de 7 elementos: ips_internas) Tj ET
+BT /F3 8 Tf 54 493 Td (ips_internas = []) Tj ET
+BT /F3 8 Tf 54 482 Td (for red in range\(1, 4\):) Tj ET
+BT /F3 8 Tf 54 471 Td (    for host in range\(10, 18\):) Tj ET
+BT /F3 8 Tf 54 460 Td (        ips_internas.append\("192.168." + str\(red\) + "." + str\(host\)\)) Tj ET
+BT /F1 10 Tf 54 421 Td (Esta lista termina teniendo 24 IPs internas, porque se generan 3 redes y 8 hosts) Tj ET
+BT /F1 10 Tf 54 407 Td (por red.) Tj ET
+BT /F3 8 Tf 54 365 Td (3 redes * 8 hosts = 24 IPs) Tj ET
+BT /F1 10 Tf 54 326 Td (Otras listas del programa:) Tj ET
+BT /F3 8 Tf 54 298 Td (| Lista | Uso |) Tj ET
+BT /F3 8 Tf 54 287 Td (|---|---|) Tj ET
+BT /F3 8 Tf 54 276 Td (| centrales | centrales monitoreadas |) Tj ET
+BT /F3 8 Tf 54 265 Td (| agentes_norte | usuarios autorizados del norte |) Tj ET
+BT /F3 8 Tf 54 254 Td (| agentes_centro | usuarios autorizados del centro |) Tj ET
+BT /F3 8 Tf 54 243 Td (| agentes_sur | usuarios autorizados del sur |) Tj ET
+BT /F3 8 Tf 54 232 Td (| usuarios_sospechosos | usuarios externos sospechosos |) Tj ET
+BT /F3 8 Tf 54 221 Td (| ips_sospechosas | IPs usadas por ataques |) Tj ET
+BT /F3 8 Tf 54 210 Td (| tipos_expediente | tipos de archivos o expedientes |) Tj ET
+BT /F3 8 Tf 54 199 Td (| TIPOS_ATAQUE | ataques que puede inyectar el simulador |) Tj ET
+BT /F2 14 Tf 54 168 Td (Salidas del programa) Tj ET
+BT /F1 10 Tf 54 130 Td (Las salidas son los mensajes, estados, recomendaciones y archivos generados.) Tj ET
+BT /F3 8 Tf 54 88 Td (print\("  Estado operativo   : " + estado\)) Tj ET
+BT /F3 8 Tf 54 77 Td (print\("  Cifrado activo     : " + cifrado\)) Tj ET
+BT /F3 8 Tf 54 66 Td (print\("  Refrigeracion      : " + texto_refrigeracion\)) Tj ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 16 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 10 0 R >>
+endobj
+12 0 obj
+<< /Length 2254 >>
+stream
+BT /F1 10 Tf 54 710 Td (Estos mensajes muestran el estado del sistema en consola.) Tj ET
+BT /F3 8 Tf 54 668 Td (if len\(alertas\) > 0:) Tj ET
+BT /F3 8 Tf 54 657 Td (    print\("  -- ALERTAS OPERATIVAS --"\)) Tj ET
+BT /F3 8 Tf 54 646 Td (    for a in alertas:) Tj ET
+BT /F3 8 Tf 54 635 Td (        print\("  [!] " + a\)) Tj ET
+BT /F1 10 Tf 54 596 Td (Esta salida imprime las alertas detectadas.) Tj ET
+BT /F3 8 Tf 54 554 Td (if len\(protecciones\) > 0:) Tj ET
+BT /F3 8 Tf 54 543 Td (    print\("  -- PROTECCIONES ACTIVADAS --"\)) Tj ET
+BT /F3 8 Tf 54 532 Td (    for p in protecciones:) Tj ET
+BT /F3 8 Tf 54 521 Td (        print\("  [OK] " + p\)) Tj ET
+BT /F1 10 Tf 54 482 Td (Esta salida imprime las protecciones que se activaron, como cifrado,) Tj ET
+BT /F1 10 Tf 54 468 Td (refrigeracion o bloqueo de login.) Tj ET
+BT /F1 10 Tf 54 440 Td (Salidas finales:) Tj ET
+BT /F3 8 Tf 54 412 Td (| Salida | Archivo o lugar |) Tj ET
+BT /F3 8 Tf 54 401 Td (|---|---|) Tj ET
+BT /F3 8 Tf 54 390 Td (| monitoreo por consola | terminal |) Tj ET
+BT /F3 8 Tf 54 379 Td (| graficas | pdi_slp_graficas/ |) Tj ET
+BT /F3 8 Tf 54 368 Td (| reporte CSV | reportes_tabla/pdi_slp_reporte_tabla.csv |) Tj ET
+BT /F3 8 Tf 54 357 Td (| resumen final | consola |) Tj ET
+BT /F2 14 Tf 54 326 Td (Porcentaje de seguridad) Tj ET
+BT /F1 10 Tf 54 288 Td (El documento de metodologia menciona que la evaluacion podria expresarse como) Tj ET
+BT /F1 10 Tf 54 274 Td (porcentaje. El codigo actual no imprime literalmente un porcentaje de seguridad,) Tj ET
+BT /F1 10 Tf 54 260 Td (pero si maneja cuatro niveles equivalentes de seguridad.) Tj ET
+BT /F3 8 Tf 54 232 Td (| Estado | Interpretacion posible |) Tj ET
+BT /F3 8 Tf 54 221 Td (|---|---|) Tj ET
+BT /F3 8 Tf 54 210 Td (| NORMAL | seguridad alta |) Tj ET
+BT /F3 8 Tf 54 199 Td (| SOSPECHOSO | seguridad media |) Tj ET
+BT /F3 8 Tf 54 188 Td (| ALERTA | seguridad baja |) Tj ET
+BT /F3 8 Tf 54 177 Td (| CRITICO | seguridad critica |) Tj ET
+BT /F1 10 Tf 54 152 Td (Si se quisiera adaptarlo sin romper la logica, se podria presentar asi en el) Tj ET
+BT /F1 10 Tf 54 138 Td (documento:) Tj ET
+BT /F3 8 Tf 54 96 Td (NORMAL -> 90% a 100%) Tj ET
+BT /F3 8 Tf 54 85 Td (SOSPECHOSO -> 70% a 89%) Tj ET
+BT /F3 8 Tf 54 74 Td (ALERTA -> 40% a 69%) Tj ET
+endstream
+endobj
+13 0 obj
+<< /Type /Page /Parent 16 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 12 0 R >>
+endobj
+14 0 obj
+<< /Length 2095 >>
+stream
+BT /F3 8 Tf 54 738 Td (CRITICO -> 0% a 39%) Tj ET
+BT /F1 10 Tf 54 699 Td (No es necesario cambiar el codigo si el proyecto se presenta por estados, porque) Tj ET
+BT /F1 10 Tf 54 685 Td (los estados ya representan el nivel de seguridad.) Tj ET
+BT /F2 14 Tf 54 651 Td (Resultados y analisis) Tj ET
+BT /F1 10 Tf 54 613 Td (El programa cumple con la estructura basica de metodologia de la programacion.) Tj ET
+BT /F1 10 Tf 54 599 Td (Tiene entradas, procesamiento y salidas. Tambien usa variables de diferentes) Tj ET
+BT /F1 10 Tf 54 585 Td (tipos, listas, diccionarios, ciclos, condicionales, operadores logicos y) Tj ET
+BT /F1 10 Tf 54 571 Td (funciones.) Tj ET
+BT /F1 10 Tf 54 543 Td (La principal adaptacion es que el usuario no introduce los datos manualmente. En) Tj ET
+BT /F1 10 Tf 54 529 Td (su lugar, el simulador genera automaticamente los valores, lo cual tiene sentido) Tj ET
+BT /F1 10 Tf 54 515 Td (porque el proyecto representa monitoreo de red en tiempo real.) Tj ET
+BT /F2 14 Tf 54 481 Td (Conclusiones) Tj ET
+BT /F1 10 Tf 54 443 Td (Metodologia de la programacion se refleja en la organizacion del sistema:) Tj ET
+BT /F1 10 Tf 54 429 Td (archivos separados, funciones, datos de entrada, procesamiento, salidas y) Tj ET
+BT /F1 10 Tf 54 415 Td (estructuras de control.) Tj ET
+BT /F1 10 Tf 54 387 Td (El prototipo cumple como programa ejecutable en Python para evaluar seguridad) Tj ET
+BT /F1 10 Tf 54 373 Td (digital. Aunque no usa input, si solicita datos de forma simulada mediante) Tj ET
+BT /F1 10 Tf 54 359 Td (generacion automatica, lo que permite probar muchos escenarios sin capturarlos) Tj ET
+BT /F1 10 Tf 54 345 Td (manualmente.) Tj ET
+BT /F1 10 Tf 54 317 Td (Si se quisiera adaptar mas al formato exacto de la materia, se podria agregar una) Tj ET
+BT /F1 10 Tf 54 303 Td (version pequeÒa con input para capturar manualmente CPU, login, fallos y mensaje) Tj ET
+BT /F1 10 Tf 54 289 Td (sospechoso. Pero para el proyecto completo conviene mantener la simulacion) Tj ET
+BT /F1 10 Tf 54 275 Td (automatica porque ya analiza 60 segundos, genera reportes y produce graficas.) Tj ET
+endstream
+endobj
+15 0 obj
+<< /Type /Page /Parent 16 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 14 0 R >>
+endobj
+16 0 obj
+<< /Type /Pages /Kids [ 5 0 R 7 0 R 9 0 R 11 0 R 13 0 R 15 0 R ] /Count 6 >>
+endobj
+17 0 obj
+<< /Type /Catalog /Pages 16 0 R >>
+endobj
+18 0 obj
+<< /Title (ANALISIS_METODOLOGIA_PROGRAMACION) /Producer (Codex minimal PDF generator) >>
+endobj
+xref
+0 19
+0000000000 65535 f 
+0000000015 00000 n 
+0000000085 00000 n 
+0000000160 00000 n 
+0000000228 00000 n 
+0000002967 00000 n 
+0000003114 00000 n 
+0000005505 00000 n 
+0000005652 00000 n 
+0000007904 00000 n 
+0000008051 00000 n 
+0000010388 00000 n 
+0000010537 00000 n 
+0000012844 00000 n 
+0000012993 00000 n 
+0000015141 00000 n 
+0000015290 00000 n 
+0000015383 00000 n 
+0000015434 00000 n 
+trailer
+<< /Size 19 /Root 17 0 R /Info 18 0 R >>
+startxref
+15539
+%%EOF

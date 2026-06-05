@@ -1,0 +1,213 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+2 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+4 0 obj
+<< /Length 2134 >>
+stream
+BT /F2 18 Tf 54 730 Td (Analisis Fisica) Tj ET
+BT /F2 14 Tf 54 682 Td (Energia, CPU y temperatura) Tj ET
+BT /F1 10 Tf 54 644 Td (En fisica el proyecto se justifica por el impacto energetico y termico de un) Tj ET
+BT /F1 10 Tf 54 630 Td (sistema digital. Cuando aumenta la actividad del servidor, tambien aumenta el uso) Tj ET
+BT /F1 10 Tf 54 616 Td (del CPU y eso se refleja en la temperatura.) Tj ET
+BT /F1 10 Tf 54 588 Td (El procedimiento usado es:) Tj ET
+BT /F3 8 Tf 54 546 Td (Actividad del sistema -> uso de CPU -> aumento de temperatura) Tj ET
+BT /F3 8 Tf 54 493 Td (def calcular_cpu\(paquete\):) Tj ET
+BT /F3 8 Tf 54 482 Td (    actividad = \(paquete["paquetes"] +) Tj ET
+BT /F3 8 Tf 54 471 Td (                 paquete["intentos_login"] * 45 +) Tj ET
+BT /F3 8 Tf 54 460 Td (                 paquete["cambios_archivos"] * 28 +) Tj ET
+BT /F3 8 Tf 54 449 Td (                 paquete["salida_datos"] * 18\)) Tj ET
+BT /F3 8 Tf 54 438 Td (    cpu = paquete["cpu_base"] + 0.005 * actividad) Tj ET
+BT /F3 8 Tf 54 427 Td (    if cpu > 100:) Tj ET
+BT /F3 8 Tf 54 416 Td (        cpu = 100) Tj ET
+BT /F3 8 Tf 54 405 Td (    return round\(cpu, 1\)) Tj ET
+BT /F1 10 Tf 54 366 Td (Este bloque calcula el CPU a partir de la actividad del paquete. Si hay muchos) Tj ET
+BT /F1 10 Tf 54 352 Td (paquetes, intentos de login, cambios de archivos o salida de datos, el CPU sube.) Tj ET
+BT /F2 14 Tf 54 318 Td (Modelo de temperatura) Tj ET
+BT /F1 10 Tf 54 280 Td (La temperatura se calcula como una relacion lineal entre temperatura ambiente y) Tj ET
+BT /F1 10 Tf 54 266 Td (uso de CPU.) Tj ET
+BT /F3 8 Tf 54 224 Td (Temperatura = Temperatura ambiente + k\(CPU\)) Tj ET
+BT /F3 8 Tf 54 171 Td (def calcular_temperatura\(cpu, temp_ambiente=28, k=0.58\):) Tj ET
+BT /F3 8 Tf 54 160 Td (    return round\(temp_ambiente + k * cpu, 1\)) Tj ET
+BT /F1 10 Tf 54 121 Td (Aqui se usa una aproximacion fisica simple. Si el CPU aumenta, la temperatura) Tj ET
+BT /F1 10 Tf 54 107 Td (tambien aumenta. No es un modelo completo de transferencia de calor, pero sirve) Tj ET
+BT /F1 10 Tf 54 93 Td (para representar el efecto termico del trabajo del servidor.) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 14 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 4 0 R >>
+endobj
+6 0 obj
+<< /Length 2100 >>
+stream
+BT /F2 14 Tf 54 732 Td (Enfriamiento pasivo) Tj ET
+BT /F1 10 Tf 54 694 Td (El enfriamiento pasivo representa una disminucion natural de temperatura cuando) Tj ET
+BT /F1 10 Tf 54 680 Td (el sistema no esta en estado critico.) Tj ET
+BT /F3 8 Tf 54 638 Td (Cada cierto intervalo:) Tj ET
+BT /F3 8 Tf 54 627 Td (Temperatura nueva = Temperatura actual - descenso) Tj ET
+BT /F3 8 Tf 54 574 Td (def aplicar_enfriamiento_pasivo\(temperatura, segundo, intervalo=5, descenso=1.0\):) Tj ET
+BT /F3 8 Tf 54 563 Td (    if segundo % intervalo != 0:) Tj ET
+BT /F3 8 Tf 54 552 Td (        return temperatura) Tj ET
+BT /F3 8 Tf 54 541 Td (    nueva = temperatura - descenso) Tj ET
+BT /F3 8 Tf 54 530 Td (    if nueva < 28:) Tj ET
+BT /F3 8 Tf 54 519 Td (        nueva = 28) Tj ET
+BT /F3 8 Tf 54 508 Td (    return round\(nueva, 1\)) Tj ET
+BT /F1 10 Tf 54 469 Td (Este bloque baja la temperatura cada 5 segundos. Tambien evita que baje de 28) Tj ET
+BT /F1 10 Tf 54 455 Td (grados, que se toma como temperatura ambiente minima del sistema.) Tj ET
+BT /F2 14 Tf 54 421 Td (Flujo del refrigerante) Tj ET
+BT /F1 10 Tf 54 383 Td (Para el enfriamiento activo se usa una idea relacionada con continuidad de) Tj ET
+BT /F1 10 Tf 54 369 Td (fluidos. Si el area del conducto cambia, la velocidad del refrigerante tambien) Tj ET
+BT /F1 10 Tf 54 355 Td (cambia.) Tj ET
+BT /F3 8 Tf 54 313 Td (A1 * v1 = A2 * v2) Tj ET
+BT /F3 8 Tf 54 302 Td (v2 = \(A1 * v1\) / A2) Tj ET
+BT /F3 8 Tf 54 249 Td (def calcular_velocidad_refrigerante\(area_1, velocidad_1, area_2\):) Tj ET
+BT /F3 8 Tf 54 238 Td (    if area_2 == 0:) Tj ET
+BT /F3 8 Tf 54 227 Td (        return 0.0) Tj ET
+BT /F3 8 Tf 54 216 Td (    return round\(\(area_1 * velocidad_1\) / area_2, 4\)) Tj ET
+BT /F1 10 Tf 54 177 Td (Esta funcion calcula la velocidad final del refrigerante. Si el area final es) Tj ET
+BT /F1 10 Tf 54 163 Td (menor, la velocidad aumenta.) Tj ET
+BT /F2 14 Tf 54 129 Td (Presion y Bernoulli) Tj ET
+BT /F1 10 Tf 54 91 Td (El sistema tambien usa una aproximacion de Bernoulli para calcular la presion) Tj ET
+BT /F1 10 Tf 54 77 Td (final del refrigerante.) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 14 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 6 0 R >>
+endobj
+8 0 obj
+<< /Length 2195 >>
+stream
+BT /F3 8 Tf 54 710 Td (P1 + 1/2 rho v1^2 = P2 + 1/2 rho v2^2) Tj ET
+BT /F1 10 Tf 54 671 Td (Despejando:) Tj ET
+BT /F3 8 Tf 54 629 Td (P2 = P1 + 1/2 rho v1^2 - 1/2 rho v2^2) Tj ET
+BT /F3 8 Tf 54 576 Td (def calcular_presion_bernoulli\(presion_1, densidad, velocidad_1, velocidad_2\):) Tj ET
+BT /F3 8 Tf 54 565 Td (    return round\(presion_1 + 0.5 * densidad * velocidad_1**2) Tj ET
+BT /F3 8 Tf 54 554 Td (                           - 0.5 * densidad * velocidad_2**2, 2\)) Tj ET
+BT /F1 10 Tf 54 515 Td (Esta parte calcula como cambia la presion cuando cambia la velocidad del) Tj ET
+BT /F1 10 Tf 54 501 Td (refrigerante. Es una forma simplificada de aplicar Bernoulli al sistema de) Tj ET
+BT /F1 10 Tf 54 487 Td (enfriamiento.) Tj ET
+BT /F2 14 Tf 54 453 Td (Descenso de temperatura por refrigeracion) Tj ET
+BT /F1 10 Tf 54 415 Td (El descenso activo se calcula usando la velocidad del refrigerante y la caida) Tj ET
+BT /F1 10 Tf 54 401 Td (relativa de presion.) Tj ET
+BT /F3 8 Tf 54 359 Td (Caida relativa = \(P1 - P2\) / P1) Tj ET
+BT /F3 8 Tf 54 348 Td (Descenso = coeficiente * velocidad * caida relativa) Tj ET
+BT /F3 8 Tf 54 295 Td (def calcular_descenso_bernoulli\(velocidad_refrigerante, presion_inicial, presion_final, coef=4.4\):) Tj ET
+BT /F3 8 Tf 54 284 Td (    if presion_inicial <= 0:) Tj ET
+BT /F3 8 Tf 54 273 Td (        return 0) Tj ET
+BT /F3 8 Tf 54 262 Td (    caida_relativa = max\(\(presion_inicial - presion_final\) / presion_inicial, 0\)) Tj ET
+BT /F3 8 Tf 54 251 Td (    return round\(coef * velocidad_refrigerante * caida_relativa, 2\)) Tj ET
+BT /F1 10 Tf 54 212 Td (Este modelo no dice que Bernoulli por si solo calcule directamente la) Tj ET
+BT /F1 10 Tf 54 198 Td (temperatura. Lo que hace el codigo es usar Bernoulli para estimar una condicion) Tj ET
+BT /F1 10 Tf 54 184 Td (del refrigerante, y con esa condicion calcular cuanto baja la temperatura.) Tj ET
+BT /F2 14 Tf 54 150 Td (Activacion del enfriamiento) Tj ET
+BT /F3 8 Tf 54 98 Td (if temperatura >= srv.U_TEMP_CRITICA:) Tj ET
+BT /F3 8 Tf 54 87 Td (    estado = "CRITICO") Tj ET
+BT /F3 8 Tf 54 76 Td (    refrigeracion = True) Tj ET
+BT /F3 8 Tf 54 65 Td (    protecciones.append\("REFRIGERACION ACTIVADA"\)) Tj ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 14 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 8 0 R >>
+endobj
+10 0 obj
+<< /Length 2778 >>
+stream
+BT /F3 8 Tf 54 738 Td (elif temperatura >= srv.U_TEMP_REFRIG and not refrigeracion:) Tj ET
+BT /F3 8 Tf 54 727 Td (    refrigeracion = True) Tj ET
+BT /F3 8 Tf 54 716 Td (    protecciones.append\("REFRIGERACION PREVENTIVA ACTIVADA"\)) Tj ET
+BT /F1 10 Tf 54 677 Td (Esta regla activa el enfriamiento cuando la temperatura pasa ciertos umbrales. Si) Tj ET
+BT /F1 10 Tf 54 663 Td (es muy alta, el estado se vuelve critico. Si solo pasa el nivel preventivo, se) Tj ET
+BT /F1 10 Tf 54 649 Td (activa refrigeracion sin llegar necesariamente al peor estado.) Tj ET
+BT /F3 8 Tf 54 607 Td (if estado_actual["refrigeracion"]:) Tj ET
+BT /F3 8 Tf 54 596 Td (    paquete["temperatura"] = lm.aplicar_enfriamiento\() Tj ET
+BT /F3 8 Tf 54 585 Td (        paquete["temperatura"], v2, lm.P1_REFRIGERANTE, P2, objetivo_termico) Tj ET
+BT /F3 8 Tf 54 574 Td (    \)) Tj ET
+BT /F1 10 Tf 54 535 Td (Aqui se aplica el enfriamiento activo usando la velocidad y presion calculadas.) Tj ET
+BT /F2 14 Tf 54 501 Td (Grafica de temperatura) Tj ET
+BT /F1 10 Tf 54 463 Td (Grafica llamada: 03_temperatura_vs_tiempo.png) Tj ET
+BT /F1 10 Tf 54 435 Td (Valores o parametros usados:) Tj ET
+BT /F3 8 Tf 54 407 Td (| Valor | Significado |) Tj ET
+BT /F3 8 Tf 54 396 Td (|---|---|) Tj ET
+BT /F3 8 Tf 54 385 Td (| t | tiempo de la simulacion en segundos |) Tj ET
+BT /F3 8 Tf 54 374 Td (| temperatura_sin_enfriamiento | temperatura calculada antes de aplicar refrigeracion |) Tj ET
+BT /F3 8 Tf 54 363 Td (| temperatura | temperatura final despues del enfriamiento |) Tj ET
+BT /F3 8 Tf 54 352 Td (| U_TEMP_REFRIG | umbral donde se activa refrigeracion preventiva |) Tj ET
+BT /F3 8 Tf 54 341 Td (| U_TEMP_CRITICA | umbral donde la temperatura se considera critica |) Tj ET
+BT /F3 8 Tf 54 330 Td (| refrigeracion_activa | marca los momentos donde actuo el sistema de enfriamiento |) Tj ET
+BT /F1 10 Tf 54 305 Td (Explicacion:) Tj ET
+BT /F1 10 Tf 54 277 Td (La grafica 3 compara la temperatura original contra la temperatura despues de) Tj ET
+BT /F1 10 Tf 54 263 Td (enfriar. Esto muestra el efecto fisico del sistema de refrigeracion.) Tj ET
+BT /F1 10 Tf 54 235 Td (Si la temperatura sin enfriamiento sube demasiado y la temperatura final baja, se) Tj ET
+BT /F1 10 Tf 54 221 Td (puede interpretar que el sistema de refrigeracion esta actuando. Esta grafica) Tj ET
+BT /F1 10 Tf 54 207 Td (ayuda a justificar la relacion entre actividad digital, CPU, temperatura y) Tj ET
+BT /F1 10 Tf 54 193 Td (enfriamiento.) Tj ET
+BT /F2 14 Tf 54 159 Td (Resultados y analisis) Tj ET
+BT /F1 10 Tf 54 121 Td (El resultado principal de fisica es que el programa relaciona actividad digital) Tj ET
+BT /F1 10 Tf 54 107 Td (con temperatura. Cuando sube la actividad, sube el CPU y despues sube la) Tj ET
+BT /F1 10 Tf 54 93 Td (temperatura.) Tj ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 14 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 10 0 R >>
+endobj
+12 0 obj
+<< /Length 1199 >>
+stream
+BT /F1 10 Tf 54 738 Td (El modelo de enfriamiento permite justificar que el sistema no solo detecta) Tj ET
+BT /F1 10 Tf 54 724 Td (ataques digitales, sino que tambien considera el impacto fisico en servidores o) Tj ET
+BT /F1 10 Tf 54 710 Td (centros de datos.) Tj ET
+BT /F1 10 Tf 54 682 Td (La limitacion es que no se modela un servidor real con todas sus variables) Tj ET
+BT /F1 10 Tf 54 668 Td (fisicas. Se usa una aproximacion para representar energia, temperatura, presion y) Tj ET
+BT /F1 10 Tf 54 654 Td (refrigeracion de manera comprensible.) Tj ET
+BT /F2 14 Tf 54 620 Td (Conclusiones) Tj ET
+BT /F1 10 Tf 54 582 Td (Fisica se justifica mediante el analisis termico del servidor, el uso de CPU, la) Tj ET
+BT /F1 10 Tf 54 568 Td (temperatura, el enfriamiento pasivo, continuidad de fluidos y Bernoulli.) Tj ET
+BT /F1 10 Tf 54 540 Td (Este apartado puede conectarse con casos reales de empresas atacadas porque un) Tj ET
+BT /F1 10 Tf 54 526 Td (incidente digital no solo afecta datos. Tambien puede aumentar carga de) Tj ET
+BT /F1 10 Tf 54 512 Td (servidores, consumo energetico, necesidad de refrigeracion y riesgo operativo en) Tj ET
+BT /F1 10 Tf 54 498 Td (infraestructura tecnologica.) Tj ET
+endstream
+endobj
+13 0 obj
+<< /Type /Page /Parent 14 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 12 0 R >>
+endobj
+14 0 obj
+<< /Type /Pages /Kids [ 5 0 R 7 0 R 9 0 R 11 0 R 13 0 R ] /Count 5 >>
+endobj
+15 0 obj
+<< /Type /Catalog /Pages 14 0 R >>
+endobj
+16 0 obj
+<< /Title (ANALISIS_FISICA) /Producer (Codex minimal PDF generator) >>
+endobj
+xref
+0 17
+0000000000 65535 f 
+0000000015 00000 n 
+0000000085 00000 n 
+0000000160 00000 n 
+0000000228 00000 n 
+0000002414 00000 n 
+0000002561 00000 n 
+0000004713 00000 n 
+0000004860 00000 n 
+0000007107 00000 n 
+0000007254 00000 n 
+0000010085 00000 n 
+0000010234 00000 n 
+0000011486 00000 n 
+0000011635 00000 n 
+0000011721 00000 n 
+0000011772 00000 n 
+trailer
+<< /Size 17 /Root 15 0 R /Info 16 0 R >>
+startxref
+11859
+%%EOF

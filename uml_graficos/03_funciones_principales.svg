@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+<rect width="100%" height="100%" fill="#0b1020"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#38bdf8"/></marker></defs>
+<text x="700.0" y="42" text-anchor="middle" fill="#e5e7eb" font-family="Arial" font-size="26" font-weight="700">3. Funciones principales por modulo</text>
+<path d="M175.0,167.5 L312.5,167.5 L312.5,167.5 L450.0,167.5" fill="none" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)" opacity="0.85"/>
+<path d="M450.0,167.5 L595.0,167.5 L595.0,180.0 L740.0,180.0" fill="none" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)" opacity="0.85"/>
+<path d="M740.0,180.0 L740.0,307.5 L630.0,307.5 L630.0,435.0" fill="none" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)" opacity="0.85"/>
+<path d="M630.0,435.0 L837.5,435.0 L837.5,175.0 L1045.0,175.0" fill="none" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)" opacity="0.85"/>
+<path d="M175.0,167.5 L402.5,167.5 L402.5,435.0 L630.0,435.0" fill="none" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)" opacity="0.85"/>
+<rect x="70" y="120" width="210" height="95" rx="8" fill="#17324a" stroke="#38bdf8" stroke-width="2"/>
+<text x="175.0" y="156.5" text-anchor="middle" fill="#e5e7eb" font-family="Arial" font-size="14">m00 Principal</text>
+<text x="175.0" y="174.5" text-anchor="middle" fill="#e5e7eb" font-family="Arial" font-size="14">for 60s</text>
+<text x="175.0" y="192.5" text-anchor="middle" fill="#e5e7eb" font-family="Arial" font-size="14">coordina todo</text>
+<rect x="340" y="120" width="220" height="95" rx="8" fill="#111827" stroke="#38bdf8" stroke-width="2"/>
+<text x="450.0" y="156.5" text-anchor="middle" fill="#e5e7eb" font-family="Arial" font-size="14">Trafico / Ataque</text>
+<text x="450.0" y="174.5" text-anchor="middle" fill="#e5e7eb" font-family="Arial" font-size="14">genera paquete</text>
+<text x="450.0" y="192.5" text-anchor="middle" fill="#e5e7eb" font-family="Arial" font-size="14">modifica paquete</text>
+<rect x="620" y="120" width="240" height="120" rx="8" fill="#17324a" stroke="#38bdf8" stroke-width="2"/>
+<text x="740.0" y="161.0" text-anchor="middle" fill="#e5e7eb" font-family="Arial" font-size="14">m04 Matematica</text>
+<text x="740.0" y="179.0" text-anchor="middle" fill="#e5e7eb" font-family="Arial" font-size="14">derivadas</text>
+<text x="740.0" y="197.0" text-anchor="middle" fill="#e5e7eb" font-family="Arial" font-size="14">flujo / estado</text>
+<text x="740.0" y="215.0" text-anchor="middle" fill="#e5e7eb" font-family="Arial" font-size="14">cifrado / fisica</text>
+<rect x="940" y="120" width="210" height="110" rx="8" fill="#1f3f2e" stroke="#38bdf8" stroke-width="2"/>
+<text x="1045.0" y="156.0" text-anchor="middle" fill="#e5e7eb" font-family="Arial" font-size="14">Salidas</text>
+<text x="1045.0" y="174.0" text-anchor="middle" fill="#e5e7eb" font-family="Arial" font-size="14">monitor</text>
+<text x="1045.0" y="192.0" text-anchor="middle" fill="#e5e7eb" font-family="Arial" font-size="14">graficas</text>
+<text x="1045.0" y="210.0" text-anchor="middle" fill="#e5e7eb" font-family="Arial" font-size="14">CSV</text>
+<rect x="500" y="390" width="260" height="90" rx="8" fill="#1f3f2e" stroke="#38bdf8" stroke-width="2"/>
+<text x="630.0" y="424.0" text-anchor="middle" fill="#e5e7eb" font-family="Arial" font-size="14">Historial</text>
+<text x="630.0" y="442.0" text-anchor="middle" fill="#e5e7eb" font-family="Arial" font-size="14">almacena cada segundo</text>
+<text x="630.0" y="460.0" text-anchor="middle" fill="#e5e7eb" font-family="Arial" font-size="14">base de reportes</text>
+</svg>
