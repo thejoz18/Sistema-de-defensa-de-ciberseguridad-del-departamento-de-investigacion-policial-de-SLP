@@ -261,8 +261,12 @@ Esta parte adapta el simulador para guardar registros con cifrado y tambien recu
 
 ```python
 if estado_actual["refrigeracion"]:
+    if estado_actual["estado"] == "CRITICO":
+        v2, P2 = lm.calcular_refrigeracion_critica(
+            paquete["temperatura"], srv.U_TEMP_REFRIG - 1
+        )
     paquete["temperatura"] = lm.aplicar_enfriamiento(
-        paquete["temperatura"], v2, lm.P1_REFRIGERANTE, P2, objetivo_termico
+        paquete["temperatura"], v2, lm.P1_REFRIGERANTE, P2
     )
 else:
     paquete["temperatura"] = lm.aplicar_enfriamiento_pasivo(
@@ -270,7 +274,7 @@ else:
     )
 ```
 
-Aqui se adapta la simulacion para incluir enfriamiento. Si el sistema esta en riesgo, se aplica enfriamiento activo; si no, solo baja de forma pasiva en ciertos intervalos.
+Aqui se adapta la simulacion para incluir enfriamiento. Si el sistema esta en riesgo, se aplica enfriamiento activo; si no, solo baja de forma pasiva en ciertos intervalos. La parte critica agrega una regla extra: cuando el estado ya es `CRITICO`, se recalcula la presion del refrigerante para intentar llevar la temperatura al nivel seguro.
 
 **Salidas generadas al final de la simulacion:**
 

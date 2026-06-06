@@ -70,13 +70,14 @@ for segundo in range(1, 61):
     if segunda_derivada_sigmoide > srv.U_TASA:
         ## Si segunda derivada sigmoide pasa el ubmral en la consola se imprime una alerta
         print("  [!!] ACELERACION DEL TRAFICO DETECTADA  d2=" + str(segunda_derivada_sigmoide))
-    ## De m04 se importa la funcion para calcular el flujo digital con paquetes, intentos login, cambios archivos, salida datos
+    ## De m04 se importa la funcion para calcular el flujo digital con
+    ## paquetes, intentos login, cambios archivos, salida datos mediante Flujo digital = 0.45P + 0.25L + 0.15A + 0.15D
     flujo = lm.calcular_flujo_digital(
         ## Se cargan los coeficientes a la funcion en base al diccionario
         paquete["paquetes"], paquete["intentos_login"],
         paquete["cambios_archivos"], paquete["salida_datos"]
     )
-
+    ##
     paquete["cpu"] = lm.calcular_cpu(paquete)
 
     paquete["temperatura"] = lm.calcular_temperatura(paquete["cpu"])
@@ -113,11 +114,12 @@ for segundo in range(1, 61):
     v2, P2 = lm.calcular_refrigeracion()
 
     if estado_actual["refrigeracion"]:
-        objetivo_termico = None
         if estado_actual["estado"] == "CRITICO":
-            objetivo_termico = srv.U_TEMP_REFRIG - 1
+            v2, P2 = lm.calcular_refrigeracion_critica(
+                paquete["temperatura"], srv.U_TEMP_REFRIG - 1
+            )
         paquete["temperatura"] = lm.aplicar_enfriamiento(
-            paquete["temperatura"], v2, lm.P1_REFRIGERANTE, P2, objetivo_termico
+            paquete["temperatura"], v2, lm.P1_REFRIGERANTE, P2
         )
     else:
         paquete["temperatura"] = lm.aplicar_enfriamiento_pasivo(
@@ -152,6 +154,8 @@ for segundo in range(1, 61):
         "temperatura" : paquete["temperatura"],
         "temperatura_sin_enfriamiento": paquete["temperatura_sin_enfriamiento"],
         "refrigeracion_activa": refrigeracion_valor,
+        "velocidad_refrigerante": v2,
+        "presion_refrigerante": P2,
         "cpu"         : paquete["cpu"],
         "flujo"       : flujo,
         "primera_derivada_paquetes": primera_derivada_paquetes,
@@ -163,7 +167,7 @@ for segundo in range(1, 61):
         "desviacion_periodica": desviacion_periodica,
         "indice_oscilatorio": indice_oscilatorio,
         "incidente"   : incidente_valor,
-        "tipo_incidente": paquete["tipo_incidente"],
+        "tipo_incidente": paquete.get("tipo_incidente", "NINGUNO"),
         "estado"      : estado_actual["estado"],
         "cifrado"     : estado_actual["cifrado"],
         "direccion"   : paquete["direccion_registro"],
@@ -172,7 +176,7 @@ for segundo in range(1, 61):
 
     inc_txt = ""
     if paquete["incidente"]:
-        inc_txt = "  | " + paquete["tipo_incidente"]
+        inc_txt = "  | " + paquete.get("tipo_incidente", "NINGUNO")
     mon.imprimir_ciclo(segundo, paquete, estado_actual["estado"], inc_txt)
 
     if segundo % 5 == 0:

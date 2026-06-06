@@ -135,12 +135,18 @@ Esta regla activa el enfriamiento cuando la temperatura pasa ciertos umbrales. S
 
 ```python
 if estado_actual["refrigeracion"]:
+    if estado_actual["estado"] == "CRITICO":
+        v2, P2 = lm.calcular_refrigeracion_critica(
+            paquete["temperatura"], srv.U_TEMP_REFRIG - 1
+        )
     paquete["temperatura"] = lm.aplicar_enfriamiento(
-        paquete["temperatura"], v2, lm.P1_REFRIGERANTE, P2, objetivo_termico
+        paquete["temperatura"], v2, lm.P1_REFRIGERANTE, P2
     )
 ```
 
-Aqui se aplica el enfriamiento activo usando la velocidad y presion calculadas.
+Aqui se aplica el enfriamiento activo usando la velocidad y presion calculadas. En estado preventivo se usa la presion normal que sale de Bernoulli. En estado critico se recalcula una presion final menor solo para ese segundo, con la intencion de bajar la temperatura al objetivo seguro de 57 C.
+
+La temperatura no se fuerza directamente a 57 C. El codigo usa ese objetivo para calcular cuanta caida de presion necesita el refrigerante, y despues la temperatura baja por la formula de descenso.
 
 ## Grafica de temperatura
 
@@ -156,6 +162,8 @@ Aqui se aplica el enfriamiento activo usando la velocidad y presion calculadas.
 | `U_TEMP_REFRIG` | umbral donde se activa refrigeracion preventiva |
 | `U_TEMP_CRITICA` | umbral donde la temperatura se considera critica |
 | `refrigeracion_activa` | marca los momentos donde actuo el sistema de enfriamiento |
+| `velocidad_refrigerante` | velocidad final del refrigerante |
+| `presion_refrigerante` | presion usada en ese segundo; baja mas cuando el estado es critico |
 
 **Explicacion:**
 

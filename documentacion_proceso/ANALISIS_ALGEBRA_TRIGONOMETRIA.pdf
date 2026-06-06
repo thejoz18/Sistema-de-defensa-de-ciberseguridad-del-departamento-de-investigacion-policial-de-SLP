@@ -1,186 +1,248 @@
 %PDF-1.4
 %‚„œ”
 1 0 obj
-<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+<< /Type /Catalog /Pages 2 0 R >>
 endobj
 2 0 obj
-<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+<< /Type /Pages /Kids [3 0 R 5 0 R 7 0 R 9 0 R] /Count 4 >>
 endobj
 3 0 obj
-<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 11 0 R >> >> /Contents 4 0 R >>
 endobj
 4 0 obj
-<< /Length 2208 >>
+<< /Length 2616 >>
 stream
-BT /F2 18 Tf 54 730 Td (Analisis Algebra y Trigonometria) Tj ET
-BT /F2 14 Tf 54 682 Td (Modelado algebraico del trafico digital) Tj ET
-BT /F1 10 Tf 54 644 Td (En este apartado se usa algebra para representar el comportamiento del sistema) Tj ET
-BT /F1 10 Tf 54 630 Td (mediante variables numericas. El objetivo no es resolver una ecuacion unica, sino) Tj ET
-BT /F1 10 Tf 54 616 Td (construir un modelo que combine datos del trafico digital para obtener un indice) Tj ET
-BT /F1 10 Tf 54 602 Td (de actividad.) Tj ET
-BT /F3 8 Tf 54 560 Td (Flujo digital = 0.45P + 0.25L + 0.15A + 0.15D) Tj ET
-BT /F1 10 Tf 54 521 Td (Donde:) Tj ET
-BT /F3 8 Tf 54 479 Td (P = paquetes por segundo) Tj ET
-BT /F3 8 Tf 54 468 Td (L = intentos de login) Tj ET
-BT /F3 8 Tf 54 457 Td (A = cambios en archivos) Tj ET
-BT /F3 8 Tf 54 446 Td (D = salida de datos) Tj ET
-BT /F3 8 Tf 54 393 Td (def calcular_flujo_digital\(paquetes, intentos_login, cambios_archivos, salida_datos\):) Tj ET
-BT /F3 8 Tf 54 382 Td (    return round\(paquetes * 0.45 + intentos_login * 0.25 +) Tj ET
-BT /F3 8 Tf 54 371 Td (                 cambios_archivos * 0.15 + salida_datos * 0.15, 2\)) Tj ET
-BT /F1 10 Tf 54 332 Td (Este bloque construye una expresion algebraica ponderada. Cada variable aporta) Tj ET
-BT /F1 10 Tf 54 318 Td (una parte al resultado final. Los paquetes pesan mas porque representan el) Tj ET
-BT /F1 10 Tf 54 304 Td (movimiento principal de la red, mientras que los login, archivos y salida de) Tj ET
-BT /F1 10 Tf 54 290 Td (datos ayudan a detectar actividad sospechosa.) Tj ET
-BT /F2 14 Tf 54 256 Td (Sustitucion de valores) Tj ET
-BT /F1 10 Tf 54 218 Td (El procedimiento algebraico consiste en tomar los valores de un paquete y) Tj ET
-BT /F1 10 Tf 54 204 Td (sustituirlos en la formula del flujo digital.) Tj ET
-BT /F3 8 Tf 54 162 Td (Si:) Tj ET
-BT /F3 8 Tf 54 151 Td (P = 800) Tj ET
-BT /F3 8 Tf 54 140 Td (L = 10) Tj ET
-BT /F3 8 Tf 54 129 Td (A = 4) Tj ET
-BT /F3 8 Tf 54 118 Td (D = 30) Tj ET
-BT /F3 8 Tf 54 107 Td () Tj ET
-BT /F3 8 Tf 54 96 Td (Flujo digital = 0.45\(800\) + 0.25\(10\) + 0.15\(4\) + 0.15\(30\)) Tj ET
-BT /F3 8 Tf 54 85 Td (Flujo digital = 360 + 2.5 + 0.6 + 4.5) Tj ET
-BT /F3 8 Tf 54 74 Td (Flujo digital = 367.6) Tj ET
+BT
+/F1 10 Tf
+1 0 0 1 50 742 Tm (ANALISIS_ALGEBRA_TRIGONOMETRIA) Tj
+1 0 0 1 50 729 Tm (==============================) Tj
+1 0 0 1 50 716 Tm () Tj
+1 0 0 1 50 703 Tm (Analisis Algebra y Trigonometria) Tj
+1 0 0 1 50 690 Tm () Tj
+1 0 0 1 50 677 Tm (Modelado algebraico del trafico digital) Tj
+1 0 0 1 50 664 Tm () Tj
+1 0 0 1 50 651 Tm (En este apartado se usa algebra para representar el comportamiento del sistema mediante) Tj
+1 0 0 1 50 638 Tm (variables numericas. El objetivo no es resolver una ecuacion unica, sino construir un modelo) Tj
+1 0 0 1 50 625 Tm (que combine datos del trafico digital para obtener un indice de actividad.) Tj
+1 0 0 1 50 612 Tm () Tj
+1 0 0 1 50 599 Tm ([formula]) Tj
+1 0 0 1 50 586 Tm (Flujo digital = 0.45P + 0.25L + 0.15A + 0.15D) Tj
+1 0 0 1 50 573 Tm () Tj
+1 0 0 1 50 560 Tm () Tj
+1 0 0 1 50 547 Tm (Donde:) Tj
+1 0 0 1 50 534 Tm () Tj
+1 0 0 1 50 521 Tm ([formula]) Tj
+1 0 0 1 50 508 Tm (P = paquetes por segundo) Tj
+1 0 0 1 50 495 Tm (L = intentos de login) Tj
+1 0 0 1 50 482 Tm (A = cambios en archivos) Tj
+1 0 0 1 50 469 Tm (D = salida de datos) Tj
+1 0 0 1 50 456 Tm () Tj
+1 0 0 1 50 443 Tm () Tj
+1 0 0 1 50 430 Tm ([codigo]) Tj
+1 0 0 1 50 417 Tm (def calcular_flujo_digital\(paquetes, intentos_login, cambios_archivos, salida_datos\):) Tj
+1 0 0 1 50 404 Tm (    return round\(paquetes * 0.45 + intentos_login * 0.25 +) Tj
+1 0 0 1 50 391 Tm (        cambios_archivos * 0.15 + salida_datos * 0.15, 2\)) Tj
+1 0 0 1 50 378 Tm () Tj
+1 0 0 1 50 365 Tm () Tj
+1 0 0 1 50 352 Tm (Este bloque construye una expresion algebraica ponderada. Cada variable aporta una parte al) Tj
+1 0 0 1 50 339 Tm (resultado final. Los paquetes pesan mas porque representan el movimiento principal de la) Tj
+1 0 0 1 50 326 Tm (red, mientras que los login, archivos y salida de datos ayudan a detectar actividad) Tj
+1 0 0 1 50 313 Tm (sospechosa.) Tj
+1 0 0 1 50 300 Tm () Tj
+1 0 0 1 50 287 Tm (Sustitucion de valores) Tj
+1 0 0 1 50 274 Tm () Tj
+1 0 0 1 50 261 Tm (El procedimiento algebraico consiste en tomar los valores de un paquete y sustituirlos en la) Tj
+1 0 0 1 50 248 Tm (formula del flujo digital.) Tj
+1 0 0 1 50 235 Tm () Tj
+1 0 0 1 50 222 Tm ([formula]) Tj
+1 0 0 1 50 209 Tm (Si:) Tj
+1 0 0 1 50 196 Tm (P = 800) Tj
+1 0 0 1 50 183 Tm (L = 10) Tj
+1 0 0 1 50 170 Tm (A = 4) Tj
+1 0 0 1 50 157 Tm (D = 30) Tj
+1 0 0 1 50 144 Tm () Tj
+1 0 0 1 50 131 Tm (Flujo digital = 0.45\(800\) + 0.25\(10\) + 0.15\(4\) + 0.15\(30\)) Tj
+1 0 0 1 50 118 Tm (Flujo digital = 360 + 2.5 + 0.6 + 4.5) Tj
+1 0 0 1 50 105 Tm (Flujo digital = 367.6) Tj
+1 0 0 1 50 92 Tm () Tj
+1 0 0 1 50 79 Tm () Tj
+1 0 0 1 50 66 Tm ([codigo]) Tj
+ET
 endstream
 endobj
 5 0 obj
-<< /Type /Page /Parent 12 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 4 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 11 0 R >> >> /Contents 6 0 R >>
 endobj
 6 0 obj
-<< /Length 2046 >>
+<< /Length 2744 >>
 stream
-BT /F3 8 Tf 54 696 Td (flujo = lm.calcular_flujo_digital\() Tj ET
-BT /F3 8 Tf 54 685 Td (    paquete["paquetes"], paquete["intentos_login"],) Tj ET
-BT /F3 8 Tf 54 674 Td (    paquete["cambios_archivos"], paquete["salida_datos"]) Tj ET
-BT /F3 8 Tf 54 663 Td (\)) Tj ET
-BT /F1 10 Tf 54 624 Td (Aqui el programa no escribe la sustitucion a mano, pero hace el mismo proceso.) Tj ET
-BT /F1 10 Tf 54 610 Td (Toma los valores reales del paquete y los manda a la funcion que calcula el) Tj ET
-BT /F1 10 Tf 54 596 Td (flujo.) Tj ET
-BT /F2 14 Tf 54 562 Td (Comparacion algebraica con umbrales) Tj ET
-BT /F1 10 Tf 54 524 Td (Despues de calcular el flujo, el sistema compara el resultado contra valores) Tj ET
-BT /F1 10 Tf 54 510 Td (limite. Esto se puede representar con desigualdades.) Tj ET
-BT /F3 8 Tf 54 468 Td (Flujo > U_FLUJO_CRITICO -> CRITICO) Tj ET
-BT /F3 8 Tf 54 457 Td (Paquetes > U_PAQUETES_ALERTA -> posible alerta) Tj ET
-BT /F3 8 Tf 54 404 Td (if paquete["paquetes"] > srv.U_PAQUETES_CRIT or flujo > srv.U_FLUJO_CRITICO:) Tj ET
-BT /F3 8 Tf 54 393 Td (    estado = "CRITICO") Tj ET
-BT /F3 8 Tf 54 382 Td (    cifrado = "REFORZADO") Tj ET
-BT /F1 10 Tf 54 343 Td (Esta parte usa algebra mediante comparaciones. El resultado numerico del modelo) Tj ET
-BT /F1 10 Tf 54 329 Td (se compara contra umbrales para decidir si el sistema sigue normal o si debe) Tj ET
-BT /F1 10 Tf 54 315 Td (subir a estado critico.) Tj ET
-BT /F2 14 Tf 54 281 Td (Modelado trigonometrico del comportamiento regular) Tj ET
-BT /F1 10 Tf 54 243 Td (En trigonometria se usa una senal periodica para representar un comportamiento de) Tj ET
-BT /F1 10 Tf 54 229 Td (referencia. Esto permite comparar si los paquetes se parecen a una oscilacion) Tj ET
-BT /F1 10 Tf 54 215 Td (regular o si se separan mucho de ella.) Tj ET
-BT /F3 8 Tf 54 173 Td (S\(t\) = A sen\(wt\) + B cos\(wt\)) Tj ET
-BT /F1 10 Tf 54 134 Td (Donde:) Tj ET
-BT /F3 8 Tf 54 92 Td (A = amplitud del seno) Tj ET
-BT /F3 8 Tf 54 81 Td (B = amplitud del coseno) Tj ET
-BT /F3 8 Tf 54 70 Td (w = frecuencia angular) Tj ET
+BT
+/F1 10 Tf
+1 0 0 1 50 742 Tm (flujo = lm.calcular_flujo_digital\() Tj
+1 0 0 1 50 729 Tm (    paquete["paquetes"], paquete["intentos_login"],) Tj
+1 0 0 1 50 716 Tm (    paquete["cambios_archivos"], paquete["salida_datos"]) Tj
+1 0 0 1 50 703 Tm (\)) Tj
+1 0 0 1 50 690 Tm () Tj
+1 0 0 1 50 677 Tm () Tj
+1 0 0 1 50 664 Tm (Aqui el programa no escribe la sustitucion a mano, pero hace el mismo proceso. Toma los) Tj
+1 0 0 1 50 651 Tm (valores reales del paquete y los manda a la funcion que calcula el flujo.) Tj
+1 0 0 1 50 638 Tm () Tj
+1 0 0 1 50 625 Tm (Comparacion algebraica con umbrales) Tj
+1 0 0 1 50 612 Tm () Tj
+1 0 0 1 50 599 Tm (Despues de calcular el flujo, el sistema compara el resultado contra valores limite. Esto se) Tj
+1 0 0 1 50 586 Tm (puede representar con desigualdades.) Tj
+1 0 0 1 50 573 Tm () Tj
+1 0 0 1 50 560 Tm ([formula]) Tj
+1 0 0 1 50 547 Tm (Flujo > U_FLUJO_CRITICO -> CRITICO) Tj
+1 0 0 1 50 534 Tm (Paquetes > U_PAQUETES_ALERTA -> posible alerta) Tj
+1 0 0 1 50 521 Tm () Tj
+1 0 0 1 50 508 Tm () Tj
+1 0 0 1 50 495 Tm ([codigo]) Tj
+1 0 0 1 50 482 Tm (if paquete["paquetes"] > srv.U_PAQUETES_CRIT or flujo > srv.U_FLUJO_CRITICO:) Tj
+1 0 0 1 50 469 Tm (    estado = "CRITICO") Tj
+1 0 0 1 50 456 Tm (    cifrado = "REFORZADO") Tj
+1 0 0 1 50 443 Tm () Tj
+1 0 0 1 50 430 Tm () Tj
+1 0 0 1 50 417 Tm (Esta parte usa algebra mediante comparaciones. El resultado numerico del modelo se compara) Tj
+1 0 0 1 50 404 Tm (contra umbrales para decidir si el sistema sigue normal o si debe subir a estado critico.) Tj
+1 0 0 1 50 391 Tm () Tj
+1 0 0 1 50 378 Tm (Modelado trigonometrico del comportamiento regular) Tj
+1 0 0 1 50 365 Tm () Tj
+1 0 0 1 50 352 Tm (En trigonometria se usa una senal periodica para representar un comportamiento de) Tj
+1 0 0 1 50 339 Tm (referencia. Esto permite comparar si los paquetes se parecen a una oscilacion regular o si) Tj
+1 0 0 1 50 326 Tm (se separan mucho de ella.) Tj
+1 0 0 1 50 313 Tm () Tj
+1 0 0 1 50 300 Tm ([formula]) Tj
+1 0 0 1 50 287 Tm (S\(t\) = A sen\(wt\) + B cos\(wt\)) Tj
+1 0 0 1 50 274 Tm () Tj
+1 0 0 1 50 261 Tm () Tj
+1 0 0 1 50 248 Tm (Donde:) Tj
+1 0 0 1 50 235 Tm () Tj
+1 0 0 1 50 222 Tm ([formula]) Tj
+1 0 0 1 50 209 Tm (A = amplitud del seno) Tj
+1 0 0 1 50 196 Tm (B = amplitud del coseno) Tj
+1 0 0 1 50 183 Tm (w = frecuencia angular) Tj
+1 0 0 1 50 170 Tm (t = tiempo en segundos) Tj
+1 0 0 1 50 157 Tm () Tj
+1 0 0 1 50 144 Tm () Tj
+1 0 0 1 50 131 Tm ([codigo]) Tj
+1 0 0 1 50 118 Tm (def senal_periodica\(t, A=45, B=18, w=0.3\):) Tj
+1 0 0 1 50 105 Tm (    return round\(A * math.sin\(w * t\) + B * math.cos\(w * t\), 2\)) Tj
+1 0 0 1 50 92 Tm () Tj
+1 0 0 1 50 79 Tm () Tj
+1 0 0 1 50 66 Tm (Esta funcion usa seno y coseno para crear una onda. La onda no controla el sistema) Tj
+ET
 endstream
 endobj
 7 0 obj
-<< /Type /Page /Parent 12 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 6 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 11 0 R >> >> /Contents 8 0 R >>
 endobj
 8 0 obj
-<< /Length 2250 >>
+<< /Length 3275 >>
 stream
-BT /F3 8 Tf 54 738 Td (t = tiempo en segundos) Tj ET
-BT /F3 8 Tf 54 685 Td (def senal_periodica\(t, A=45, B=18, w=0.3\):) Tj ET
-BT /F3 8 Tf 54 674 Td (    return round\(A * math.sin\(w * t\) + B * math.cos\(w * t\), 2\)) Tj ET
-BT /F1 10 Tf 54 635 Td (Esta funcion usa seno y coseno para crear una onda. La onda no controla el) Tj ET
-BT /F1 10 Tf 54 621 Td (sistema directamente, pero sirve para analisis posterior del comportamiento del) Tj ET
-BT /F1 10 Tf 54 607 Td (trafico.) Tj ET
-BT /F2 14 Tf 54 573 Td (Desviacion respecto al patron) Tj ET
-BT /F1 10 Tf 54 535 Td (Una vez calculada la senal periodica, el sistema compara esa senal contra los) Tj ET
-BT /F1 10 Tf 54 521 Td (paquetes reales.) Tj ET
-BT /F3 8 Tf 54 479 Td (Desviacion = |Paquetes reales - Senal periodica|) Tj ET
-BT /F3 8 Tf 54 426 Td (def calcular_analisis_oscilatorio\(paquetes, senal\):) Tj ET
-BT /F3 8 Tf 54 415 Td (    desviacion_periodica = round\(abs\(paquetes - senal\), 2\)) Tj ET
-BT /F3 8 Tf 54 404 Td (    indice_oscilatorio = desviacion_periodica) Tj ET
-BT /F3 8 Tf 54 393 Td (    return desviacion_periodica, indice_oscilatorio) Tj ET
-BT /F1 10 Tf 54 354 Td (Este calculo ayuda a medir que tanto se separa el trafico real de un) Tj ET
-BT /F1 10 Tf 54 340 Td (comportamiento de referencia. Si la desviacion es muy grande, puede indicar) Tj ET
-BT /F1 10 Tf 54 326 Td (actividad irregular.) Tj ET
-BT /F2 14 Tf 54 292 Td (Grafica de apoyo) Tj ET
-BT /F1 10 Tf 54 254 Td (Grafica llamada: 07_analisis_oscilatorio_vs_tiempo.png) Tj ET
-BT /F1 10 Tf 54 226 Td (Valores o parametros usados:) Tj ET
-BT /F3 8 Tf 54 198 Td (| Valor | Significado |) Tj ET
-BT /F3 8 Tf 54 187 Td (|---|---|) Tj ET
-BT /F3 8 Tf 54 176 Td (| t | tiempo de la simulacion en segundos |) Tj ET
-BT /F3 8 Tf 54 165 Td (| paquetes | comportamiento real del trafico |) Tj ET
-BT /F3 8 Tf 54 154 Td (| onda_envio | onda regular generada como referencia |) Tj ET
-BT /F3 8 Tf 54 143 Td (| intervalo = 5 | tamaÒo del intervalo usado para formar la onda |) Tj ET
-BT /F3 8 Tf 54 132 Td (| max_regular = 500 | limite usado para representar trafico regular |) Tj ET
-BT /F1 10 Tf 54 107 Td (Explicacion:) Tj ET
-BT /F1 10 Tf 54 79 Td (Esta grafica permite observar visualmente cuando el trafico se mantiene cerca de) Tj ET
+BT
+/F1 10 Tf
+1 0 0 1 50 742 Tm (directamente, pero sirve para analisis posterior del comportamiento del trafico.) Tj
+1 0 0 1 50 729 Tm () Tj
+1 0 0 1 50 716 Tm (Desviacion respecto al patron) Tj
+1 0 0 1 50 703 Tm () Tj
+1 0 0 1 50 690 Tm (Una vez calculada la senal periodica, el sistema compara esa senal contra los paquetes) Tj
+1 0 0 1 50 677 Tm (reales.) Tj
+1 0 0 1 50 664 Tm () Tj
+1 0 0 1 50 651 Tm ([formula]) Tj
+1 0 0 1 50 638 Tm (Desviacion = |Paquetes reales - Senal periodica|) Tj
+1 0 0 1 50 625 Tm () Tj
+1 0 0 1 50 612 Tm () Tj
+1 0 0 1 50 599 Tm ([codigo]) Tj
+1 0 0 1 50 586 Tm (def calcular_analisis_oscilatorio\(paquetes, senal\):) Tj
+1 0 0 1 50 573 Tm (    desviacion_periodica = round\(abs\(paquetes - senal\), 2\)) Tj
+1 0 0 1 50 560 Tm (    indice_oscilatorio = desviacion_periodica) Tj
+1 0 0 1 50 547 Tm (    return desviacion_periodica, indice_oscilatorio) Tj
+1 0 0 1 50 534 Tm () Tj
+1 0 0 1 50 521 Tm () Tj
+1 0 0 1 50 508 Tm (Este calculo ayuda a medir que tanto se separa el trafico real de un comportamiento de) Tj
+1 0 0 1 50 495 Tm (referencia. Si la desviacion es muy grande, puede indicar actividad irregular.) Tj
+1 0 0 1 50 482 Tm () Tj
+1 0 0 1 50 469 Tm (Grafica de apoyo) Tj
+1 0 0 1 50 456 Tm () Tj
+1 0 0 1 50 443 Tm (Grafica llamada: 07_analisis_oscilatorio_vs_tiempo.png) Tj
+1 0 0 1 50 430 Tm () Tj
+1 0 0 1 50 417 Tm (Valores o parametros usados:) Tj
+1 0 0 1 50 404 Tm () Tj
+1 0 0 1 50 391 Tm (| Valor | Significado |) Tj
+1 0 0 1 50 378 Tm (|---|---|) Tj
+1 0 0 1 50 365 Tm (| t | tiempo de la simulacion en segundos |) Tj
+1 0 0 1 50 352 Tm (| paquetes | comportamiento real del trafico |) Tj
+1 0 0 1 50 339 Tm (| onda_envio | onda regular generada como referencia |) Tj
+1 0 0 1 50 326 Tm (| intervalo = 5 | tamaÒo del intervalo usado para formar la onda |) Tj
+1 0 0 1 50 313 Tm (| max_regular = 500 | limite usado para representar trafico regular |) Tj
+1 0 0 1 50 300 Tm () Tj
+1 0 0 1 50 287 Tm (Explicacion:) Tj
+1 0 0 1 50 274 Tm () Tj
+1 0 0 1 50 261 Tm (Esta grafica permite observar visualmente cuando el trafico se mantiene cerca de un) Tj
+1 0 0 1 50 248 Tm (comportamiento regular y cuando se separa. En algebra y trigonometria se justifica como una) Tj
+1 0 0 1 50 235 Tm (comparacion entre un modelo construido y los datos reales generados por la simulacion.) Tj
+1 0 0 1 50 222 Tm () Tj
+1 0 0 1 50 209 Tm (La onda regular representa un comportamiento esperado de envio. La linea de paquetes) Tj
+1 0 0 1 50 196 Tm (representa lo que realmente paso. Si ambas se parecen, el trafico puede interpretarse como) Tj
+1 0 0 1 50 183 Tm (mas estable. Si los paquetes se separan demasiado de la onda, se puede interpretar como una) Tj
+1 0 0 1 50 170 Tm (desviacion o actividad irregular.) Tj
+1 0 0 1 50 157 Tm () Tj
+1 0 0 1 50 144 Tm (Resultados y analisis) Tj
+1 0 0 1 50 131 Tm () Tj
+1 0 0 1 50 118 Tm (El resultado algebraico principal es el indice de flujo digital. Este indice resume varias) Tj
+1 0 0 1 50 105 Tm (variables en un solo numero y permite clasificar el comportamiento del sistema.) Tj
+1 0 0 1 50 92 Tm () Tj
+1 0 0 1 50 79 Tm (El resultado trigonometrico principal es la comparacion entre el trafico real y una onda de) Tj
+1 0 0 1 50 66 Tm (referencia. Si los paquetes se alejan demasiado del patron, el sistema puede interpretarlo) Tj
+ET
 endstream
 endobj
 9 0 obj
-<< /Type /Page /Parent 12 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 8 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 11 0 R >> >> /Contents 10 0 R >>
 endobj
 10 0 obj
-<< /Length 2393 >>
+<< /Length 1123 >>
 stream
-BT /F1 10 Tf 54 738 Td (un comportamiento regular y cuando se separa. En algebra y trigonometria se) Tj ET
-BT /F1 10 Tf 54 724 Td (justifica como una comparacion entre un modelo construido y los datos reales) Tj ET
-BT /F1 10 Tf 54 710 Td (generados por la simulacion.) Tj ET
-BT /F1 10 Tf 54 682 Td (La onda regular representa un comportamiento esperado de envio. La linea de) Tj ET
-BT /F1 10 Tf 54 668 Td (paquetes representa lo que realmente paso. Si ambas se parecen, el trafico puede) Tj ET
-BT /F1 10 Tf 54 654 Td (interpretarse como mas estable. Si los paquetes se separan demasiado de la onda,) Tj ET
-BT /F1 10 Tf 54 640 Td (se puede interpretar como una desviacion o actividad irregular.) Tj ET
-BT /F2 14 Tf 54 606 Td (Resultados y analisis) Tj ET
-BT /F1 10 Tf 54 568 Td (El resultado algebraico principal es el indice de flujo digital. Este indice) Tj ET
-BT /F1 10 Tf 54 554 Td (resume varias variables en un solo numero y permite clasificar el comportamiento) Tj ET
-BT /F1 10 Tf 54 540 Td (del sistema.) Tj ET
-BT /F1 10 Tf 54 512 Td (El resultado trigonometrico principal es la comparacion entre el trafico real y) Tj ET
-BT /F1 10 Tf 54 498 Td (una onda de referencia. Si los paquetes se alejan demasiado del patron, el) Tj ET
-BT /F1 10 Tf 54 484 Td (sistema puede interpretarlo como una desviacion.) Tj ET
-BT /F1 10 Tf 54 456 Td (La limitacion del modelo es que la onda no predice ataques reales; funciona como) Tj ET
-BT /F1 10 Tf 54 442 Td (herramienta de analisis. Tambien los pesos del flujo digital son seleccionados) Tj ET
-BT /F1 10 Tf 54 428 Td (por el proyecto, por lo que pueden ajustarse si se trabaja con datos reales.) Tj ET
-BT /F2 14 Tf 54 394 Td (Conclusiones) Tj ET
-BT /F1 10 Tf 54 356 Td (El codigo permite justificar algebra mediante formulas ponderadas, sustitucion de) Tj ET
-BT /F1 10 Tf 54 342 Td (valores y comparacion con umbrales. Tambien permite justificar trigonometria) Tj ET
-BT /F1 10 Tf 54 328 Td (mediante el uso de seno y coseno para representar un comportamiento periodico.) Tj ET
-BT /F1 10 Tf 54 300 Td (Este enfoque puede ampliarse si se agregan datos reales de empresas atacadas,) Tj ET
-BT /F1 10 Tf 54 286 Td (como numero de incidentes, costos o frecuencia de ataques. Con esos datos se) Tj ET
-BT /F1 10 Tf 54 272 Td (podrian ajustar modelos algebraicos y trigonometrico-estadisticos mas cercanos a) Tj ET
-BT /F1 10 Tf 54 258 Td (un caso real.) Tj ET
+BT
+/F1 10 Tf
+1 0 0 1 50 742 Tm (como una desviacion.) Tj
+1 0 0 1 50 729 Tm () Tj
+1 0 0 1 50 716 Tm (La limitacion del modelo es que la onda no predice ataques reales; funciona como herramienta) Tj
+1 0 0 1 50 703 Tm (de analisis. Tambien los pesos del flujo digital son seleccionados por el proyecto, por lo) Tj
+1 0 0 1 50 690 Tm (que pueden ajustarse si se trabaja con datos reales.) Tj
+1 0 0 1 50 677 Tm () Tj
+1 0 0 1 50 664 Tm (Conclusiones) Tj
+1 0 0 1 50 651 Tm () Tj
+1 0 0 1 50 638 Tm (El codigo permite justificar algebra mediante formulas ponderadas, sustitucion de valores y) Tj
+1 0 0 1 50 625 Tm (comparacion con umbrales. Tambien permite justificar trigonometria mediante el uso de seno y) Tj
+1 0 0 1 50 612 Tm (coseno para representar un comportamiento periodico.) Tj
+1 0 0 1 50 599 Tm () Tj
+1 0 0 1 50 586 Tm (Este enfoque puede ampliarse si se agregan datos reales de empresas atacadas, como numero de) Tj
+1 0 0 1 50 573 Tm (incidentes, costos o frecuencia de ataques. Con esos datos se podrian ajustar modelos) Tj
+1 0 0 1 50 560 Tm (algebraicos y trigonometrico-estadisticos mas cercanos a un caso real.) Tj
+ET
 endstream
 endobj
 11 0 obj
-<< /Type /Page /Parent 12 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 10 0 R >>
-endobj
-12 0 obj
-<< /Type /Pages /Kids [ 5 0 R 7 0 R 9 0 R 11 0 R ] /Count 4 >>
-endobj
-13 0 obj
-<< /Type /Catalog /Pages 12 0 R >>
-endobj
-14 0 obj
-<< /Title (ANALISIS_ALGEBRA_TRIGONOMETRIA) /Producer (Codex minimal PDF generator) >>
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
 endobj
 xref
-0 15
+0 12
 0000000000 65535 f 
 0000000015 00000 n 
-0000000085 00000 n 
-0000000160 00000 n 
-0000000228 00000 n 
-0000002488 00000 n 
-0000002635 00000 n 
-0000004733 00000 n 
-0000004880 00000 n 
-0000007182 00000 n 
-0000007329 00000 n 
-0000009775 00000 n 
-0000009924 00000 n 
-0000010003 00000 n 
-0000010054 00000 n 
+0000000064 00000 n 
+0000000139 00000 n 
+0000000266 00000 n 
+0000002934 00000 n 
+0000003061 00000 n 
+0000005857 00000 n 
+0000005984 00000 n 
+0000009311 00000 n 
+0000009439 00000 n 
+0000010615 00000 n 
 trailer
-<< /Size 15 /Root 13 0 R /Info 14 0 R >>
+<< /Size 12 /Root 1 0 R >>
 startxref
-10156
+10686
 %%EOF

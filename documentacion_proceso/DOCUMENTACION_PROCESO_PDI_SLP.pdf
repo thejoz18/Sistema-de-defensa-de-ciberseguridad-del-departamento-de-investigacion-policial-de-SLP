@@ -1,575 +1,929 @@
 %PDF-1.4
 %‚„œ”
 1 0 obj
-<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+<< /Type /Catalog /Pages 2 0 R >>
 endobj
 2 0 obj
-<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+<< /Type /Pages /Kids [3 0 R 5 0 R 7 0 R 9 0 R 11 0 R 13 0 R 15 0 R 17 0 R 19 0 R 21 0 R 23 0 R 25 0 R 27 0 R 29 0 R] /Count 14 >>
 endobj
 3 0 obj
-<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 31 0 R >> >> /Contents 4 0 R >>
 endobj
 4 0 obj
-<< /Length 2259 >>
+<< /Length 2766 >>
 stream
-BT /F1 10 Tf 54 738 Td (?# Documentacion del proyecto PDI SLP Cyber Defense System) Tj ET
-BT /F1 10 Tf 54 710 Td (Este documento explica como esta armado el programa y que hace cada parte. La) Tj ET
-BT /F1 10 Tf 54 696 Td (idea es que se pueda seguir el flujo sin tener que leer todo el codigo linea por) Tj ET
-BT /F1 10 Tf 54 682 Td (linea.) Tj ET
-BT /F2 14 Tf 54 648 Td (1. Objetivo del sistema) Tj ET
-BT /F1 10 Tf 54 610 Td (El proyecto simula un sistema de defensa cibernetica para tres centrales:) Tj ET
-BT /F1 10 Tf 54 582 Td (? CENTRAL_NORTE) Tj ET
-BT /F1 10 Tf 54 568 Td (? CENTRAL_CENTRO) Tj ET
-BT /F1 10 Tf 54 554 Td (? CENTRAL_SUR) Tj ET
-BT /F1 10 Tf 54 526 Td (Durante 60 segundos se genera trafico normal, a veces se inyectan ataques, se) Tj ET
-BT /F1 10 Tf 54 512 Td (calculan metricas matematicas y fisicas, se actualiza el estado del sistema y al) Tj ET
-BT /F1 10 Tf 54 498 Td (final se generan reportes.) Tj ET
-BT /F1 10 Tf 54 470 Td (El archivo principal es:) Tj ET
-BT /F3 8 Tf 54 428 Td (m00_pdi_slp.py) Tj ET
-BT /F1 10 Tf 54 389 Td (Los reportes finales son:) Tj ET
-BT /F3 8 Tf 54 347 Td (pdi_slp_graficas/) Tj ET
-BT /F3 8 Tf 54 336 Td (reportes_tabla/pdi_slp_reporte_tabla.csv) Tj ET
-BT /F1 10 Tf 54 297 Td (La carpeta pdi_slp_graficas contiene una imagen individual por grafica.) Tj ET
-BT /F2 14 Tf 54 263 Td (2. Archivos del programa) Tj ET
-BT /F3 8 Tf 54 225 Td (| Archivo | Para que sirve |) Tj ET
-BT /F3 8 Tf 54 214 Td (|---|---|) Tj ET
-BT /F3 8 Tf 54 203 Td (| m00_pdi_slp.py | Ejecuta la simulacion principal. |) Tj ET
-BT /F3 8 Tf 54 192 Td (| m01_servidores.py | Guarda datos fijos, agentes, IPs y umbrales. |) Tj ET
-BT /F3 8 Tf 54 181 Td (| m02_trafico_normal.py | Genera actividad normal del sistema. |) Tj ET
-BT /F3 8 Tf 54 170 Td (| m03_atacante.py | Modifica un paquete normal para simular ataques. |) Tj ET
-BT /F3 8 Tf 54 159 Td (| m04_logica_matematica.py | Contiene calculos, alertas, estados, cifrado y fisica. |) Tj ET
-BT /F3 8 Tf 54 148 Td (| m05_monitor.py | Muestra informacion en consola. |) Tj ET
-BT /F3 8 Tf 54 137 Td (| m06_graficas.py | Genera las imagenes de las graficas. |) Tj ET
-BT /F3 8 Tf 54 126 Td (| m07_reporte_tabla.py | Genera el archivo CSV. |) Tj ET
-BT /F2 14 Tf 54 95 Td (3. Librerias usadas) Tj ET
+BT
+/F1 10 Tf
+1 0 0 1 50 742 Tm (DOCUMENTACION_PROCESO_PDI_SLP) Tj
+1 0 0 1 50 729 Tm (=============================) Tj
+1 0 0 1 50 716 Tm () Tj
+1 0 0 1 50 703 Tm (Documentacion del proyecto PDI SLP Cyber Defense System) Tj
+1 0 0 1 50 690 Tm () Tj
+1 0 0 1 50 677 Tm (Este documento explica como esta armado el programa y que hace cada parte. La idea es que se) Tj
+1 0 0 1 50 664 Tm (pueda seguir el flujo sin tener que leer todo el codigo linea por linea.) Tj
+1 0 0 1 50 651 Tm () Tj
+1 0 0 1 50 638 Tm (1. Objetivo del sistema) Tj
+1 0 0 1 50 625 Tm () Tj
+1 0 0 1 50 612 Tm (El proyecto simula un sistema de defensa cibernetica para tres centrales:) Tj
+1 0 0 1 50 599 Tm () Tj
+1 0 0 1 50 586 Tm (- CENTRAL_NORTE) Tj
+1 0 0 1 50 573 Tm (- CENTRAL_CENTRO) Tj
+1 0 0 1 50 560 Tm (- CENTRAL_SUR) Tj
+1 0 0 1 50 547 Tm () Tj
+1 0 0 1 50 534 Tm (Durante 60 segundos se genera trafico normal, a veces se inyectan ataques, se calculan) Tj
+1 0 0 1 50 521 Tm (metricas matematicas y fisicas, se actualiza el estado del sistema y al final se generan) Tj
+1 0 0 1 50 508 Tm (reportes.) Tj
+1 0 0 1 50 495 Tm () Tj
+1 0 0 1 50 482 Tm (El archivo principal es:) Tj
+1 0 0 1 50 469 Tm () Tj
+1 0 0 1 50 456 Tm ([formula]) Tj
+1 0 0 1 50 443 Tm (m00_pdi_slp.py) Tj
+1 0 0 1 50 430 Tm () Tj
+1 0 0 1 50 417 Tm () Tj
+1 0 0 1 50 404 Tm (Los reportes finales son:) Tj
+1 0 0 1 50 391 Tm () Tj
+1 0 0 1 50 378 Tm ([formula]) Tj
+1 0 0 1 50 365 Tm (pdi_slp_graficas/) Tj
+1 0 0 1 50 352 Tm (reportes_tabla/pdi_slp_reporte_tabla.csv) Tj
+1 0 0 1 50 339 Tm () Tj
+1 0 0 1 50 326 Tm () Tj
+1 0 0 1 50 313 Tm (La carpeta pdi_slp_graficas contiene una imagen individual por grafica.) Tj
+1 0 0 1 50 300 Tm () Tj
+1 0 0 1 50 287 Tm (2. Archivos del programa) Tj
+1 0 0 1 50 274 Tm () Tj
+1 0 0 1 50 261 Tm (| Archivo | Para que sirve |) Tj
+1 0 0 1 50 248 Tm (|---|---|) Tj
+1 0 0 1 50 235 Tm (| m00_pdi_slp.py | Ejecuta la simulacion principal. |) Tj
+1 0 0 1 50 222 Tm (| m01_servidores.py | Guarda datos fijos, agentes, IPs y umbrales. |) Tj
+1 0 0 1 50 209 Tm (| m02_trafico_normal.py | Genera actividad normal del sistema. |) Tj
+1 0 0 1 50 196 Tm (| m03_atacante.py | Modifica un paquete normal para simular ataques. |) Tj
+1 0 0 1 50 183 Tm (| m04_logica_matematica.py | Contiene calculos, alertas, estados, cifrado y fisica. |) Tj
+1 0 0 1 50 170 Tm (| m05_monitor.py | Muestra informacion en consola. |) Tj
+1 0 0 1 50 157 Tm (| m06_graficas.py | Genera las imagenes de las graficas. |) Tj
+1 0 0 1 50 144 Tm (| m07_reporte_tabla.py | Genera el archivo CSV. |) Tj
+1 0 0 1 50 131 Tm () Tj
+1 0 0 1 50 118 Tm (3. Librerias usadas) Tj
+1 0 0 1 50 105 Tm () Tj
+1 0 0 1 50 92 Tm (| Libreria | Uso |) Tj
+1 0 0 1 50 79 Tm (|---|---|) Tj
+1 0 0 1 50 66 Tm (| random | Elegir datos aleatorios y decidir si ocurre un ataque. |) Tj
+ET
 endstream
 endobj
 5 0 obj
-<< /Type /Page /Parent 34 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 4 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 31 0 R >> >> /Contents 6 0 R >>
 endobj
 6 0 obj
-<< /Length 2129 >>
+<< /Length 2584 >>
 stream
-BT /F3 8 Tf 54 738 Td (| Libreria | Uso |) Tj ET
-BT /F3 8 Tf 54 727 Td (|---|---|) Tj ET
-BT /F3 8 Tf 54 716 Td (| random | Elegir datos aleatorios y decidir si ocurre un ataque. |) Tj ET
-BT /F3 8 Tf 54 705 Td (| time | Pausar la simulacion para simular segundos reales. |) Tj ET
-BT /F3 8 Tf 54 694 Td (| math | Usar formulas como raiz, seno, coseno, exponencial y angulos. |) Tj ET
-BT /F3 8 Tf 54 683 Td (| os | Crear la carpeta donde se guardan las graficas. |) Tj ET
-BT /F3 8 Tf 54 672 Td (| csv | Crear el reporte tabular. |) Tj ET
-BT /F3 8 Tf 54 661 Td (| matplotlib | Dibujar y guardar las graficas como imagenes. |) Tj ET
-BT /F1 10 Tf 54 636 Td (Los demas imports son archivos del mismo proyecto.) Tj ET
-BT /F2 14 Tf 54 602 Td (4. Estado inicial) Tj ET
-BT /F1 10 Tf 54 564 Td (En m00_pdi_slp.py se crea un diccionario llamado estado_actual.) Tj ET
-BT /F3 8 Tf 54 522 Td (estado_actual = {) Tj ET
-BT /F3 8 Tf 54 511 Td (    "estado": "NORMAL",) Tj ET
-BT /F3 8 Tf 54 500 Td (    "cifrado": "NINGUNO",) Tj ET
-BT /F3 8 Tf 54 489 Td (    "refrigeracion": False,) Tj ET
-BT /F3 8 Tf 54 478 Td (    "login_bloqueado": False,) Tj ET
-BT /F3 8 Tf 54 467 Td (    "ips_bloqueadas": [],) Tj ET
-BT /F3 8 Tf 54 456 Td (    "historial": []) Tj ET
-BT /F3 8 Tf 54 445 Td (}) Tj ET
-BT /F1 10 Tf 54 406 Td (Ese diccionario guarda como se encuentra el sistema durante la simulacion.) Tj ET
-BT /F1 10 Tf 54 378 Td (Tambien se crea estado_calculo, que guarda valores anteriores para calcular) Tj ET
-BT /F1 10 Tf 54 364 Td (derivadas:) Tj ET
-BT /F3 8 Tf 54 322 Td (paquetes_anteriores) Tj ET
-BT /F3 8 Tf 54 311 Td (temperatura_anterior) Tj ET
-BT /F3 8 Tf 54 300 Td (cpu_anterior) Tj ET
-BT /F3 8 Tf 54 289 Td (primera_derivada_sigmoide_anterior) Tj ET
-BT /F2 14 Tf 54 244 Td (5. Ciclo principal) Tj ET
-BT /F1 10 Tf 54 206 Td (El programa trabaja con un for:) Tj ET
-BT /F3 8 Tf 54 164 Td (for segundo in range\(1, 61\):) Tj ET
-BT /F1 10 Tf 54 125 Td (Eso hace que la simulacion dure 60 ciclos. Cada ciclo representa un segundo.) Tj ET
-BT /F1 10 Tf 54 97 Td (En cada segundo pasa esto:) Tj ET
-BT /F1 10 Tf 54 69 Td (1. Se genera trafico normal.) Tj ET
+BT
+/F1 10 Tf
+1 0 0 1 50 742 Tm (| time | Pausar la simulacion para simular segundos reales. |) Tj
+1 0 0 1 50 729 Tm (| math | Usar formulas como raiz, seno, coseno, exponencial y angulos. |) Tj
+1 0 0 1 50 716 Tm (| os | Crear la carpeta donde se guardan las graficas. |) Tj
+1 0 0 1 50 703 Tm (| csv | Crear el reporte tabular. |) Tj
+1 0 0 1 50 690 Tm (| matplotlib | Dibujar y guardar las graficas como imagenes. |) Tj
+1 0 0 1 50 677 Tm () Tj
+1 0 0 1 50 664 Tm (Los demas imports son archivos del mismo proyecto.) Tj
+1 0 0 1 50 651 Tm () Tj
+1 0 0 1 50 638 Tm (4. Estado inicial) Tj
+1 0 0 1 50 625 Tm () Tj
+1 0 0 1 50 612 Tm (En m00_pdi_slp.py se crea un diccionario llamado estado_actual.) Tj
+1 0 0 1 50 599 Tm () Tj
+1 0 0 1 50 586 Tm ([codigo]) Tj
+1 0 0 1 50 573 Tm (estado_actual = {) Tj
+1 0 0 1 50 560 Tm (    "estado": "NORMAL",) Tj
+1 0 0 1 50 547 Tm (    "cifrado": "NINGUNO",) Tj
+1 0 0 1 50 534 Tm (    "refrigeracion": False,) Tj
+1 0 0 1 50 521 Tm (    "login_bloqueado": False,) Tj
+1 0 0 1 50 508 Tm (    "ips_bloqueadas": [],) Tj
+1 0 0 1 50 495 Tm (    "historial": []) Tj
+1 0 0 1 50 482 Tm (}) Tj
+1 0 0 1 50 469 Tm () Tj
+1 0 0 1 50 456 Tm () Tj
+1 0 0 1 50 443 Tm (Ese diccionario guarda como se encuentra el sistema durante la simulacion.) Tj
+1 0 0 1 50 430 Tm () Tj
+1 0 0 1 50 417 Tm (Tambien se crea estado_calculo, que guarda valores anteriores para calcular derivadas:) Tj
+1 0 0 1 50 404 Tm () Tj
+1 0 0 1 50 391 Tm ([formula]) Tj
+1 0 0 1 50 378 Tm (paquetes_anteriores) Tj
+1 0 0 1 50 365 Tm (temperatura_anterior) Tj
+1 0 0 1 50 352 Tm (cpu_anterior) Tj
+1 0 0 1 50 339 Tm (primera_derivada_sigmoide_anterior) Tj
+1 0 0 1 50 326 Tm () Tj
+1 0 0 1 50 313 Tm () Tj
+1 0 0 1 50 300 Tm (5. Ciclo principal) Tj
+1 0 0 1 50 287 Tm () Tj
+1 0 0 1 50 274 Tm (El programa trabaja con un for:) Tj
+1 0 0 1 50 261 Tm () Tj
+1 0 0 1 50 248 Tm ([codigo]) Tj
+1 0 0 1 50 235 Tm (for segundo in range\(1, 61\):) Tj
+1 0 0 1 50 222 Tm () Tj
+1 0 0 1 50 209 Tm () Tj
+1 0 0 1 50 196 Tm (Eso hace que la simulacion dure 60 ciclos. Cada ciclo representa un segundo.) Tj
+1 0 0 1 50 183 Tm () Tj
+1 0 0 1 50 170 Tm (En cada segundo pasa esto:) Tj
+1 0 0 1 50 157 Tm () Tj
+1 0 0 1 50 144 Tm (1. Se genera trafico normal.) Tj
+1 0 0 1 50 131 Tm (2. Se calcula si ocurre un ataque.) Tj
+1 0 0 1 50 118 Tm (3. Si ocurre, se modifica el paquete.) Tj
+1 0 0 1 50 105 Tm (4. Se calculan derivadas, flujo e indice oscilatorio.) Tj
+1 0 0 1 50 92 Tm (5. Se calcula CPU y temperatura.) Tj
+1 0 0 1 50 79 Tm (6. Se evalua el estado.) Tj
+1 0 0 1 50 66 Tm (7. Se activa cifrado, bloqueo o refrigeracion si hace falta.) Tj
+ET
 endstream
 endobj
 7 0 obj
-<< /Type /Page /Parent 34 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 6 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 31 0 R >> >> /Contents 8 0 R >>
 endobj
 8 0 obj
-<< /Length 2125 >>
+<< /Length 2148 >>
 stream
-BT /F1 10 Tf 54 738 Td (2. Se calcula si ocurre un ataque.) Tj ET
-BT /F1 10 Tf 54 724 Td (3. Si ocurre, se modifica el paquete.) Tj ET
-BT /F1 10 Tf 54 710 Td (4. Se calculan derivadas, flujo e indice oscilatorio.) Tj ET
-BT /F1 10 Tf 54 696 Td (5. Se calcula CPU y temperatura.) Tj ET
-BT /F1 10 Tf 54 682 Td (6. Se evalua el estado.) Tj ET
-BT /F1 10 Tf 54 668 Td (7. Se activa cifrado, bloqueo o refrigeracion si hace falta.) Tj ET
-BT /F1 10 Tf 54 654 Td (8. Se guardan los datos en el historial.) Tj ET
-BT /F1 10 Tf 54 640 Td (9. Se imprime informacion en consola.) Tj ET
-BT /F1 10 Tf 54 626 Td (10. Al final se generan graficas y CSV.) Tj ET
-BT /F2 14 Tf 54 592 Td (6. Trafico normal) Tj ET
-BT /F1 10 Tf 54 554 Td (m02_trafico_normal.py genera un paquete normal. El paquete es un diccionario con) Tj ET
-BT /F1 10 Tf 54 540 Td (datos como:) Tj ET
-BT /F3 8 Tf 54 498 Td (segundo) Tj ET
-BT /F3 8 Tf 54 487 Td (central) Tj ET
-BT /F3 8 Tf 54 476 Td (usuario) Tj ET
-BT /F3 8 Tf 54 465 Td (ip) Tj ET
-BT /F3 8 Tf 54 454 Td (expediente) Tj ET
-BT /F3 8 Tf 54 443 Td (paquetes) Tj ET
-BT /F3 8 Tf 54 432 Td (intentos_login) Tj ET
-BT /F3 8 Tf 54 421 Td (cambios_archivos) Tj ET
-BT /F3 8 Tf 54 410 Td (salida_datos) Tj ET
-BT /F3 8 Tf 54 399 Td (cpu_base) Tj ET
-BT /F3 8 Tf 54 388 Td (incidente) Tj ET
-BT /F3 8 Tf 54 377 Td (tipo_incidente) Tj ET
-BT /F1 10 Tf 54 338 Td (Los valores normales estan dentro de rangos bajos. Por ejemplo:) Tj ET
-BT /F3 8 Tf 54 296 Td (paquetes: 80 a 420) Tj ET
-BT /F3 8 Tf 54 285 Td (intentos_login: 0 a 2) Tj ET
-BT /F3 8 Tf 54 274 Td (cambios_archivos: 0 a 3) Tj ET
-BT /F3 8 Tf 54 263 Td (salida_datos: 1 a 12 MB) Tj ET
-BT /F2 14 Tf 54 218 Td (7. Ataques) Tj ET
-BT /F1 10 Tf 54 180 Td (m03_atacante.py puede modificar el paquete normal. Los ataques posibles son:) Tj ET
-BT /F3 8 Tf 54 138 Td (ATAQUE_TRAFICO) Tj ET
-BT /F3 8 Tf 54 127 Td (FUERZA_BRUTA) Tj ET
-BT /F3 8 Tf 54 116 Td (ACCESO_NO_AUTORIZADO) Tj ET
-BT /F3 8 Tf 54 105 Td (COPIA_EXPEDIENTE) Tj ET
-BT /F3 8 Tf 54 94 Td (MODIFICACION_EVIDENCIA) Tj ET
-BT /F3 8 Tf 54 83 Td (ELIMINACION_ARCHIVO) Tj ET
-BT /F3 8 Tf 54 72 Td (EXTRACCION_INFORMACION) Tj ET
+BT
+/F1 10 Tf
+1 0 0 1 50 742 Tm (8. Se guardan los datos en el historial.) Tj
+1 0 0 1 50 729 Tm (9. Se imprime informacion en consola.) Tj
+1 0 0 1 50 716 Tm (10. Al final se generan graficas y CSV.) Tj
+1 0 0 1 50 703 Tm () Tj
+1 0 0 1 50 690 Tm (6. Trafico normal) Tj
+1 0 0 1 50 677 Tm () Tj
+1 0 0 1 50 664 Tm (m02_trafico_normal.py genera un paquete normal. El paquete es un diccionario con datos como:) Tj
+1 0 0 1 50 651 Tm () Tj
+1 0 0 1 50 638 Tm ([formula]) Tj
+1 0 0 1 50 625 Tm (segundo) Tj
+1 0 0 1 50 612 Tm (central) Tj
+1 0 0 1 50 599 Tm (usuario) Tj
+1 0 0 1 50 586 Tm (ip) Tj
+1 0 0 1 50 573 Tm (expediente) Tj
+1 0 0 1 50 560 Tm (paquetes) Tj
+1 0 0 1 50 547 Tm (intentos_login) Tj
+1 0 0 1 50 534 Tm (cambios_archivos) Tj
+1 0 0 1 50 521 Tm (salida_datos) Tj
+1 0 0 1 50 508 Tm (cpu_base) Tj
+1 0 0 1 50 495 Tm (incidente) Tj
+1 0 0 1 50 482 Tm (tipo_incidente) Tj
+1 0 0 1 50 469 Tm () Tj
+1 0 0 1 50 456 Tm () Tj
+1 0 0 1 50 443 Tm (Los valores normales estan dentro de rangos bajos. Por ejemplo:) Tj
+1 0 0 1 50 430 Tm () Tj
+1 0 0 1 50 417 Tm ([formula]) Tj
+1 0 0 1 50 404 Tm (paquetes: 80 a 420) Tj
+1 0 0 1 50 391 Tm (intentos_login: 0 a 2) Tj
+1 0 0 1 50 378 Tm (cambios_archivos: 0 a 3) Tj
+1 0 0 1 50 365 Tm (salida_datos: 1 a 12 MB) Tj
+1 0 0 1 50 352 Tm () Tj
+1 0 0 1 50 339 Tm () Tj
+1 0 0 1 50 326 Tm (7. Ataques) Tj
+1 0 0 1 50 313 Tm () Tj
+1 0 0 1 50 300 Tm (m03_atacante.py puede modificar el paquete normal. Los ataques posibles son:) Tj
+1 0 0 1 50 287 Tm () Tj
+1 0 0 1 50 274 Tm ([formula]) Tj
+1 0 0 1 50 261 Tm (ATAQUE_TRAFICO) Tj
+1 0 0 1 50 248 Tm (FUERZA_BRUTA) Tj
+1 0 0 1 50 235 Tm (ACCESO_NO_AUTORIZADO) Tj
+1 0 0 1 50 222 Tm (COPIA_EXPEDIENTE) Tj
+1 0 0 1 50 209 Tm (MODIFICACION_EVIDENCIA) Tj
+1 0 0 1 50 196 Tm (ELIMINACION_ARCHIVO) Tj
+1 0 0 1 50 183 Tm (EXTRACCION_INFORMACION) Tj
+1 0 0 1 50 170 Tm () Tj
+1 0 0 1 50 157 Tm () Tj
+1 0 0 1 50 144 Tm (El ataque escala con el tiempo:) Tj
+1 0 0 1 50 131 Tm () Tj
+1 0 0 1 50 118 Tm ([codigo]) Tj
+1 0 0 1 50 105 Tm (factor = segundo / 10) Tj
+1 0 0 1 50 92 Tm () Tj
+1 0 0 1 50 79 Tm () Tj
+1 0 0 1 50 66 Tm (Eso significa que un ataque puede ser mas fuerte conforme avanza la simulacion.) Tj
+ET
 endstream
 endobj
 9 0 obj
-<< /Type /Page /Parent 34 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 8 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 31 0 R >> >> /Contents 10 0 R >>
 endobj
 10 0 obj
-<< /Length 1550 >>
+<< /Length 2337 >>
 stream
-BT /F1 10 Tf 54 710 Td (El ataque escala con el tiempo:) Tj ET
-BT /F3 8 Tf 54 668 Td (factor = segundo / 10) Tj ET
-BT /F1 10 Tf 54 629 Td (Eso significa que un ataque puede ser mas fuerte conforme avanza la simulacion.) Tj ET
-BT /F1 10 Tf 54 601 Td (El atacante no cambia directamente la temperatura. Lo que hace es subir paquetes,) Tj ET
-BT /F1 10 Tf 54 587 Td (intentos, cambios o salida de datos. Luego el CPU sube por esa actividad y la) Tj ET
-BT /F1 10 Tf 54 573 Td (temperatura sube como consecuencia.) Tj ET
-BT /F2 14 Tf 54 539 Td (8. Probabilidad de ataque) Tj ET
-BT /F1 10 Tf 54 501 Td (En m00_pdi_slp.py la probabilidad cambia por tramos:) Tj ET
-BT /F3 8 Tf 54 459 Td (segundo 1: 0%) Tj ET
-BT /F3 8 Tf 54 448 Td (segundos 2 a 20: 20%) Tj ET
-BT /F3 8 Tf 54 437 Td (segundos 21 a 40: 40%) Tj ET
-BT /F3 8 Tf 54 426 Td (segundos 41 a 60: 60%) Tj ET
-BT /F1 10 Tf 54 387 Td (El primer segundo queda sin ataque para que el sistema inicie en estado normal.) Tj ET
-BT /F2 14 Tf 54 353 Td (9. Calculo) Tj ET
-BT /F1 10 Tf 54 315 Td (La parte de calculo esta en m04_logica_matematica.py.) Tj ET
-BT /F1 10 Tf 54 287 Td (La tasa compara paquetes actuales contra paquetes anteriores:) Tj ET
-BT /F3 8 Tf 54 245 Td (tasa = paquetes_actuales - paquetes_anteriores) Tj ET
-BT /F1 10 Tf 54 206 Td (La primera derivada discreta mide el cambio entre ciclos:) Tj ET
-BT /F3 8 Tf 54 164 Td (P'\(t\) = P\(t\) - P\(t-1\)) Tj ET
-BT /F1 10 Tf 54 125 Td (La segunda derivada mide si el cambio se acelera:) Tj ET
-BT /F3 8 Tf 54 83 Td (P''\(t\) = P'\(t\) - P'\(t-1\)) Tj ET
+BT
+/F1 10 Tf
+1 0 0 1 50 742 Tm () Tj
+1 0 0 1 50 729 Tm (El atacante no cambia directamente la temperatura. Lo que hace es subir paquetes, intentos,) Tj
+1 0 0 1 50 716 Tm (cambios o salida de datos. Luego el CPU sube por esa actividad y la temperatura sube como) Tj
+1 0 0 1 50 703 Tm (consecuencia.) Tj
+1 0 0 1 50 690 Tm () Tj
+1 0 0 1 50 677 Tm (8. Probabilidad de ataque) Tj
+1 0 0 1 50 664 Tm () Tj
+1 0 0 1 50 651 Tm (En m00_pdi_slp.py la probabilidad cambia por tramos:) Tj
+1 0 0 1 50 638 Tm () Tj
+1 0 0 1 50 625 Tm ([formula]) Tj
+1 0 0 1 50 612 Tm (segundo 1: 0%) Tj
+1 0 0 1 50 599 Tm (segundos 2 a 20: 20%) Tj
+1 0 0 1 50 586 Tm (segundos 21 a 40: 40%) Tj
+1 0 0 1 50 573 Tm (segundos 41 a 60: 60%) Tj
+1 0 0 1 50 560 Tm () Tj
+1 0 0 1 50 547 Tm () Tj
+1 0 0 1 50 534 Tm (El primer segundo queda sin ataque para que el sistema inicie en estado normal.) Tj
+1 0 0 1 50 521 Tm () Tj
+1 0 0 1 50 508 Tm (9. Calculo) Tj
+1 0 0 1 50 495 Tm () Tj
+1 0 0 1 50 482 Tm (La parte de calculo esta en m04_logica_matematica.py.) Tj
+1 0 0 1 50 469 Tm () Tj
+1 0 0 1 50 456 Tm (La tasa compara paquetes actuales contra paquetes anteriores:) Tj
+1 0 0 1 50 443 Tm () Tj
+1 0 0 1 50 430 Tm ([formula]) Tj
+1 0 0 1 50 417 Tm (tasa = paquetes_actuales - paquetes_anteriores) Tj
+1 0 0 1 50 404 Tm () Tj
+1 0 0 1 50 391 Tm () Tj
+1 0 0 1 50 378 Tm (La primera derivada discreta mide el cambio entre ciclos:) Tj
+1 0 0 1 50 365 Tm () Tj
+1 0 0 1 50 352 Tm ([formula]) Tj
+1 0 0 1 50 339 Tm (P'\(t\) = P\(t\) - P\(t-1\)) Tj
+1 0 0 1 50 326 Tm () Tj
+1 0 0 1 50 313 Tm () Tj
+1 0 0 1 50 300 Tm (La segunda derivada mide si el cambio se acelera:) Tj
+1 0 0 1 50 287 Tm () Tj
+1 0 0 1 50 274 Tm ([formula]) Tj
+1 0 0 1 50 261 Tm (P''\(t\) = P'\(t\) - P'\(t-1\)) Tj
+1 0 0 1 50 248 Tm () Tj
+1 0 0 1 50 235 Tm () Tj
+1 0 0 1 50 222 Tm (Luego se aplica una sigmoide como compuerta:) Tj
+1 0 0 1 50 209 Tm () Tj
+1 0 0 1 50 196 Tm ([formula]) Tj
+1 0 0 1 50 183 Tm (sigmoide\(x\) = 1 / \(1 + e^\(-x\)\)) Tj
+1 0 0 1 50 170 Tm (resultado = valor * sigmoide\(k * valor / escala\)) Tj
+1 0 0 1 50 157 Tm () Tj
+1 0 0 1 50 144 Tm () Tj
+1 0 0 1 50 131 Tm (Esta compuerta deja ver mejor las subidas fuertes y suaviza mas las bajadas.) Tj
+1 0 0 1 50 118 Tm () Tj
+1 0 0 1 50 105 Tm (10. Algebra) Tj
+1 0 0 1 50 92 Tm () Tj
+1 0 0 1 50 79 Tm (Se usa el indice de flujo digital:) Tj
+1 0 0 1 50 66 Tm () Tj
+ET
 endstream
 endobj
 11 0 obj
-<< /Type /Page /Parent 34 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 10 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 31 0 R >> >> /Contents 12 0 R >>
 endobj
 12 0 obj
-<< /Length 1644 >>
+<< /Length 2532 >>
 stream
-BT /F1 10 Tf 54 724 Td (Luego se aplica una sigmoide como compuerta:) Tj ET
-BT /F3 8 Tf 54 682 Td (sigmoide\(x\) = 1 / \(1 + e^\(-x\)\)) Tj ET
-BT /F3 8 Tf 54 671 Td (resultado = valor * sigmoide\(k * valor / escala\)) Tj ET
-BT /F1 10 Tf 54 632 Td (Esta compuerta deja ver mejor las subidas fuertes y suaviza mas las bajadas.) Tj ET
-BT /F2 14 Tf 54 598 Td (10. Algebra) Tj ET
-BT /F1 10 Tf 54 560 Td (Se usa el indice de flujo digital:) Tj ET
-BT /F3 8 Tf 54 518 Td (F = 0.45P + 0.25L + 0.15C + 0.15D) Tj ET
-BT /F1 10 Tf 54 479 Td (Donde:) Tj ET
-BT /F3 8 Tf 54 437 Td (P = paquetes) Tj ET
-BT /F3 8 Tf 54 426 Td (L = intentos_login) Tj ET
-BT /F3 8 Tf 54 415 Td (C = cambios_archivos) Tj ET
-BT /F3 8 Tf 54 404 Td (D = salida_datos) Tj ET
-BT /F1 10 Tf 54 365 Td (El flujo sirve para resumir la intensidad del evento en un solo valor. Esta es la) Tj ET
-BT /F1 10 Tf 54 351 Td (parte algebraica principal del sistema.) Tj ET
-BT /F2 14 Tf 54 317 Td (11. Trigonometria y oscilacion) Tj ET
-BT /F1 10 Tf 54 279 Td (La grafica 7 usa una onda de envio regular. Ademas, el programa calcula un indice) Tj ET
-BT /F1 10 Tf 54 265 Td (oscilatorio para apoyar la evaluacion del estado.) Tj ET
-BT /F1 10 Tf 54 237 Td (La onda se genera por intervalos de 5 segundos. En cada intervalo se toma el) Tj ET
-BT /F1 10 Tf 54 223 Td (valor maximo de paquetes, pero se limita a 500 para representar comportamiento) Tj ET
-BT /F1 10 Tf 54 209 Td (regular:) Tj ET
-BT /F3 8 Tf 54 167 Td (amplitud = min\(max\(paquetes_en_5_segundos\), 500\)) Tj ET
-BT /F1 10 Tf 54 128 Td (Luego se crea la onda con seno:) Tj ET
-BT /F3 8 Tf 54 86 Td (onda = amplitud * sen\(pi * progreso\)) Tj ET
+BT
+/F1 10 Tf
+1 0 0 1 50 742 Tm ([formula]) Tj
+1 0 0 1 50 729 Tm (F = 0.45P + 0.25L + 0.15C + 0.15D) Tj
+1 0 0 1 50 716 Tm () Tj
+1 0 0 1 50 703 Tm () Tj
+1 0 0 1 50 690 Tm (Donde:) Tj
+1 0 0 1 50 677 Tm () Tj
+1 0 0 1 50 664 Tm ([formula]) Tj
+1 0 0 1 50 651 Tm (P = paquetes) Tj
+1 0 0 1 50 638 Tm (L = intentos_login) Tj
+1 0 0 1 50 625 Tm (C = cambios_archivos) Tj
+1 0 0 1 50 612 Tm (D = salida_datos) Tj
+1 0 0 1 50 599 Tm () Tj
+1 0 0 1 50 586 Tm () Tj
+1 0 0 1 50 573 Tm (El flujo sirve para resumir la intensidad del evento en un solo valor. Esta es la parte) Tj
+1 0 0 1 50 560 Tm (algebraica principal del sistema.) Tj
+1 0 0 1 50 547 Tm () Tj
+1 0 0 1 50 534 Tm (11. Trigonometria y oscilacion) Tj
+1 0 0 1 50 521 Tm () Tj
+1 0 0 1 50 508 Tm (La grafica 7 usa una onda de envio regular. Ademas, el programa calcula un indice) Tj
+1 0 0 1 50 495 Tm (oscilatorio para apoyar la evaluacion del estado.) Tj
+1 0 0 1 50 482 Tm () Tj
+1 0 0 1 50 469 Tm (La onda se genera por intervalos de 5 segundos. En cada intervalo se toma el valor maximo de) Tj
+1 0 0 1 50 456 Tm (paquetes, pero se limita a 500 para representar comportamiento regular:) Tj
+1 0 0 1 50 443 Tm () Tj
+1 0 0 1 50 430 Tm ([formula]) Tj
+1 0 0 1 50 417 Tm (amplitud = min\(max\(paquetes_en_5_segundos\), 500\)) Tj
+1 0 0 1 50 404 Tm () Tj
+1 0 0 1 50 391 Tm () Tj
+1 0 0 1 50 378 Tm (Luego se crea la onda con seno:) Tj
+1 0 0 1 50 365 Tm () Tj
+1 0 0 1 50 352 Tm ([formula]) Tj
+1 0 0 1 50 339 Tm (onda = amplitud * sen\(pi * progreso\)) Tj
+1 0 0 1 50 326 Tm () Tj
+1 0 0 1 50 313 Tm () Tj
+1 0 0 1 50 300 Tm (La linea real de paquetes se compara contra esa onda. Si la linea real se sale demasiado, se) Tj
+1 0 0 1 50 287 Tm (interpreta como comportamiento irregular.) Tj
+1 0 0 1 50 274 Tm () Tj
+1 0 0 1 50 261 Tm (El indice oscilatorio usa la diferencia entre la senal periodica y los paquetes reales.) Tj
+1 0 0 1 50 248 Tm (Tiene dos niveles:) Tj
+1 0 0 1 50 235 Tm () Tj
+1 0 0 1 50 222 Tm ([formula]) Tj
+1 0 0 1 50 209 Tm (U_OSCILACION_SOSP = 250) Tj
+1 0 0 1 50 196 Tm (U_OSCILACION_CRIT = 1200) Tj
+1 0 0 1 50 183 Tm () Tj
+1 0 0 1 50 170 Tm () Tj
+1 0 0 1 50 157 Tm (Si el indice pasa el nivel sospechoso, puede apoyar un estado SOSPECHOSO. Si pasa el nivel) Tj
+1 0 0 1 50 144 Tm (critico, puede activar CRITICO y registrar una desviacion oscilatoria critica.) Tj
+1 0 0 1 50 131 Tm () Tj
+1 0 0 1 50 118 Tm (12. Fisica: CPU y temperatura) Tj
+1 0 0 1 50 105 Tm () Tj
+1 0 0 1 50 92 Tm (El CPU se calcula a partir de la actividad:) Tj
+1 0 0 1 50 79 Tm () Tj
+1 0 0 1 50 66 Tm ([formula]) Tj
+ET
 endstream
 endobj
 13 0 obj
-<< /Type /Page /Parent 34 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 12 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 31 0 R >> >> /Contents 14 0 R >>
 endobj
 14 0 obj
-<< /Length 1671 >>
+<< /Length 1961 >>
 stream
-BT /F1 10 Tf 54 724 Td (La linea real de paquetes se compara contra esa onda. Si la linea real se sale) Tj ET
-BT /F1 10 Tf 54 710 Td (demasiado, se interpreta como comportamiento irregular.) Tj ET
-BT /F1 10 Tf 54 682 Td (El indice oscilatorio usa la diferencia entre la senal periodica y los paquetes) Tj ET
-BT /F1 10 Tf 54 668 Td (reales. Tiene dos niveles:) Tj ET
-BT /F3 8 Tf 54 626 Td (U_OSCILACION_SOSP = 250) Tj ET
-BT /F3 8 Tf 54 615 Td (U_OSCILACION_CRIT = 1200) Tj ET
-BT /F1 10 Tf 54 576 Td (Si el indice pasa el nivel sospechoso, puede apoyar un estado SOSPECHOSO. Si pasa) Tj ET
-BT /F1 10 Tf 54 562 Td (el nivel critico, puede activar CRITICO y registrar una desviacion oscilatoria) Tj ET
-BT /F1 10 Tf 54 548 Td (critica.) Tj ET
-BT /F2 14 Tf 54 514 Td (12. Fisica: CPU y temperatura) Tj ET
-BT /F1 10 Tf 54 476 Td (El CPU se calcula a partir de la actividad:) Tj ET
-BT /F3 8 Tf 54 434 Td (cpu = cpu_base + 0.005 * \(P + 45L + 28C + 18D\)) Tj ET
-BT /F1 10 Tf 54 395 Td (La temperatura se calcula con:) Tj ET
-BT /F3 8 Tf 54 353 Td (T = 28 + 0.58 * CPU) Tj ET
-BT /F1 10 Tf 54 314 Td (Si no hay ataques fuertes, el CPU se mantiene moderado y la temperatura) Tj ET
-BT /F1 10 Tf 54 300 Td (normalmente no llega a refrigeracion activa.) Tj ET
-BT /F2 14 Tf 54 266 Td (13. Fisica: continuidad y Bernoulli) Tj ET
-BT /F1 10 Tf 54 228 Td (El sistema de refrigeracion usa continuidad:) Tj ET
-BT /F3 8 Tf 54 186 Td (A1 * v1 = A2 * v2) Tj ET
-BT /F3 8 Tf 54 175 Td (v2 = \(A1 * v1\) / A2) Tj ET
-BT /F1 10 Tf 54 136 Td (Con los datos del programa:) Tj ET
-BT /F3 8 Tf 54 94 Td (A1 = 0.05 m2) Tj ET
-BT /F3 8 Tf 54 83 Td (A2 = 0.02 m2) Tj ET
-BT /F3 8 Tf 54 72 Td (v1 = 2.0 m/s) Tj ET
+BT
+/F1 10 Tf
+1 0 0 1 50 742 Tm (cpu = cpu_base + 0.005 * \(P + 45L + 28C + 18D\)) Tj
+1 0 0 1 50 729 Tm () Tj
+1 0 0 1 50 716 Tm () Tj
+1 0 0 1 50 703 Tm (La temperatura se calcula con:) Tj
+1 0 0 1 50 690 Tm () Tj
+1 0 0 1 50 677 Tm ([formula]) Tj
+1 0 0 1 50 664 Tm (T = 28 + 0.58 * CPU) Tj
+1 0 0 1 50 651 Tm () Tj
+1 0 0 1 50 638 Tm () Tj
+1 0 0 1 50 625 Tm (Si no hay ataques fuertes, el CPU se mantiene moderado y la temperatura normalmente no llega) Tj
+1 0 0 1 50 612 Tm (a refrigeracion activa.) Tj
+1 0 0 1 50 599 Tm () Tj
+1 0 0 1 50 586 Tm (13. Fisica: continuidad y Bernoulli) Tj
+1 0 0 1 50 573 Tm () Tj
+1 0 0 1 50 560 Tm (El sistema de refrigeracion usa continuidad:) Tj
+1 0 0 1 50 547 Tm () Tj
+1 0 0 1 50 534 Tm ([formula]) Tj
+1 0 0 1 50 521 Tm (A1 * v1 = A2 * v2) Tj
+1 0 0 1 50 508 Tm (v2 = \(A1 * v1\) / A2) Tj
+1 0 0 1 50 495 Tm () Tj
+1 0 0 1 50 482 Tm () Tj
+1 0 0 1 50 469 Tm (Con los datos del programa:) Tj
+1 0 0 1 50 456 Tm () Tj
+1 0 0 1 50 443 Tm ([formula]) Tj
+1 0 0 1 50 430 Tm (A1 = 0.05 m2) Tj
+1 0 0 1 50 417 Tm (A2 = 0.02 m2) Tj
+1 0 0 1 50 404 Tm (v1 = 2.0 m/s) Tj
+1 0 0 1 50 391 Tm (v2 = 5.0 m/s) Tj
+1 0 0 1 50 378 Tm () Tj
+1 0 0 1 50 365 Tm () Tj
+1 0 0 1 50 352 Tm (Despues usa Bernoulli simplificado:) Tj
+1 0 0 1 50 339 Tm () Tj
+1 0 0 1 50 326 Tm ([formula]) Tj
+1 0 0 1 50 313 Tm (P2 = P1 + 0.5*rho*v1^2 - 0.5*rho*v2^2) Tj
+1 0 0 1 50 300 Tm () Tj
+1 0 0 1 50 287 Tm () Tj
+1 0 0 1 50 274 Tm (Con los datos:) Tj
+1 0 0 1 50 261 Tm () Tj
+1 0 0 1 50 248 Tm ([formula]) Tj
+1 0 0 1 50 235 Tm (P1 = 101325 Pa) Tj
+1 0 0 1 50 222 Tm (rho = 1000 kg/m3) Tj
+1 0 0 1 50 209 Tm (v1 = 2.0 m/s) Tj
+1 0 0 1 50 196 Tm (v2 = 5.0 m/s) Tj
+1 0 0 1 50 183 Tm (P2 = 90825 Pa) Tj
+1 0 0 1 50 170 Tm () Tj
+1 0 0 1 50 157 Tm () Tj
+1 0 0 1 50 144 Tm (14. Enfriamiento) Tj
+1 0 0 1 50 131 Tm () Tj
+1 0 0 1 50 118 Tm (Hay dos tipos de enfriamiento.) Tj
+1 0 0 1 50 105 Tm () Tj
+1 0 0 1 50 92 Tm (Enfriamiento pasivo:) Tj
+1 0 0 1 50 79 Tm () Tj
+1 0 0 1 50 66 Tm ([formula]) Tj
+ET
 endstream
 endobj
 15 0 obj
-<< /Type /Page /Parent 34 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 14 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 31 0 R >> >> /Contents 16 0 R >>
 endobj
 16 0 obj
-<< /Length 1316 >>
+<< /Length 2568 >>
 stream
-BT /F3 8 Tf 54 738 Td (v2 = 5.0 m/s) Tj ET
-BT /F1 10 Tf 54 699 Td (Despues usa Bernoulli simplificado:) Tj ET
-BT /F3 8 Tf 54 657 Td (P2 = P1 + 0.5*rho*v1^2 - 0.5*rho*v2^2) Tj ET
-BT /F1 10 Tf 54 618 Td (Con los datos:) Tj ET
-BT /F3 8 Tf 54 576 Td (P1 = 101325 Pa) Tj ET
-BT /F3 8 Tf 54 565 Td (rho = 1000 kg/m3) Tj ET
-BT /F3 8 Tf 54 554 Td (v1 = 2.0 m/s) Tj ET
-BT /F3 8 Tf 54 543 Td (v2 = 5.0 m/s) Tj ET
-BT /F3 8 Tf 54 532 Td (P2 = 90825 Pa) Tj ET
-BT /F2 14 Tf 54 487 Td (14. Enfriamiento) Tj ET
-BT /F1 10 Tf 54 449 Td (Hay dos tipos de enfriamiento.) Tj ET
-BT /F1 10 Tf 54 421 Td (Enfriamiento pasivo:) Tj ET
-BT /F3 8 Tf 54 379 Td (si no hay refrigeracion activa,) Tj ET
-BT /F3 8 Tf 54 368 Td (cada 5 segundos baja 1 C) Tj ET
-BT /F1 10 Tf 54 329 Td (Enfriamiento activo:) Tj ET
-BT /F3 8 Tf 54 287 Td (DeltaT = coef * v2 * \(\(P1 - P2\) / P1\)) Tj ET
-BT /F1 10 Tf 54 248 Td (Con los valores actuales:) Tj ET
-BT /F3 8 Tf 54 206 Td (DeltaT = 4.4 * 5.0 * \(\(101325 - 90825\) / 101325\)) Tj ET
-BT /F3 8 Tf 54 195 Td (DeltaT = 2.28 C aprox.) Tj ET
-BT /F1 10 Tf 54 156 Td (Si el estado es CRITICO, se busca que la temperatura quede por debajo del umbral) Tj ET
-BT /F1 10 Tf 54 142 Td (preventivo:) Tj ET
-BT /F3 8 Tf 54 100 Td (objetivo_termico = U_TEMP_REFRIG - 1) Tj ET
-BT /F3 8 Tf 54 89 Td (objetivo_termico = 57 C) Tj ET
+BT
+/F1 10 Tf
+1 0 0 1 50 742 Tm (si no hay refrigeracion activa,) Tj
+1 0 0 1 50 729 Tm (cada 5 segundos baja 1 C) Tj
+1 0 0 1 50 716 Tm () Tj
+1 0 0 1 50 703 Tm () Tj
+1 0 0 1 50 690 Tm (Enfriamiento activo:) Tj
+1 0 0 1 50 677 Tm () Tj
+1 0 0 1 50 664 Tm ([formula]) Tj
+1 0 0 1 50 651 Tm (DeltaT = coef * v2 * \(\(P1 - P2\) / P1\)) Tj
+1 0 0 1 50 638 Tm () Tj
+1 0 0 1 50 625 Tm () Tj
+1 0 0 1 50 612 Tm (Con los valores actuales:) Tj
+1 0 0 1 50 599 Tm () Tj
+1 0 0 1 50 586 Tm ([formula]) Tj
+1 0 0 1 50 573 Tm (DeltaT = 4.4 * 5.0 * \(\(101325 - 90825\) / 101325\)) Tj
+1 0 0 1 50 560 Tm (DeltaT = 2.28 C aprox.) Tj
+1 0 0 1 50 547 Tm () Tj
+1 0 0 1 50 534 Tm () Tj
+1 0 0 1 50 521 Tm (Si el estado es CRITICO, se busca que la temperatura quede por debajo del umbral preventivo:) Tj
+1 0 0 1 50 508 Tm () Tj
+1 0 0 1 50 495 Tm ([formula]) Tj
+1 0 0 1 50 482 Tm (objetivo_termico = U_TEMP_REFRIG - 1) Tj
+1 0 0 1 50 469 Tm (objetivo_termico = 57 C) Tj
+1 0 0 1 50 456 Tm () Tj
+1 0 0 1 50 443 Tm () Tj
+1 0 0 1 50 430 Tm (Ese objetivo no se asigna directo a la temperatura. Primero se calcula cuanto tendria que) Tj
+1 0 0 1 50 417 Tm (bajar:) Tj
+1 0 0 1 50 404 Tm () Tj
+1 0 0 1 50 391 Tm ([formula]) Tj
+1 0 0 1 50 378 Tm (descenso_necesario = temperatura_actual - objetivo_termico) Tj
+1 0 0 1 50 365 Tm () Tj
+1 0 0 1 50 352 Tm () Tj
+1 0 0 1 50 339 Tm (Despues se recalcula la caida relativa de presion:) Tj
+1 0 0 1 50 326 Tm () Tj
+1 0 0 1 50 313 Tm ([formula]) Tj
+1 0 0 1 50 300 Tm (caida_relativa = descenso_necesario / \(coef * v2\)) Tj
+1 0 0 1 50 287 Tm (P2_critica = P1 * \(1 - caida_relativa\)) Tj
+1 0 0 1 50 274 Tm () Tj
+1 0 0 1 50 261 Tm () Tj
+1 0 0 1 50 248 Tm (Entonces, durante ese segundo critico, la refrigeracion usa una presion final mas baja. Con) Tj
+1 0 0 1 50 235 Tm (esa presion se vuelve a aplicar:) Tj
+1 0 0 1 50 222 Tm () Tj
+1 0 0 1 50 209 Tm ([formula]) Tj
+1 0 0 1 50 196 Tm (DeltaT = coef * v2 * \(\(P1 - P2_critica\) / P1\)) Tj
+1 0 0 1 50 183 Tm (temperatura_final = temperatura_actual - DeltaT) Tj
+1 0 0 1 50 170 Tm () Tj
+1 0 0 1 50 157 Tm () Tj
+1 0 0 1 50 144 Tm (Por eso la diferencia entre refrigeracion activa y critica no es solo "bajar temperatura".) Tj
+1 0 0 1 50 131 Tm (La activa usa la presion normal calculada con Bernoulli. La critica recalcula P2 para forzar) Tj
+1 0 0 1 50 118 Tm (mas caida de presion durante ese segundo y alcanzar el umbral seguro.) Tj
+1 0 0 1 50 105 Tm () Tj
+1 0 0 1 50 92 Tm (La refrigeracion ya no queda encendida para siempre. En cada ciclo se vuelve a decidir si) Tj
+1 0 0 1 50 79 Tm (hace falta.) Tj
+1 0 0 1 50 66 Tm () Tj
+ET
 endstream
 endobj
 17 0 obj
-<< /Type /Page /Parent 34 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 16 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 31 0 R >> >> /Contents 18 0 R >>
 endobj
 18 0 obj
-<< /Length 2433 >>
+<< /Length 2648 >>
 stream
-BT /F1 10 Tf 54 724 Td (La refrigeracion ya no queda encendida para siempre. En cada ciclo se vuelve a) Tj ET
-BT /F1 10 Tf 54 710 Td (decidir si hace falta.) Tj ET
-BT /F2 14 Tf 54 676 Td (15. Estados del sistema) Tj ET
-BT /F1 10 Tf 54 638 Td (Los estados posibles son:) Tj ET
-BT /F3 8 Tf 54 596 Td (NORMAL) Tj ET
-BT /F3 8 Tf 54 585 Td (SOSPECHOSO) Tj ET
-BT /F3 8 Tf 54 574 Td (ALERTA) Tj ET
-BT /F3 8 Tf 54 563 Td (CRITICO) Tj ET
-BT /F1 10 Tf 54 524 Td (Se deciden en evaluar_estado.) Tj ET
-BT /F3 8 Tf 54 496 Td (| Estado | Cuando aparece |) Tj ET
-BT /F3 8 Tf 54 485 Td (|---|---|) Tj ET
-BT /F3 8 Tf 54 474 Td (| NORMAL | No hay alertas y los valores estan controlados. |) Tj ET
-BT /F3 8 Tf 54 463 Td (| SOSPECHOSO | No hay alerta fuerte, pero paquetes o login salen un poco de lo normal. |) Tj ET
-BT /F3 8 Tf 54 452 Td (| ALERTA | Hay usuario no autorizado, fuerza bruta, cambios de archivos o salida de datos alta. |) Tj ET
-BT /F3 8 Tf 54 441 Td (| CRITICO | Paquetes, flujo o temperatura llegan a nivel critico. |) Tj ET
-BT /F2 14 Tf 54 410 Td (16. Alertas y protecciones) Tj ET
-BT /F1 10 Tf 54 372 Td (Las reglas principales son:) Tj ET
-BT /F3 8 Tf 54 344 Td (| Condicion | Resultado |) Tj ET
-BT /F3 8 Tf 54 333 Td (|---|---|) Tj ET
-BT /F3 8 Tf 54 322 Td (| Usuario no autorizado | Alerta y posible bloqueo de IP. |) Tj ET
-BT /F3 8 Tf 54 311 Td (| Paquetes altos + login alto | Alerta por trafico masivo y fuerza bruta. |) Tj ET
-BT /F3 8 Tf 54 300 Td (| Cambios de archivos altos | Alerta por manipulacion de expediente. |) Tj ET
-BT /F3 8 Tf 54 289 Td (| Salida de datos alta | Alerta y cifrado si no habia cifrado. |) Tj ET
-BT /F3 8 Tf 54 278 Td (| Paquetes criticos o flujo critico | Estado CRITICO y cifrado reforzado. |) Tj ET
-BT /F3 8 Tf 54 267 Td (| Temperatura critica | Estado CRITICO y refrigeracion. |) Tj ET
-BT /F3 8 Tf 54 256 Td (| Login critico | Cierre de login remoto. |) Tj ET
-BT /F3 8 Tf 54 245 Td (| Indice oscilatorio critico | Estado CRITICO y registro de desviacion oscilatoria. |) Tj ET
-BT /F2 14 Tf 54 214 Td (17. Cifrado) Tj ET
-BT /F1 10 Tf 54 176 Td (El sistema no cifra todo el contenido de un archivo real. En esta simulacion) Tj ET
-BT /F1 10 Tf 54 162 Td (cifra el nombre del registro que se genera para guardar evidencia del ciclo.) Tj ET
-BT /F1 10 Tf 54 134 Td (Hay tres niveles:) Tj ET
-BT /F3 8 Tf 54 92 Td (NINGUNO) Tj ET
-BT /F3 8 Tf 54 81 Td (CIFRADO) Tj ET
-BT /F3 8 Tf 54 70 Td (REFORZADO) Tj ET
+BT
+/F1 10 Tf
+1 0 0 1 50 742 Tm (15. Estados del sistema) Tj
+1 0 0 1 50 729 Tm () Tj
+1 0 0 1 50 716 Tm (Los estados posibles son:) Tj
+1 0 0 1 50 703 Tm () Tj
+1 0 0 1 50 690 Tm ([formula]) Tj
+1 0 0 1 50 677 Tm (NORMAL) Tj
+1 0 0 1 50 664 Tm (SOSPECHOSO) Tj
+1 0 0 1 50 651 Tm (ALERTA) Tj
+1 0 0 1 50 638 Tm (CRITICO) Tj
+1 0 0 1 50 625 Tm () Tj
+1 0 0 1 50 612 Tm () Tj
+1 0 0 1 50 599 Tm (Se deciden en evaluar_estado.) Tj
+1 0 0 1 50 586 Tm () Tj
+1 0 0 1 50 573 Tm (| Estado | Cuando aparece |) Tj
+1 0 0 1 50 560 Tm (|---|---|) Tj
+1 0 0 1 50 547 Tm (| NORMAL | No hay alertas y los valores estan controlados. |) Tj
+1 0 0 1 50 534 Tm (| SOSPECHOSO | No hay alerta fuerte, pero paquetes o login salen un poco de lo normal. |) Tj
+1 0 0 1 50 521 Tm (| ALERTA | Hay usuario no autorizado, fuerza bruta, cambios de archivos o salida de datos) Tj
+1 0 0 1 50 508 Tm (alta. |) Tj
+1 0 0 1 50 495 Tm (| CRITICO | Paquetes, flujo o temperatura llegan a nivel critico. |) Tj
+1 0 0 1 50 482 Tm () Tj
+1 0 0 1 50 469 Tm (16. Alertas y protecciones) Tj
+1 0 0 1 50 456 Tm () Tj
+1 0 0 1 50 443 Tm (Las reglas principales son:) Tj
+1 0 0 1 50 430 Tm () Tj
+1 0 0 1 50 417 Tm (| Condicion | Resultado |) Tj
+1 0 0 1 50 404 Tm (|---|---|) Tj
+1 0 0 1 50 391 Tm (| Usuario no autorizado | Alerta y posible bloqueo de IP. |) Tj
+1 0 0 1 50 378 Tm (| Paquetes altos + login alto | Alerta por trafico masivo y fuerza bruta. |) Tj
+1 0 0 1 50 365 Tm (| Cambios de archivos altos | Alerta por manipulacion de expediente. |) Tj
+1 0 0 1 50 352 Tm (| Salida de datos alta | Alerta y cifrado si no habia cifrado. |) Tj
+1 0 0 1 50 339 Tm (| Paquetes criticos o flujo critico | Estado CRITICO y cifrado reforzado. |) Tj
+1 0 0 1 50 326 Tm (| Temperatura critica | Estado CRITICO y refrigeracion. |) Tj
+1 0 0 1 50 313 Tm (| Login critico | Cierre de login remoto. |) Tj
+1 0 0 1 50 300 Tm (| Indice oscilatorio critico | Estado CRITICO y registro de desviacion oscilatoria. |) Tj
+1 0 0 1 50 287 Tm () Tj
+1 0 0 1 50 274 Tm (17. Cifrado) Tj
+1 0 0 1 50 261 Tm () Tj
+1 0 0 1 50 248 Tm (El sistema no cifra todo el contenido de un archivo real. En esta simulacion cifra el nombre) Tj
+1 0 0 1 50 235 Tm (del registro que se genera para guardar evidencia del ciclo.) Tj
+1 0 0 1 50 222 Tm () Tj
+1 0 0 1 50 209 Tm (Hay tres niveles:) Tj
+1 0 0 1 50 196 Tm () Tj
+1 0 0 1 50 183 Tm ([formula]) Tj
+1 0 0 1 50 170 Tm (NINGUNO) Tj
+1 0 0 1 50 157 Tm (CIFRADO) Tj
+1 0 0 1 50 144 Tm (REFORZADO) Tj
+1 0 0 1 50 131 Tm () Tj
+1 0 0 1 50 118 Tm () Tj
+1 0 0 1 50 105 Tm (NINGUNO) Tj
+1 0 0 1 50 92 Tm () Tj
+1 0 0 1 50 79 Tm (Se usa cuando el sistema esta normal y no necesita proteccion extra.) Tj
+1 0 0 1 50 66 Tm () Tj
+ET
 endstream
 endobj
 19 0 obj
-<< /Type /Page /Parent 34 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 18 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 31 0 R >> >> /Contents 20 0 R >>
 endobj
 20 0 obj
-<< /Length 1385 >>
+<< /Length 2304 >>
 stream
-BT /F2 12 Tf 54 710 Td (NINGUNO) Tj ET
-BT /F1 10 Tf 54 679 Td (Se usa cuando el sistema esta normal y no necesita proteccion extra.) Tj ET
-BT /F1 10 Tf 54 651 Td (Ejemplo de nombre base:) Tj ET
-BT /F3 8 Tf 54 609 Td (datos_05.log) Tj ET
-BT /F1 10 Tf 54 570 Td (Direccion generada:) Tj ET
-BT /F3 8 Tf 54 528 Td (registro_local://central_norte/ci-2025-123456/datos_05.log) Tj ET
-BT /F2 12 Tf 54 489 Td (CIFRADO) Tj ET
-BT /F1 10 Tf 54 458 Td (Se usa cuando el sistema esta en SOSPECHOSO o ALERTA, o cuando ya se activo) Tj ET
-BT /F1 10 Tf 54 444 Td (cifrado por salida de datos o trafico riesgoso.) Tj ET
-BT /F1 10 Tf 54 416 Td (En el sistema se muestra como CIFRADO. Por dentro usa cifrado Cesar, moviendo) Tj ET
-BT /F1 10 Tf 54 402 Td (cada letra 3 posiciones en el alfabeto. Los numeros, guiones bajos y puntos se) Tj ET
-BT /F1 10 Tf 54 388 Td (quedan igual.) Tj ET
-BT /F1 10 Tf 54 360 Td (Ejemplo visible del cifrado:) Tj ET
-BT /F3 8 Tf 54 318 Td (Antes : datos_05.log) Tj ET
-BT /F3 8 Tf 54 307 Td (Despues: gdwrv_05.orj) Tj ET
-BT /F1 10 Tf 54 268 Td (Comparacion letra por letra:) Tj ET
-BT /F3 8 Tf 54 226 Td (d a t o s _ 0 5 . l o g) Tj ET
-BT /F3 8 Tf 54 215 Td (g d w r v _ 0 5 . o r j) Tj ET
-BT /F1 10 Tf 54 176 Td (La ruta final quedaria asi:) Tj ET
-BT /F3 8 Tf 54 134 Td (registro_seguro://central_norte/ci-2025-123456/gdwrv_05.orj) Tj ET
-BT /F2 12 Tf 54 95 Td (REFORZADO) Tj ET
+BT
+/F1 10 Tf
+1 0 0 1 50 742 Tm (Ejemplo de nombre base:) Tj
+1 0 0 1 50 729 Tm () Tj
+1 0 0 1 50 716 Tm ([formula]) Tj
+1 0 0 1 50 703 Tm (datos_05.log) Tj
+1 0 0 1 50 690 Tm () Tj
+1 0 0 1 50 677 Tm () Tj
+1 0 0 1 50 664 Tm (Direccion generada:) Tj
+1 0 0 1 50 651 Tm () Tj
+1 0 0 1 50 638 Tm ([formula]) Tj
+1 0 0 1 50 625 Tm (registro_local://central_norte/ci-2025-123456/datos_05.log) Tj
+1 0 0 1 50 612 Tm () Tj
+1 0 0 1 50 599 Tm () Tj
+1 0 0 1 50 586 Tm (CIFRADO) Tj
+1 0 0 1 50 573 Tm () Tj
+1 0 0 1 50 560 Tm (Se usa cuando el sistema esta en SOSPECHOSO o ALERTA, o cuando ya se activo cifrado por) Tj
+1 0 0 1 50 547 Tm (salida de datos o trafico riesgoso.) Tj
+1 0 0 1 50 534 Tm () Tj
+1 0 0 1 50 521 Tm (En el sistema se muestra como CIFRADO. Por dentro usa cifrado Cesar, moviendo cada letra 3) Tj
+1 0 0 1 50 508 Tm (posiciones en el alfabeto. Los numeros, guiones bajos y puntos se quedan igual.) Tj
+1 0 0 1 50 495 Tm () Tj
+1 0 0 1 50 482 Tm (Ejemplo visible del cifrado:) Tj
+1 0 0 1 50 469 Tm () Tj
+1 0 0 1 50 456 Tm ([formula]) Tj
+1 0 0 1 50 443 Tm (Antes : datos_05.log) Tj
+1 0 0 1 50 430 Tm (Despues: gdwrv_05.orj) Tj
+1 0 0 1 50 417 Tm () Tj
+1 0 0 1 50 404 Tm () Tj
+1 0 0 1 50 391 Tm (Comparacion letra por letra:) Tj
+1 0 0 1 50 378 Tm () Tj
+1 0 0 1 50 365 Tm ([formula]) Tj
+1 0 0 1 50 352 Tm (d a t o s _ 0 5 . l o g) Tj
+1 0 0 1 50 339 Tm (g d w r v _ 0 5 . o r j) Tj
+1 0 0 1 50 326 Tm () Tj
+1 0 0 1 50 313 Tm () Tj
+1 0 0 1 50 300 Tm (La ruta final quedaria asi:) Tj
+1 0 0 1 50 287 Tm () Tj
+1 0 0 1 50 274 Tm ([formula]) Tj
+1 0 0 1 50 261 Tm (registro_seguro://central_norte/ci-2025-123456/gdwrv_05.orj) Tj
+1 0 0 1 50 248 Tm () Tj
+1 0 0 1 50 235 Tm () Tj
+1 0 0 1 50 222 Tm (REFORZADO) Tj
+1 0 0 1 50 209 Tm () Tj
+1 0 0 1 50 196 Tm (Se usa cuando el sistema llega a estado CRITICO o cuando ya tenia cifrado reforzado activo.) Tj
+1 0 0 1 50 183 Tm () Tj
+1 0 0 1 50 170 Tm (El cifrado reforzado hace dos pasos:) Tj
+1 0 0 1 50 157 Tm () Tj
+1 0 0 1 50 144 Tm ([formula]) Tj
+1 0 0 1 50 131 Tm (1. Aplica cifrado Cesar +3) Tj
+1 0 0 1 50 118 Tm (2. Aplica cifrado multiplicativo con clave 5) Tj
+1 0 0 1 50 105 Tm () Tj
+1 0 0 1 50 92 Tm () Tj
+1 0 0 1 50 79 Tm (En el segundo paso, las letras se transforman dentro del alfabeto y los numeros se) Tj
+1 0 0 1 50 66 Tm (transforman dentro de las cifras 0 a 9.) Tj
+ET
 endstream
 endobj
 21 0 obj
-<< /Type /Page /Parent 34 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 20 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 31 0 R >> >> /Contents 22 0 R >>
 endobj
 22 0 obj
-<< /Length 1551 >>
+<< /Length 2158 >>
 stream
-BT /F1 10 Tf 54 738 Td (Se usa cuando el sistema llega a estado CRITICO o cuando ya tenia cifrado) Tj ET
-BT /F1 10 Tf 54 724 Td (reforzado activo.) Tj ET
-BT /F1 10 Tf 54 696 Td (El cifrado reforzado hace dos pasos:) Tj ET
-BT /F3 8 Tf 54 654 Td (1. Aplica cifrado Cesar +3) Tj ET
-BT /F3 8 Tf 54 643 Td (2. Aplica cifrado multiplicativo con clave 5) Tj ET
-BT /F1 10 Tf 54 604 Td (En el segundo paso, las letras se transforman dentro del alfabeto y los numeros) Tj ET
-BT /F1 10 Tf 54 590 Td (se transforman dentro de las cifras 0 a 9.) Tj ET
-BT /F1 10 Tf 54 562 Td (Ejemplo visible del cifrado reforzado:) Tj ET
-BT /F3 8 Tf 54 520 Td (Antes : datos_05.log) Tj ET
-BT /F3 8 Tf 54 509 Td (Despues: epghb_38.sht) Tj ET
-BT /F1 10 Tf 54 470 Td (Primer paso, cifrado Cesar +3:) Tj ET
-BT /F3 8 Tf 54 428 Td (datos_05.log -> gdwrv_05.orj) Tj ET
-BT /F1 10 Tf 54 389 Td (Segundo paso, cifrado multiplicativo con clave 5:) Tj ET
-BT /F3 8 Tf 54 347 Td (gdwrv_05.orj -> epghb_38.sht) Tj ET
-BT /F1 10 Tf 54 308 Td (En los numeros tambien se nota el cambio:) Tj ET
-BT /F3 8 Tf 54 266 Td (0 -> 3) Tj ET
-BT /F3 8 Tf 54 255 Td (5 -> 8) Tj ET
-BT /F1 10 Tf 54 216 Td (La ruta final quedaria asi:) Tj ET
-BT /F3 8 Tf 54 174 Td (registro_reforzado://central_norte/ci-2025-123456/epghb_38.sht) Tj ET
-BT /F1 10 Tf 54 135 Td (La direccion del registro cambia segun el estado:) Tj ET
-BT /F3 8 Tf 54 93 Td (NORMAL -> registro_local://...) Tj ET
-BT /F3 8 Tf 54 82 Td (ALERTA o SOSPECHOSO -> registro_seguro://...) Tj ET
-BT /F3 8 Tf 54 71 Td (CRITICO -> registro_reforzado://...) Tj ET
+BT
+/F1 10 Tf
+1 0 0 1 50 742 Tm () Tj
+1 0 0 1 50 729 Tm (Ejemplo visible del cifrado reforzado:) Tj
+1 0 0 1 50 716 Tm () Tj
+1 0 0 1 50 703 Tm ([formula]) Tj
+1 0 0 1 50 690 Tm (Antes : datos_05.log) Tj
+1 0 0 1 50 677 Tm (Despues: epghb_38.sht) Tj
+1 0 0 1 50 664 Tm () Tj
+1 0 0 1 50 651 Tm () Tj
+1 0 0 1 50 638 Tm (Primer paso, cifrado Cesar +3:) Tj
+1 0 0 1 50 625 Tm () Tj
+1 0 0 1 50 612 Tm ([formula]) Tj
+1 0 0 1 50 599 Tm (datos_05.log -> gdwrv_05.orj) Tj
+1 0 0 1 50 586 Tm () Tj
+1 0 0 1 50 573 Tm () Tj
+1 0 0 1 50 560 Tm (Segundo paso, cifrado multiplicativo con clave 5:) Tj
+1 0 0 1 50 547 Tm () Tj
+1 0 0 1 50 534 Tm ([formula]) Tj
+1 0 0 1 50 521 Tm (gdwrv_05.orj -> epghb_38.sht) Tj
+1 0 0 1 50 508 Tm () Tj
+1 0 0 1 50 495 Tm () Tj
+1 0 0 1 50 482 Tm (En los numeros tambien se nota el cambio:) Tj
+1 0 0 1 50 469 Tm () Tj
+1 0 0 1 50 456 Tm ([formula]) Tj
+1 0 0 1 50 443 Tm (0 -> 3) Tj
+1 0 0 1 50 430 Tm (5 -> 8) Tj
+1 0 0 1 50 417 Tm () Tj
+1 0 0 1 50 404 Tm () Tj
+1 0 0 1 50 391 Tm (La ruta final quedaria asi:) Tj
+1 0 0 1 50 378 Tm () Tj
+1 0 0 1 50 365 Tm ([formula]) Tj
+1 0 0 1 50 352 Tm (registro_reforzado://central_norte/ci-2025-123456/epghb_38.sht) Tj
+1 0 0 1 50 339 Tm () Tj
+1 0 0 1 50 326 Tm () Tj
+1 0 0 1 50 313 Tm (La direccion del registro cambia segun el estado:) Tj
+1 0 0 1 50 300 Tm () Tj
+1 0 0 1 50 287 Tm ([formula]) Tj
+1 0 0 1 50 274 Tm (NORMAL -> registro_local://...) Tj
+1 0 0 1 50 261 Tm (ALERTA o SOSPECHOSO -> registro_seguro://...) Tj
+1 0 0 1 50 248 Tm (CRITICO -> registro_reforzado://...) Tj
+1 0 0 1 50 235 Tm () Tj
+1 0 0 1 50 222 Tm () Tj
+1 0 0 1 50 209 Tm (En resumen, el cifrado sirve para representar que, mientras mas riesgoso es el estado, mas) Tj
+1 0 0 1 50 196 Tm (protegida queda la ruta del registro.) Tj
+1 0 0 1 50 183 Tm () Tj
+1 0 0 1 50 170 Tm (18. Bloqueo de IP y login) Tj
+1 0 0 1 50 157 Tm () Tj
+1 0 0 1 50 144 Tm (Si el usuario no esta autorizado, su IP se agrega a:) Tj
+1 0 0 1 50 131 Tm () Tj
+1 0 0 1 50 118 Tm ([formula]) Tj
+1 0 0 1 50 105 Tm (estado_actual["ips_bloqueadas"]) Tj
+1 0 0 1 50 92 Tm () Tj
+1 0 0 1 50 79 Tm () Tj
+1 0 0 1 50 66 Tm (Si los intentos de login superan el umbral critico, se activa:) Tj
+ET
 endstream
 endobj
 23 0 obj
-<< /Type /Page /Parent 34 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 22 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 31 0 R >> >> /Contents 24 0 R >>
 endobj
 24 0 obj
-<< /Length 1715 >>
+<< /Length 2055 >>
 stream
-BT /F1 10 Tf 54 710 Td (En resumen, el cifrado sirve para representar que, mientras mas riesgoso es el) Tj ET
-BT /F1 10 Tf 54 696 Td (estado, mas protegida queda la ruta del registro.) Tj ET
-BT /F2 14 Tf 54 662 Td (18. Bloqueo de IP y login) Tj ET
-BT /F1 10 Tf 54 624 Td (Si el usuario no esta autorizado, su IP se agrega a:) Tj ET
-BT /F3 8 Tf 54 582 Td (estado_actual["ips_bloqueadas"]) Tj ET
-BT /F1 10 Tf 54 543 Td (Si los intentos de login superan el umbral critico, se activa:) Tj ET
-BT /F3 8 Tf 54 501 Td (estado_actual["login_bloqueado"] = True) Tj ET
-BT /F2 14 Tf 54 456 Td (19. Historial) Tj ET
-BT /F1 10 Tf 54 418 Td (Cada ciclo se guarda en:) Tj ET
-BT /F3 8 Tf 54 376 Td (estado_actual["historial"]) Tj ET
-BT /F1 10 Tf 54 337 Td (Ese historial es lo que despues usan las graficas y el CSV.) Tj ET
-BT /F1 10 Tf 54 309 Td (Campos principales guardados:) Tj ET
-BT /F3 8 Tf 54 267 Td (segundo) Tj ET
-BT /F3 8 Tf 54 256 Td (central) Tj ET
-BT /F3 8 Tf 54 245 Td (usuario) Tj ET
-BT /F3 8 Tf 54 234 Td (ip) Tj ET
-BT /F3 8 Tf 54 223 Td (paquetes) Tj ET
-BT /F3 8 Tf 54 212 Td (intentos_login) Tj ET
-BT /F3 8 Tf 54 201 Td (cambios_archivos) Tj ET
-BT /F3 8 Tf 54 190 Td (salida_datos) Tj ET
-BT /F3 8 Tf 54 179 Td (cpu) Tj ET
-BT /F3 8 Tf 54 168 Td (temperatura) Tj ET
-BT /F3 8 Tf 54 157 Td (temperatura_sin_enfriamiento) Tj ET
-BT /F3 8 Tf 54 146 Td (refrigeracion_activa) Tj ET
-BT /F3 8 Tf 54 135 Td (flujo) Tj ET
-BT /F3 8 Tf 54 124 Td (primera_derivada_paquetes) Tj ET
-BT /F3 8 Tf 54 113 Td (primera_derivada_sigmoide) Tj ET
-BT /F3 8 Tf 54 102 Td (segunda_derivada_sigmoide) Tj ET
-BT /F3 8 Tf 54 91 Td (derivada_cpu) Tj ET
-BT /F3 8 Tf 54 80 Td (derivada_temperatura) Tj ET
-BT /F3 8 Tf 54 69 Td (senal_periodica) Tj ET
+BT
+/F1 10 Tf
+1 0 0 1 50 742 Tm () Tj
+1 0 0 1 50 729 Tm ([formula]) Tj
+1 0 0 1 50 716 Tm (estado_actual["login_bloqueado"] = True) Tj
+1 0 0 1 50 703 Tm () Tj
+1 0 0 1 50 690 Tm () Tj
+1 0 0 1 50 677 Tm (19. Historial) Tj
+1 0 0 1 50 664 Tm () Tj
+1 0 0 1 50 651 Tm (Cada ciclo se guarda en:) Tj
+1 0 0 1 50 638 Tm () Tj
+1 0 0 1 50 625 Tm ([formula]) Tj
+1 0 0 1 50 612 Tm (estado_actual["historial"]) Tj
+1 0 0 1 50 599 Tm () Tj
+1 0 0 1 50 586 Tm () Tj
+1 0 0 1 50 573 Tm (Ese historial es lo que despues usan las graficas y el CSV.) Tj
+1 0 0 1 50 560 Tm () Tj
+1 0 0 1 50 547 Tm (Campos principales guardados:) Tj
+1 0 0 1 50 534 Tm () Tj
+1 0 0 1 50 521 Tm ([formula]) Tj
+1 0 0 1 50 508 Tm (segundo) Tj
+1 0 0 1 50 495 Tm (central) Tj
+1 0 0 1 50 482 Tm (usuario) Tj
+1 0 0 1 50 469 Tm (ip) Tj
+1 0 0 1 50 456 Tm (paquetes) Tj
+1 0 0 1 50 443 Tm (intentos_login) Tj
+1 0 0 1 50 430 Tm (cambios_archivos) Tj
+1 0 0 1 50 417 Tm (salida_datos) Tj
+1 0 0 1 50 404 Tm (cpu) Tj
+1 0 0 1 50 391 Tm (temperatura) Tj
+1 0 0 1 50 378 Tm (temperatura_sin_enfriamiento) Tj
+1 0 0 1 50 365 Tm (refrigeracion_activa) Tj
+1 0 0 1 50 352 Tm (flujo) Tj
+1 0 0 1 50 339 Tm (primera_derivada_paquetes) Tj
+1 0 0 1 50 326 Tm (primera_derivada_sigmoide) Tj
+1 0 0 1 50 313 Tm (segunda_derivada_sigmoide) Tj
+1 0 0 1 50 300 Tm (derivada_cpu) Tj
+1 0 0 1 50 287 Tm (derivada_temperatura) Tj
+1 0 0 1 50 274 Tm (senal_periodica) Tj
+1 0 0 1 50 261 Tm (desviacion_periodica) Tj
+1 0 0 1 50 248 Tm (indice_oscilatorio) Tj
+1 0 0 1 50 235 Tm (incidente) Tj
+1 0 0 1 50 222 Tm (tipo_incidente) Tj
+1 0 0 1 50 209 Tm (estado) Tj
+1 0 0 1 50 196 Tm (cifrado) Tj
+1 0 0 1 50 183 Tm (direccion) Tj
+1 0 0 1 50 170 Tm () Tj
+1 0 0 1 50 157 Tm () Tj
+1 0 0 1 50 144 Tm (20. Graficas generadas) Tj
+1 0 0 1 50 131 Tm () Tj
+1 0 0 1 50 118 Tm (Las graficas se guardan individualmente en pdi_slp_graficas.) Tj
+1 0 0 1 50 105 Tm () Tj
+1 0 0 1 50 92 Tm (| Archivo | Materia | Que muestra |) Tj
+1 0 0 1 50 79 Tm (|---|---|---|) Tj
+1 0 0 1 50 66 Tm (| 01_paquetes_vs_tiempo.png | Fundamentos matematicos | Paquetes por segundo. |) Tj
+ET
 endstream
 endobj
 25 0 obj
-<< /Type /Page /Parent 34 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 24 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 31 0 R >> >> /Contents 26 0 R >>
 endobj
 26 0 obj
-<< /Length 2124 >>
+<< /Length 2406 >>
 stream
-BT /F3 8 Tf 54 738 Td (desviacion_periodica) Tj ET
-BT /F3 8 Tf 54 727 Td (indice_oscilatorio) Tj ET
-BT /F3 8 Tf 54 716 Td (incidente) Tj ET
-BT /F3 8 Tf 54 705 Td (tipo_incidente) Tj ET
-BT /F3 8 Tf 54 694 Td (estado) Tj ET
-BT /F3 8 Tf 54 683 Td (cifrado) Tj ET
-BT /F3 8 Tf 54 672 Td (direccion) Tj ET
-BT /F2 14 Tf 54 627 Td (20. Graficas generadas) Tj ET
-BT /F1 10 Tf 54 589 Td (Las graficas se guardan individualmente en pdi_slp_graficas.) Tj ET
-BT /F3 8 Tf 54 561 Td (| Archivo | Materia | Que muestra |) Tj ET
-BT /F3 8 Tf 54 550 Td (|---|---|---|) Tj ET
-BT /F3 8 Tf 54 539 Td (| 01_paquetes_vs_tiempo.png | Fundamentos matematicos | Paquetes por segundo. |) Tj ET
-BT /F3 8 Tf 54 528 Td (| 02_intentos_login_vs_tiempo.png | Fundamentos matematicos | Intentos de login por segundo. |) Tj ET
-BT /F3 8 Tf 54 517 Td (| 03_temperatura_vs_tiempo.png | Fisica | Temperatura con y sin enfriamiento. |) Tj ET
-BT /F3 8 Tf 54 506 Td (| 04_estado_sistema_vs_tiempo.png | Fundamentos matematicos | Cambios de estado del sistema. |) Tj ET
-BT /F3 8 Tf 54 495 Td (| 05_indice_flujo_digital_vs_tiempo.png | Algebra y trigonometria | Indice de flujo digital. |) Tj ET
-BT /F3 8 Tf 54 484 Td (| 06_derivadas_trafico_vs_tiempo.png | Calculo | Primera y segunda derivada con sigmoide. |) Tj ET
-BT /F3 8 Tf 54 473 Td (| 07_analisis_oscilatorio_vs_tiempo.png | Algebra y trigonometria | Onda regular contra comportamiento real.) Tj ET
-BT /F3 8 Tf 54 462 Td ( |) Tj ET
-BT /F2 14 Tf 54 431 Td (21. Grafica 1: paquetes) Tj ET
-BT /F1 10 Tf 54 393 Td (Entra:) Tj ET
-BT /F3 8 Tf 54 351 Td (segundo) Tj ET
-BT /F3 8 Tf 54 340 Td (paquetes) Tj ET
-BT /F1 10 Tf 54 301 Td (Sale una linea de paquetes por segundo. Sirve para ver picos de trafico y) Tj ET
-BT /F1 10 Tf 54 287 Td (compararlos con umbrales.) Tj ET
-BT /F2 14 Tf 54 253 Td (22. Grafica 2: intentos login) Tj ET
-BT /F1 10 Tf 54 215 Td (Entra:) Tj ET
-BT /F3 8 Tf 54 173 Td (segundo) Tj ET
-BT /F3 8 Tf 54 162 Td (intentos_login) Tj ET
-BT /F1 10 Tf 54 123 Td (Muestra intentos de acceso. Cuando sube demasiado puede indicar fuerza bruta.) Tj ET
-BT /F2 14 Tf 54 89 Td (23. Grafica 3: temperatura) Tj ET
+BT
+/F1 10 Tf
+1 0 0 1 50 742 Tm (| 02_intentos_login_vs_tiempo.png | Fundamentos matematicos | Intentos de login por segundo.) Tj
+1 0 0 1 50 729 Tm (|) Tj
+1 0 0 1 50 716 Tm (| 03_temperatura_vs_tiempo.png | Fisica | Temperatura con y sin enfriamiento. |) Tj
+1 0 0 1 50 703 Tm (| 04_estado_sistema_vs_tiempo.png | Fundamentos matematicos | Cambios de estado del sistema.) Tj
+1 0 0 1 50 690 Tm (|) Tj
+1 0 0 1 50 677 Tm (| 05_indice_flujo_digital_vs_tiempo.png | Algebra y trigonometria | Indice de flujo digital.) Tj
+1 0 0 1 50 664 Tm (|) Tj
+1 0 0 1 50 651 Tm (| 06_derivadas_trafico_vs_tiempo.png | Calculo | Primera y segunda derivada con sigmoide. |) Tj
+1 0 0 1 50 638 Tm (| 07_analisis_oscilatorio_vs_tiempo.png | Algebra y trigonometria | Onda regular contra) Tj
+1 0 0 1 50 625 Tm (comportamiento real. |) Tj
+1 0 0 1 50 612 Tm () Tj
+1 0 0 1 50 599 Tm (21. Grafica 1: paquetes) Tj
+1 0 0 1 50 586 Tm () Tj
+1 0 0 1 50 573 Tm (Entra:) Tj
+1 0 0 1 50 560 Tm () Tj
+1 0 0 1 50 547 Tm ([formula]) Tj
+1 0 0 1 50 534 Tm (segundo) Tj
+1 0 0 1 50 521 Tm (paquetes) Tj
+1 0 0 1 50 508 Tm () Tj
+1 0 0 1 50 495 Tm () Tj
+1 0 0 1 50 482 Tm (Sale una linea de paquetes por segundo. Sirve para ver picos de trafico y compararlos con) Tj
+1 0 0 1 50 469 Tm (umbrales.) Tj
+1 0 0 1 50 456 Tm () Tj
+1 0 0 1 50 443 Tm (22. Grafica 2: intentos login) Tj
+1 0 0 1 50 430 Tm () Tj
+1 0 0 1 50 417 Tm (Entra:) Tj
+1 0 0 1 50 404 Tm () Tj
+1 0 0 1 50 391 Tm ([formula]) Tj
+1 0 0 1 50 378 Tm (segundo) Tj
+1 0 0 1 50 365 Tm (intentos_login) Tj
+1 0 0 1 50 352 Tm () Tj
+1 0 0 1 50 339 Tm () Tj
+1 0 0 1 50 326 Tm (Muestra intentos de acceso. Cuando sube demasiado puede indicar fuerza bruta.) Tj
+1 0 0 1 50 313 Tm () Tj
+1 0 0 1 50 300 Tm (23. Grafica 3: temperatura) Tj
+1 0 0 1 50 287 Tm () Tj
+1 0 0 1 50 274 Tm (Entra:) Tj
+1 0 0 1 50 261 Tm () Tj
+1 0 0 1 50 248 Tm ([formula]) Tj
+1 0 0 1 50 235 Tm (temperatura_sin_enfriamiento) Tj
+1 0 0 1 50 222 Tm (temperatura) Tj
+1 0 0 1 50 209 Tm (refrigeracion_activa) Tj
+1 0 0 1 50 196 Tm () Tj
+1 0 0 1 50 183 Tm () Tj
+1 0 0 1 50 170 Tm (Muestra que hubiera pasado sin enfriamiento y que paso despues de aplicar refrigeracion) Tj
+1 0 0 1 50 157 Tm (pasiva o activa.) Tj
+1 0 0 1 50 144 Tm () Tj
+1 0 0 1 50 131 Tm (24. Grafica 4: estado) Tj
+1 0 0 1 50 118 Tm () Tj
+1 0 0 1 50 105 Tm (Convierte estados a numeros:) Tj
+1 0 0 1 50 92 Tm () Tj
+1 0 0 1 50 79 Tm ([formula]) Tj
+1 0 0 1 50 66 Tm (NORMAL = 0) Tj
+ET
 endstream
 endobj
 27 0 obj
-<< /Type /Page /Parent 34 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 26 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 31 0 R >> >> /Contents 28 0 R >>
 endobj
 28 0 obj
-<< /Length 1369 >>
+<< /Length 2196 >>
 stream
-BT /F1 10 Tf 54 724 Td (Entra:) Tj ET
-BT /F3 8 Tf 54 682 Td (temperatura_sin_enfriamiento) Tj ET
-BT /F3 8 Tf 54 671 Td (temperatura) Tj ET
-BT /F3 8 Tf 54 660 Td (refrigeracion_activa) Tj ET
-BT /F1 10 Tf 54 621 Td (Muestra que hubiera pasado sin enfriamiento y que paso despues de aplicar) Tj ET
-BT /F1 10 Tf 54 607 Td (refrigeracion pasiva o activa.) Tj ET
-BT /F2 14 Tf 54 573 Td (24. Grafica 4: estado) Tj ET
-BT /F1 10 Tf 54 535 Td (Convierte estados a numeros:) Tj ET
-BT /F3 8 Tf 54 493 Td (NORMAL = 0) Tj ET
-BT /F3 8 Tf 54 482 Td (SOSPECHOSO = 1) Tj ET
-BT /F3 8 Tf 54 471 Td (ALERTA = 2) Tj ET
-BT /F3 8 Tf 54 460 Td (CRITICO = 3) Tj ET
-BT /F1 10 Tf 54 421 Td (Sirve para ver en que segundos el sistema cambio de condicion.) Tj ET
-BT /F2 14 Tf 54 387 Td (25. Grafica 5: flujo digital) Tj ET
-BT /F1 10 Tf 54 349 Td (Muestra el resultado de:) Tj ET
-BT /F3 8 Tf 54 307 Td (F = 0.45P + 0.25L + 0.15C + 0.15D) Tj ET
-BT /F1 10 Tf 54 268 Td (Sirve para ver la intensidad general del evento.) Tj ET
-BT /F2 14 Tf 54 234 Td (26. Grafica 6: derivadas) Tj ET
-BT /F1 10 Tf 54 196 Td (Muestra:) Tj ET
-BT /F3 8 Tf 54 154 Td (primera derivada con sigmoide P'\(t\)) Tj ET
-BT /F3 8 Tf 54 143 Td (segunda derivada con sigmoide P''\(t\)) Tj ET
-BT /F1 10 Tf 54 104 Td (La sigmoide hace que la grafica se enfoque mas en subidas fuertes y) Tj ET
-BT /F1 10 Tf 54 90 Td (aceleraciones.) Tj ET
+BT
+/F1 10 Tf
+1 0 0 1 50 742 Tm (SOSPECHOSO = 1) Tj
+1 0 0 1 50 729 Tm (ALERTA = 2) Tj
+1 0 0 1 50 716 Tm (CRITICO = 3) Tj
+1 0 0 1 50 703 Tm () Tj
+1 0 0 1 50 690 Tm () Tj
+1 0 0 1 50 677 Tm (Sirve para ver en que segundos el sistema cambio de condicion.) Tj
+1 0 0 1 50 664 Tm () Tj
+1 0 0 1 50 651 Tm (25. Grafica 5: flujo digital) Tj
+1 0 0 1 50 638 Tm () Tj
+1 0 0 1 50 625 Tm (Muestra el resultado de:) Tj
+1 0 0 1 50 612 Tm () Tj
+1 0 0 1 50 599 Tm ([formula]) Tj
+1 0 0 1 50 586 Tm (F = 0.45P + 0.25L + 0.15C + 0.15D) Tj
+1 0 0 1 50 573 Tm () Tj
+1 0 0 1 50 560 Tm () Tj
+1 0 0 1 50 547 Tm (Sirve para ver la intensidad general del evento.) Tj
+1 0 0 1 50 534 Tm () Tj
+1 0 0 1 50 521 Tm (26. Grafica 6: derivadas) Tj
+1 0 0 1 50 508 Tm () Tj
+1 0 0 1 50 495 Tm (Muestra:) Tj
+1 0 0 1 50 482 Tm () Tj
+1 0 0 1 50 469 Tm ([formula]) Tj
+1 0 0 1 50 456 Tm (primera derivada con sigmoide P'\(t\)) Tj
+1 0 0 1 50 443 Tm (segunda derivada con sigmoide P''\(t\)) Tj
+1 0 0 1 50 430 Tm () Tj
+1 0 0 1 50 417 Tm () Tj
+1 0 0 1 50 404 Tm (La sigmoide hace que la grafica se enfoque mas en subidas fuertes y aceleraciones.) Tj
+1 0 0 1 50 391 Tm () Tj
+1 0 0 1 50 378 Tm (27. Grafica 7: analisis oscilatorio) Tj
+1 0 0 1 50 365 Tm () Tj
+1 0 0 1 50 352 Tm (Muestra dos cosas:) Tj
+1 0 0 1 50 339 Tm () Tj
+1 0 0 1 50 326 Tm ([formula]) Tj
+1 0 0 1 50 313 Tm (onda de envio regular) Tj
+1 0 0 1 50 300 Tm (comportamiento lineal real) Tj
+1 0 0 1 50 287 Tm () Tj
+1 0 0 1 50 274 Tm () Tj
+1 0 0 1 50 261 Tm (La grafica se usa para interpretar el patron, y el indice oscilatorio calculado en el) Tj
+1 0 0 1 50 248 Tm (programa tambien puede apoyar el estado del sistema cuando la desviacion es muy alta.) Tj
+1 0 0 1 50 235 Tm () Tj
+1 0 0 1 50 222 Tm (28. CSV) Tj
+1 0 0 1 50 209 Tm () Tj
+1 0 0 1 50 196 Tm (m07_reporte_tabla.py genera:) Tj
+1 0 0 1 50 183 Tm () Tj
+1 0 0 1 50 170 Tm ([formula]) Tj
+1 0 0 1 50 157 Tm (reportes_tabla/pdi_slp_reporte_tabla.csv) Tj
+1 0 0 1 50 144 Tm () Tj
+1 0 0 1 50 131 Tm () Tj
+1 0 0 1 50 118 Tm (Usa csv.DictWriter. Se escriben encabezados y despues una fila por cada ciclo.) Tj
+1 0 0 1 50 105 Tm () Tj
+1 0 0 1 50 92 Tm (29. Monitor) Tj
+1 0 0 1 50 79 Tm () Tj
+1 0 0 1 50 66 Tm (m05_monitor.py imprime:) Tj
+ET
 endstream
 endobj
 29 0 obj
-<< /Type /Page /Parent 34 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 28 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 31 0 R >> >> /Contents 30 0 R >>
 endobj
 30 0 obj
-<< /Length 1556 >>
+<< /Length 1762 >>
 stream
-BT /F2 14 Tf 54 732 Td (27. Grafica 7: analisis oscilatorio) Tj ET
-BT /F1 10 Tf 54 694 Td (Muestra dos cosas:) Tj ET
-BT /F3 8 Tf 54 652 Td (onda de envio regular) Tj ET
-BT /F3 8 Tf 54 641 Td (comportamiento lineal real) Tj ET
-BT /F1 10 Tf 54 602 Td (La grafica se usa para interpretar el patron, y el indice oscilatorio calculado) Tj ET
-BT /F1 10 Tf 54 588 Td (en el programa tambien puede apoyar el estado del sistema cuando la desviacion es) Tj ET
-BT /F1 10 Tf 54 574 Td (muy alta.) Tj ET
-BT /F2 14 Tf 54 540 Td (28. CSV) Tj ET
-BT /F1 10 Tf 54 502 Td (m07_reporte_tabla.py genera:) Tj ET
-BT /F3 8 Tf 54 460 Td (reportes_tabla/pdi_slp_reporte_tabla.csv) Tj ET
-BT /F1 10 Tf 54 421 Td (Usa csv.DictWriter. Se escriben encabezados y despues una fila por cada ciclo.) Tj ET
-BT /F2 14 Tf 54 387 Td (29. Monitor) Tj ET
-BT /F1 10 Tf 54 349 Td (m05_monitor.py imprime:) Tj ET
-BT /F1 10 Tf 54 321 Td (? pantalla inicial.) Tj ET
-BT /F1 10 Tf 54 307 Td (? linea por cada ciclo.) Tj ET
-BT /F1 10 Tf 54 293 Td (? panel completo cada 5 ciclos.) Tj ET
-BT /F1 10 Tf 54 279 Td (? resumen final.) Tj ET
-BT /F1 10 Tf 54 251 Td (No toma decisiones. Solo muestra datos ya calculados.) Tj ET
-BT /F2 14 Tf 54 217 Td (30. Resumen del flujo) Tj ET
-BT /F3 8 Tf 54 165 Td (trafico normal) Tj ET
-BT /F3 8 Tf 54 154 Td (-> posible ataque) Tj ET
-BT /F3 8 Tf 54 143 Td (-> calculos matematicos) Tj ET
-BT /F3 8 Tf 54 132 Td (-> estado y alertas) Tj ET
-BT /F3 8 Tf 54 121 Td (-> protecciones) Tj ET
-BT /F3 8 Tf 54 110 Td (-> historial) Tj ET
-BT /F3 8 Tf 54 99 Td (-> graficas y CSV) Tj ET
+BT
+/F1 10 Tf
+1 0 0 1 50 742 Tm () Tj
+1 0 0 1 50 729 Tm (- pantalla inicial.) Tj
+1 0 0 1 50 716 Tm (- linea por cada ciclo.) Tj
+1 0 0 1 50 703 Tm (- panel completo cada 5 ciclos.) Tj
+1 0 0 1 50 690 Tm (- resumen final.) Tj
+1 0 0 1 50 677 Tm () Tj
+1 0 0 1 50 664 Tm (No toma decisiones. Solo muestra datos ya calculados.) Tj
+1 0 0 1 50 651 Tm () Tj
+1 0 0 1 50 638 Tm (30. Resumen del flujo) Tj
+1 0 0 1 50 625 Tm () Tj
+1 0 0 1 50 612 Tm ([formula]) Tj
+1 0 0 1 50 599 Tm (trafico normal) Tj
+1 0 0 1 50 586 Tm (-> posible ataque) Tj
+1 0 0 1 50 573 Tm (-> calculos matematicos) Tj
+1 0 0 1 50 560 Tm (-> estado y alertas) Tj
+1 0 0 1 50 547 Tm (-> protecciones) Tj
+1 0 0 1 50 534 Tm (-> historial) Tj
+1 0 0 1 50 521 Tm (-> graficas y CSV) Tj
+1 0 0 1 50 508 Tm () Tj
+1 0 0 1 50 495 Tm () Tj
+1 0 0 1 50 482 Tm (El dato mas importante durante la simulacion es paquete.) Tj
+1 0 0 1 50 469 Tm () Tj
+1 0 0 1 50 456 Tm (El dato mas importante al final es estado_actual["historial"].) Tj
+1 0 0 1 50 443 Tm () Tj
+1 0 0 1 50 430 Tm (31. Referencias para librerias) Tj
+1 0 0 1 50 417 Tm () Tj
+1 0 0 1 50 404 Tm (Estas referencias son para justificar el uso de herramientas, no para decir que la logica) Tj
+1 0 0 1 50 391 Tm (del sistema salio de ahi.) Tj
+1 0 0 1 50 378 Tm () Tj
+1 0 0 1 50 365 Tm (- Python random: https://docs.python.org/3/library/random.html) Tj
+1 0 0 1 50 352 Tm (- Python time: https://docs.python.org/3/library/time.html) Tj
+1 0 0 1 50 339 Tm (- Python math: https://docs.python.org/3/library/math.html) Tj
+1 0 0 1 50 326 Tm (- Python csv: https://docs.python.org/3/library/csv.html) Tj
+1 0 0 1 50 313 Tm (- Python os: https://docs.python.org/3/library/os.html) Tj
+1 0 0 1 50 300 Tm (- Matplotlib: https://matplotlib.org/stable/) Tj
+1 0 0 1 50 287 Tm () Tj
+ET
 endstream
 endobj
 31 0 obj
-<< /Type /Page /Parent 34 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 30 0 R >>
-endobj
-32 0 obj
-<< /Length 945 >>
-stream
-BT /F1 10 Tf 54 738 Td (El dato mas importante durante la simulacion es paquete.) Tj ET
-BT /F1 10 Tf 54 710 Td (El dato mas importante al final es estado_actual["historial"].) Tj ET
-BT /F2 14 Tf 54 676 Td (31. Referencias para librerias) Tj ET
-BT /F1 10 Tf 54 638 Td (Estas referencias son para justificar el uso de herramientas, no para decir que) Tj ET
-BT /F1 10 Tf 54 624 Td (la logica del sistema salio de ahi.) Tj ET
-BT /F1 10 Tf 54 596 Td (? Python random: https://docs.python.org/3/library/random.html) Tj ET
-BT /F1 10 Tf 54 582 Td (? Python time: https://docs.python.org/3/library/time.html) Tj ET
-BT /F1 10 Tf 54 568 Td (? Python math: https://docs.python.org/3/library/math.html) Tj ET
-BT /F1 10 Tf 54 554 Td (? Python csv: https://docs.python.org/3/library/csv.html) Tj ET
-BT /F1 10 Tf 54 540 Td (? Python os: https://docs.python.org/3/library/os.html) Tj ET
-BT /F1 10 Tf 54 526 Td (? Matplotlib: https://matplotlib.org/stable/) Tj ET
-endstream
-endobj
-33 0 obj
-<< /Type /Page /Parent 34 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 32 0 R >>
-endobj
-34 0 obj
-<< /Type /Pages /Kids [ 5 0 R 7 0 R 9 0 R 11 0 R 13 0 R 15 0 R 17 0 R 19 0 R 21 0 R 23 0 R 25 0 R 27 0 R 29 0 R 31 0 R 33 0 R ] /Count 15 >>
-endobj
-35 0 obj
-<< /Type /Catalog /Pages 34 0 R >>
-endobj
-36 0 obj
-<< /Title (DOCUMENTACION_PROCESO_PDI_SLP) /Producer (Codex minimal PDF generator) >>
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
 endobj
 xref
-0 37
+0 32
 0000000000 65535 f 
 0000000015 00000 n 
-0000000085 00000 n 
-0000000160 00000 n 
-0000000228 00000 n 
-0000002539 00000 n 
-0000002686 00000 n 
-0000004867 00000 n 
-0000005014 00000 n 
-0000007191 00000 n 
-0000007338 00000 n 
-0000008941 00000 n 
-0000009090 00000 n 
-0000010787 00000 n 
-0000010936 00000 n 
-0000012660 00000 n 
-0000012809 00000 n 
-0000014178 00000 n 
-0000014327 00000 n 
-0000016813 00000 n 
-0000016962 00000 n 
-0000018400 00000 n 
-0000018549 00000 n 
-0000020153 00000 n 
-0000020302 00000 n 
-0000022070 00000 n 
-0000022219 00000 n 
-0000024396 00000 n 
-0000024545 00000 n 
-0000025967 00000 n 
-0000026116 00000 n 
-0000027725 00000 n 
-0000027874 00000 n 
-0000028871 00000 n 
-0000029020 00000 n 
-0000029177 00000 n 
-0000029228 00000 n 
+0000000064 00000 n 
+0000000210 00000 n 
+0000000337 00000 n 
+0000003155 00000 n 
+0000003282 00000 n 
+0000005918 00000 n 
+0000006045 00000 n 
+0000008245 00000 n 
+0000008373 00000 n 
+0000010763 00000 n 
+0000010892 00000 n 
+0000013477 00000 n 
+0000013606 00000 n 
+0000015620 00000 n 
+0000015749 00000 n 
+0000018370 00000 n 
+0000018499 00000 n 
+0000021200 00000 n 
+0000021329 00000 n 
+0000023686 00000 n 
+0000023815 00000 n 
+0000026026 00000 n 
+0000026155 00000 n 
+0000028263 00000 n 
+0000028392 00000 n 
+0000030851 00000 n 
+0000030980 00000 n 
+0000033229 00000 n 
+0000033358 00000 n 
+0000035173 00000 n 
 trailer
-<< /Size 37 /Root 35 0 R /Info 36 0 R >>
+<< /Size 32 /Root 1 0 R >>
 startxref
-29329
+35244
 %%EOF

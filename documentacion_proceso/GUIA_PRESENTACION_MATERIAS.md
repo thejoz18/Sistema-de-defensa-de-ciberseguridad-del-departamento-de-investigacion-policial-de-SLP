@@ -289,14 +289,25 @@ El programa usa esa relacion para estimar velocidad y presion del refrigerante. 
 Descenso = coeficiente * velocidad * ((P1 - P2) / P1)
 ```
 
+Cuando el estado llega a critico, la presion final se recalcula solo para ese segundo:
+
+```text
+objetivo = U_TEMP_REFRIG - 1
+caida relativa = (temperatura actual - objetivo) / (coeficiente * velocidad)
+P2 critica = P1 * (1 - caida relativa)
+```
+
+Esto permite explicar que el sistema no baja la temperatura "a mano". Lo que hace es aumentar el efecto del refrigerante bajando la presion final calculada.
+
 **Procedimiento fisico:**
 
 ```text
 1. Actividad digital aumenta CPU
 2. CPU aumenta temperatura
 3. Temperatura se compara con umbrales
-4. Si hay riesgo, se activa refrigeracion
-5. La refrigeracion reduce la temperatura
+4. Si hay riesgo, se activa refrigeracion preventiva
+5. Si el estado es critico, se recalcula la presion
+6. La refrigeracion reduce la temperatura
 ```
 
 **Apoyo visual sugerido:**
@@ -307,4 +318,5 @@ Descenso = coeficiente * velocidad * ((P1 - P2) / P1)
 | formula de temperatura | explicar relacion CPU-temperatura |
 | formula de continuidad | justificar velocidad del refrigerante |
 | formula de Bernoulli | justificar presion del refrigerante |
+| columnas `velocidad_refrigerante` y `presion_refrigerante` del CSV | mostrar cuando se usa presion normal o critica |
 | UML `05_refrigeracion.drawio` | explicar el flujo de enfriamiento |

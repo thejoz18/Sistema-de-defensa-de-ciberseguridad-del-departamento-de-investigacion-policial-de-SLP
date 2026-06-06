@@ -270,6 +270,17 @@ def calcular_refrigeracion():
     P2 = calcular_presion_bernoulli(P1_REFRIGERANTE, RHO_REFRIGERANTE, V1_REFRIGERANTE, v2)
     return v2, P2
 
+def calcular_refrigeracion_critica(temperatura, objetivo, coef=4.4):
+    v2 = calcular_velocidad_refrigerante(A1_REFRIGERANTE, V1_REFRIGERANTE, A2_REFRIGERANTE)
+    descenso_necesario = temperatura - objetivo
+    if descenso_necesario <= 0:
+        return calcular_refrigeracion()
+    caida_relativa = descenso_necesario / (coef * v2)
+    if caida_relativa > 0.95:
+        caida_relativa = 0.95
+    P2 = round(P1_REFRIGERANTE * (1 - caida_relativa), 2)
+    return v2, P2
+
 def calcular_descenso_bernoulli(velocidad_refrigerante, presion_inicial, presion_final, coef=4.4):
     if presion_inicial <= 0:
         return 0
@@ -284,13 +295,10 @@ def aplicar_enfriamiento_pasivo(temperatura, segundo, intervalo=5, descenso=1.0)
         nueva = 28
     return round(nueva, 1)
 
-def aplicar_enfriamiento(temperatura, velocidad_refrigerante, presion_inicial, presion_final,
-                         objetivo=None):
+def aplicar_enfriamiento(temperatura, velocidad_refrigerante, presion_inicial, presion_final):
     descenso = calcular_descenso_bernoulli(
         velocidad_refrigerante, presion_inicial, presion_final
     )
-    if objetivo is not None and temperatura - descenso > objetivo:
-        descenso = temperatura - objetivo
     nueva = temperatura - descenso
     if nueva < 28:
         nueva = 28

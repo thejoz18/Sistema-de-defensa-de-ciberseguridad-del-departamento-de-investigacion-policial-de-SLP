@@ -21,6 +21,8 @@ def generar_reporte_tabla(historial, ruta="reportes_tabla/pdi_slp_reporte_tabla.
         "temperatura",
         "temperatura_sin_enfriamiento",
         "refrigeracion_activa",
+        "velocidad_refrigerante",
+        "presion_refrigerante",
         "flujo",
         "primera_derivada_paquetes",
         "primera_derivada_sigmoide",

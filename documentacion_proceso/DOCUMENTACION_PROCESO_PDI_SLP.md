@@ -325,6 +325,28 @@ objetivo_termico = U_TEMP_REFRIG - 1
 objetivo_termico = 57 C
 ```
 
+Ese objetivo no se asigna directo a la temperatura. Primero se calcula cuanto tendria que bajar:
+
+```text
+descenso_necesario = temperatura_actual - objetivo_termico
+```
+
+Despues se recalcula la caida relativa de presion:
+
+```text
+caida_relativa = descenso_necesario / (coef * v2)
+P2_critica = P1 * (1 - caida_relativa)
+```
+
+Entonces, durante ese segundo critico, la refrigeracion usa una presion final mas baja. Con esa presion se vuelve a aplicar:
+
+```text
+DeltaT = coef * v2 * ((P1 - P2_critica) / P1)
+temperatura_final = temperatura_actual - DeltaT
+```
+
+Por eso la diferencia entre refrigeracion activa y critica no es solo "bajar temperatura". La activa usa la presion normal calculada con Bernoulli. La critica recalcula `P2` para forzar mas caida de presion durante ese segundo y alcanzar el umbral seguro.
+
 La refrigeracion ya no queda encendida para siempre. En cada ciclo se vuelve a decidir si hace falta.
 
 ## 15. Estados del sistema

@@ -1,175 +1,250 @@
 %PDF-1.4
 %‚„œ”
 1 0 obj
-<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+<< /Type /Catalog /Pages 2 0 R >>
 endobj
 2 0 obj
-<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+<< /Type /Pages /Kids [3 0 R 5 0 R 7 0 R 9 0 R] /Count 4 >>
 endobj
 3 0 obj
-<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 11 0 R >> >> /Contents 4 0 R >>
 endobj
 4 0 obj
-<< /Length 1851 >>
+<< /Length 2615 >>
 stream
-BT /F2 18 Tf 54 730 Td (Analisis Calculo) Tj ET
-BT /F2 14 Tf 54 682 Td (Funcion de trafico en el tiempo) Tj ET
-BT /F1 10 Tf 54 644 Td (En calculo se analiza como cambia una variable respecto al tiempo. En este) Tj ET
-BT /F1 10 Tf 54 630 Td (proyecto la variable principal es el numero de paquetes o solicitudes por) Tj ET
-BT /F1 10 Tf 54 616 Td (segundo.) Tj ET
-BT /F3 8 Tf 54 574 Td (T\(t\) = paquetes registrados en el segundo t) Tj ET
-BT /F1 10 Tf 54 535 Td (Como los datos son simulados y se generan por segundo, no se trabaja con una) Tj ET
-BT /F1 10 Tf 54 521 Td (funcion continua exacta. Se trabaja con una funcion discreta, formada por valores) Tj ET
-BT /F1 10 Tf 54 507 Td (registrados en cada ciclo.) Tj ET
-BT /F3 8 Tf 54 465 Td (for segundo in range\(1, 61\):) Tj ET
-BT /F3 8 Tf 54 454 Td (    paquete = trafico.generar_trafico_normal\(segundo\)) Tj ET
-BT /F1 10 Tf 54 415 Td (Aqui segundo funciona como la variable de tiempo. Cada vuelta del ciclo produce) Tj ET
-BT /F1 10 Tf 54 401 Td (un nuevo valor de trafico.) Tj ET
-BT /F2 14 Tf 54 367 Td (Primera derivada discreta) Tj ET
-BT /F1 10 Tf 54 329 Td (La primera derivada sirve para medir la velocidad de cambio. En este caso mide) Tj ET
-BT /F1 10 Tf 54 315 Td (cuanto cambio el numero de paquetes entre un segundo y el anterior.) Tj ET
-BT /F3 8 Tf 54 273 Td (T'\(t\) aproximada = \(T\(t\) - T\(t - 1\)\) / Delta t) Tj ET
-BT /F1 10 Tf 54 234 Td (Como la simulacion avanza de segundo en segundo:) Tj ET
-BT /F3 8 Tf 54 192 Td (Delta t = 1) Tj ET
-BT /F3 8 Tf 54 181 Td (T'\(t\) aproximada = T\(t\) - T\(t - 1\)) Tj ET
-BT /F3 8 Tf 54 128 Td (def calcular_derivada_discreta\(actual, anterior, delta_t=1\):) Tj ET
-BT /F3 8 Tf 54 117 Td (    if delta_t == 0:) Tj ET
-BT /F3 8 Tf 54 106 Td (        return 0) Tj ET
-BT /F3 8 Tf 54 95 Td (    return round\(\(actual - anterior\) / delta_t, 2\)) Tj ET
+BT
+/F1 10 Tf
+1 0 0 1 50 742 Tm (ANALISIS_CALCULO) Tj
+1 0 0 1 50 729 Tm (================) Tj
+1 0 0 1 50 716 Tm () Tj
+1 0 0 1 50 703 Tm (Analisis Calculo) Tj
+1 0 0 1 50 690 Tm () Tj
+1 0 0 1 50 677 Tm (Funcion de trafico en el tiempo) Tj
+1 0 0 1 50 664 Tm () Tj
+1 0 0 1 50 651 Tm (En calculo se analiza como cambia una variable respecto al tiempo. En este proyecto la) Tj
+1 0 0 1 50 638 Tm (variable principal es el numero de paquetes o solicitudes por segundo.) Tj
+1 0 0 1 50 625 Tm () Tj
+1 0 0 1 50 612 Tm ([formula]) Tj
+1 0 0 1 50 599 Tm (T\(t\) = paquetes registrados en el segundo t) Tj
+1 0 0 1 50 586 Tm () Tj
+1 0 0 1 50 573 Tm () Tj
+1 0 0 1 50 560 Tm (Como los datos son simulados y se generan por segundo, no se trabaja con una funcion) Tj
+1 0 0 1 50 547 Tm (continua exacta. Se trabaja con una funcion discreta, formada por valores registrados en) Tj
+1 0 0 1 50 534 Tm (cada ciclo.) Tj
+1 0 0 1 50 521 Tm () Tj
+1 0 0 1 50 508 Tm ([codigo]) Tj
+1 0 0 1 50 495 Tm (for segundo in range\(1, 61\):) Tj
+1 0 0 1 50 482 Tm (    paquete = trafico.generar_trafico_normal\(segundo\)) Tj
+1 0 0 1 50 469 Tm () Tj
+1 0 0 1 50 456 Tm () Tj
+1 0 0 1 50 443 Tm (Aqui segundo funciona como la variable de tiempo. Cada vuelta del ciclo produce un nuevo) Tj
+1 0 0 1 50 430 Tm (valor de trafico.) Tj
+1 0 0 1 50 417 Tm () Tj
+1 0 0 1 50 404 Tm (Primera derivada discreta) Tj
+1 0 0 1 50 391 Tm () Tj
+1 0 0 1 50 378 Tm (La primera derivada sirve para medir la velocidad de cambio. En este caso mide cuanto cambio) Tj
+1 0 0 1 50 365 Tm (el numero de paquetes entre un segundo y el anterior.) Tj
+1 0 0 1 50 352 Tm () Tj
+1 0 0 1 50 339 Tm ([formula]) Tj
+1 0 0 1 50 326 Tm (T'\(t\) aproximada = \(T\(t\) - T\(t - 1\)\) / Delta t) Tj
+1 0 0 1 50 313 Tm () Tj
+1 0 0 1 50 300 Tm () Tj
+1 0 0 1 50 287 Tm (Como la simulacion avanza de segundo en segundo:) Tj
+1 0 0 1 50 274 Tm () Tj
+1 0 0 1 50 261 Tm ([formula]) Tj
+1 0 0 1 50 248 Tm (Delta t = 1) Tj
+1 0 0 1 50 235 Tm (T'\(t\) aproximada = T\(t\) - T\(t - 1\)) Tj
+1 0 0 1 50 222 Tm () Tj
+1 0 0 1 50 209 Tm () Tj
+1 0 0 1 50 196 Tm ([codigo]) Tj
+1 0 0 1 50 183 Tm (def calcular_derivada_discreta\(actual, anterior, delta_t=1\):) Tj
+1 0 0 1 50 170 Tm (    if delta_t == 0:) Tj
+1 0 0 1 50 157 Tm (        return 0) Tj
+1 0 0 1 50 144 Tm (    return round\(\(actual - anterior\) / delta_t, 2\)) Tj
+1 0 0 1 50 131 Tm () Tj
+1 0 0 1 50 118 Tm () Tj
+1 0 0 1 50 105 Tm (Esta funcion hace la derivada discreta. Si el trafico actual es mayor que el anterior, el) Tj
+1 0 0 1 50 92 Tm (resultado es positivo. Si baja, el resultado es negativo.) Tj
+1 0 0 1 50 79 Tm () Tj
+1 0 0 1 50 66 Tm (Tasa de cambio) Tj
+ET
 endstream
 endobj
 5 0 obj
-<< /Type /Page /Parent 12 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 4 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 11 0 R >> >> /Contents 6 0 R >>
 endobj
 6 0 obj
-<< /Length 2032 >>
+<< /Length 2519 >>
 stream
-BT /F1 10 Tf 54 738 Td (Esta funcion hace la derivada discreta. Si el trafico actual es mayor que el) Tj ET
-BT /F1 10 Tf 54 724 Td (anterior, el resultado es positivo. Si baja, el resultado es negativo.) Tj ET
-BT /F2 14 Tf 54 690 Td (Tasa de cambio) Tj ET
-BT /F1 10 Tf 54 652 Td (La tasa de cambio se usa como forma directa de detectar subidas fuertes.) Tj ET
-BT /F3 8 Tf 54 610 Td (Delta T = T\(t\) - T\(t - 1\)) Tj ET
-BT /F3 8 Tf 54 557 Td (def calcular_tasa\(actual, anterior\):) Tj ET
-BT /F3 8 Tf 54 546 Td (    return actual - anterior) Tj ET
-BT /F1 10 Tf 54 507 Td (La tasa y la derivada discreta son muy parecidas en este proyecto porque el) Tj ET
-BT /F1 10 Tf 54 493 Td (tiempo entre ciclos vale 1 segundo. La diferencia es que tasa se usa como lectura) Tj ET
-BT /F1 10 Tf 54 479 Td (directa del crecimiento abrupto.) Tj ET
-BT /F2 14 Tf 54 445 Td (Suavizado con sigmoide) Tj ET
-BT /F1 10 Tf 54 407 Td (El proyecto usa una funcion sigmoide para suavizar las derivadas. La sigmoide) Tj ET
-BT /F1 10 Tf 54 393 Td (convierte un valor en un factor entre 0 y 1.) Tj ET
-BT /F3 8 Tf 54 351 Td (sigmoide\(x\) = 1 / \(1 + e^\(-x\)\)) Tj ET
-BT /F1 10 Tf 54 312 Td (En el codigo se usa asi:) Tj ET
-BT /F3 8 Tf 54 270 Td (def calcular_sigmoide\(x\):) Tj ET
-BT /F3 8 Tf 54 259 Td (    if x >= 0:) Tj ET
-BT /F3 8 Tf 54 248 Td (        z = math.exp\(-x\)) Tj ET
-BT /F3 8 Tf 54 237 Td (        return 1 / \(1 + z\)) Tj ET
-BT /F3 8 Tf 54 226 Td (    z = math.exp\(x\)) Tj ET
-BT /F3 8 Tf 54 215 Td (    return z / \(1 + z\)) Tj ET
-BT /F1 10 Tf 54 176 Td (Esta forma evita errores cuando el exponente es muy grande. Matematicamente sigue) Tj ET
-BT /F1 10 Tf 54 162 Td (siendo la funcion sigmoide.) Tj ET
-BT /F3 8 Tf 54 120 Td (def aplicar_sigmoide_derivada\(valor, escala=srv.U_TASA, k=6\):) Tj ET
-BT /F3 8 Tf 54 109 Td (    if escala == 0:) Tj ET
-BT /F3 8 Tf 54 98 Td (        escala = 1) Tj ET
-BT /F3 8 Tf 54 87 Td (    factor = calcular_sigmoide\(k * valor / escala\)) Tj ET
-BT /F3 8 Tf 54 76 Td (    return round\(valor * factor, 2\)) Tj ET
+BT
+/F1 10 Tf
+1 0 0 1 50 742 Tm () Tj
+1 0 0 1 50 729 Tm (La tasa de cambio se usa como forma directa de detectar subidas fuertes.) Tj
+1 0 0 1 50 716 Tm () Tj
+1 0 0 1 50 703 Tm ([formula]) Tj
+1 0 0 1 50 690 Tm (Delta T = T\(t\) - T\(t - 1\)) Tj
+1 0 0 1 50 677 Tm () Tj
+1 0 0 1 50 664 Tm () Tj
+1 0 0 1 50 651 Tm ([codigo]) Tj
+1 0 0 1 50 638 Tm (def calcular_tasa\(actual, anterior\):) Tj
+1 0 0 1 50 625 Tm (    return actual - anterior) Tj
+1 0 0 1 50 612 Tm () Tj
+1 0 0 1 50 599 Tm () Tj
+1 0 0 1 50 586 Tm (La tasa y la derivada discreta son muy parecidas en este proyecto porque el tiempo entre) Tj
+1 0 0 1 50 573 Tm (ciclos vale 1 segundo. La diferencia es que tasa se usa como lectura directa del crecimiento) Tj
+1 0 0 1 50 560 Tm (abrupto.) Tj
+1 0 0 1 50 547 Tm () Tj
+1 0 0 1 50 534 Tm (Suavizado con sigmoide) Tj
+1 0 0 1 50 521 Tm () Tj
+1 0 0 1 50 508 Tm (El proyecto usa una funcion sigmoide para suavizar las derivadas. La sigmoide convierte un) Tj
+1 0 0 1 50 495 Tm (valor en un factor entre 0 y 1.) Tj
+1 0 0 1 50 482 Tm () Tj
+1 0 0 1 50 469 Tm ([formula]) Tj
+1 0 0 1 50 456 Tm (sigmoide\(x\) = 1 / \(1 + e^\(-x\)\)) Tj
+1 0 0 1 50 443 Tm () Tj
+1 0 0 1 50 430 Tm () Tj
+1 0 0 1 50 417 Tm (En el codigo se usa asi:) Tj
+1 0 0 1 50 404 Tm () Tj
+1 0 0 1 50 391 Tm ([codigo]) Tj
+1 0 0 1 50 378 Tm (def calcular_sigmoide\(x\):) Tj
+1 0 0 1 50 365 Tm (    if x >= 0:) Tj
+1 0 0 1 50 352 Tm (        z = math.exp\(-x\)) Tj
+1 0 0 1 50 339 Tm (        return 1 / \(1 + z\)) Tj
+1 0 0 1 50 326 Tm (    z = math.exp\(x\)) Tj
+1 0 0 1 50 313 Tm (    return z / \(1 + z\)) Tj
+1 0 0 1 50 300 Tm () Tj
+1 0 0 1 50 287 Tm () Tj
+1 0 0 1 50 274 Tm (Esta forma evita errores cuando el exponente es muy grande. Matematicamente sigue siendo la) Tj
+1 0 0 1 50 261 Tm (funcion sigmoide.) Tj
+1 0 0 1 50 248 Tm () Tj
+1 0 0 1 50 235 Tm ([codigo]) Tj
+1 0 0 1 50 222 Tm (def aplicar_sigmoide_derivada\(valor, escala=srv.U_TASA, k=6\):) Tj
+1 0 0 1 50 209 Tm (    if escala == 0:) Tj
+1 0 0 1 50 196 Tm (        escala = 1) Tj
+1 0 0 1 50 183 Tm (    factor = calcular_sigmoide\(k * valor / escala\)) Tj
+1 0 0 1 50 170 Tm (    return round\(valor * factor, 2\)) Tj
+1 0 0 1 50 157 Tm () Tj
+1 0 0 1 50 144 Tm () Tj
+1 0 0 1 50 131 Tm (Aqui se toma la derivada y se multiplica por el factor sigmoide. Si el cambio es positivo,) Tj
+1 0 0 1 50 118 Tm (el factor se acerca mas a 1. Si el cambio es negativo, el factor baja y suaviza mas la) Tj
+1 0 0 1 50 105 Tm (caida.) Tj
+1 0 0 1 50 92 Tm () Tj
+1 0 0 1 50 79 Tm (Segunda derivada) Tj
+1 0 0 1 50 66 Tm () Tj
+ET
 endstream
 endobj
 7 0 obj
-<< /Type /Page /Parent 12 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 6 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 11 0 R >> >> /Contents 8 0 R >>
 endobj
 8 0 obj
-<< /Length 2275 >>
+<< /Length 2998 >>
 stream
-BT /F1 10 Tf 54 710 Td (Aqui se toma la derivada y se multiplica por el factor sigmoide. Si el cambio es) Tj ET
-BT /F1 10 Tf 54 696 Td (positivo, el factor se acerca mas a 1. Si el cambio es negativo, el factor baja y) Tj ET
-BT /F1 10 Tf 54 682 Td (suaviza mas la caida.) Tj ET
-BT /F2 14 Tf 54 648 Td (Segunda derivada) Tj ET
-BT /F1 10 Tf 54 610 Td (La segunda derivada mide si el cambio se esta acelerando o frenando.) Tj ET
-BT /F3 8 Tf 54 568 Td (T''\(t\) aproximada = T'\(t\) - T'\(t - 1\)) Tj ET
-BT /F3 8 Tf 54 515 Td (def calcular_segunda_derivada\(derivada_actual, derivada_anterior, delta_t=1\):) Tj ET
-BT /F3 8 Tf 54 504 Td (    if delta_t == 0:) Tj ET
-BT /F3 8 Tf 54 493 Td (        return 0) Tj ET
-BT /F3 8 Tf 54 482 Td (    return round\(\(derivada_actual - derivada_anterior\) / delta_t, 2\)) Tj ET
-BT /F1 10 Tf 54 443 Td (Si la segunda derivada es alta, significa que el trafico no solo subio, sino que) Tj ET
-BT /F1 10 Tf 54 429 Td (su crecimiento se acelero. Eso puede relacionarse con ataques o cambios bruscos.) Tj ET
-BT /F2 14 Tf 54 395 Td (Uso en alertas) Tj ET
-BT /F3 8 Tf 54 343 Td (if tasa > srv.U_TASA:) Tj ET
-BT /F3 8 Tf 54 332 Td (    print\("  [!!] CRECIMIENTO ABRUPTO DEL TRAFICO  tasa=" + str\(tasa\)\)) Tj ET
-BT /F3 8 Tf 54 321 Td (if segunda_derivada_sigmoide > srv.U_TASA:) Tj ET
-BT /F3 8 Tf 54 310 Td (    print\("  [!!] ACELERACION DEL TRAFICO DETECTADA  d2=" + str\(segunda_derivada_sigmoide\)\)) Tj ET
-BT /F1 10 Tf 54 271 Td (Aqui calculo se vuelve parte del sistema de deteccion. Si la tasa o la) Tj ET
-BT /F1 10 Tf 54 257 Td (aceleracion pasan el umbral, el programa marca una alerta.) Tj ET
-BT /F2 14 Tf 54 223 Td (Grafica de derivadas) Tj ET
-BT /F1 10 Tf 54 185 Td (Grafica llamada: 06_derivadas_trafico_vs_tiempo.png) Tj ET
-BT /F1 10 Tf 54 157 Td (Valores o parametros usados:) Tj ET
-BT /F3 8 Tf 54 129 Td (| Valor | Significado |) Tj ET
-BT /F3 8 Tf 54 118 Td (|---|---|) Tj ET
-BT /F3 8 Tf 54 107 Td (| t | tiempo de la simulacion en segundos |) Tj ET
-BT /F3 8 Tf 54 96 Td (| primera_derivada_sigmoide | cambio del trafico suavizado con sigmoide |) Tj ET
-BT /F3 8 Tf 54 85 Td (| segunda_derivada_sigmoide | aceleracion o frenado del cambio |) Tj ET
-BT /F3 8 Tf 54 74 Td (| U_TASA | umbral usado para marcar cambios importantes |) Tj ET
+BT
+/F1 10 Tf
+1 0 0 1 50 742 Tm (La segunda derivada mide si el cambio se esta acelerando o frenando.) Tj
+1 0 0 1 50 729 Tm () Tj
+1 0 0 1 50 716 Tm ([formula]) Tj
+1 0 0 1 50 703 Tm (T''\(t\) aproximada = T'\(t\) - T'\(t - 1\)) Tj
+1 0 0 1 50 690 Tm () Tj
+1 0 0 1 50 677 Tm () Tj
+1 0 0 1 50 664 Tm ([codigo]) Tj
+1 0 0 1 50 651 Tm (def calcular_segunda_derivada\(derivada_actual, derivada_anterior, delta_t=1\):) Tj
+1 0 0 1 50 638 Tm (    if delta_t == 0:) Tj
+1 0 0 1 50 625 Tm (        return 0) Tj
+1 0 0 1 50 612 Tm (    return round\(\(derivada_actual - derivada_anterior\) / delta_t, 2\)) Tj
+1 0 0 1 50 599 Tm () Tj
+1 0 0 1 50 586 Tm () Tj
+1 0 0 1 50 573 Tm (Si la segunda derivada es alta, significa que el trafico no solo subio, sino que su) Tj
+1 0 0 1 50 560 Tm (crecimiento se acelero. Eso puede relacionarse con ataques o cambios bruscos.) Tj
+1 0 0 1 50 547 Tm () Tj
+1 0 0 1 50 534 Tm (Uso en alertas) Tj
+1 0 0 1 50 521 Tm () Tj
+1 0 0 1 50 508 Tm ([codigo]) Tj
+1 0 0 1 50 495 Tm (if tasa > srv.U_TASA:) Tj
+1 0 0 1 50 482 Tm (    print\("  [!!] CRECIMIENTO ABRUPTO DEL TRAFICO  tasa=" + str\(tasa\)\)) Tj
+1 0 0 1 50 469 Tm (if segunda_derivada_sigmoide > srv.U_TASA:) Tj
+1 0 0 1 50 456 Tm (    print\("  [!!] ACELERACION DEL TRAFICO DETECTADA  d2=" + str\(segunda_derivada_sigmoide\)\)) Tj
+1 0 0 1 50 443 Tm () Tj
+1 0 0 1 50 430 Tm () Tj
+1 0 0 1 50 417 Tm (Aqui calculo se vuelve parte del sistema de deteccion. Si la tasa o la aceleracion pasan el) Tj
+1 0 0 1 50 404 Tm (umbral, el programa marca una alerta.) Tj
+1 0 0 1 50 391 Tm () Tj
+1 0 0 1 50 378 Tm (Grafica de derivadas) Tj
+1 0 0 1 50 365 Tm () Tj
+1 0 0 1 50 352 Tm (Grafica llamada: 06_derivadas_trafico_vs_tiempo.png) Tj
+1 0 0 1 50 339 Tm () Tj
+1 0 0 1 50 326 Tm (Valores o parametros usados:) Tj
+1 0 0 1 50 313 Tm () Tj
+1 0 0 1 50 300 Tm (| Valor | Significado |) Tj
+1 0 0 1 50 287 Tm (|---|---|) Tj
+1 0 0 1 50 274 Tm (| t | tiempo de la simulacion en segundos |) Tj
+1 0 0 1 50 261 Tm (| primera_derivada_sigmoide | cambio del trafico suavizado con sigmoide |) Tj
+1 0 0 1 50 248 Tm (| segunda_derivada_sigmoide | aceleracion o frenado del cambio |) Tj
+1 0 0 1 50 235 Tm (| U_TASA | umbral usado para marcar cambios importantes |) Tj
+1 0 0 1 50 222 Tm (| 0 | linea base para separar subidas y bajadas |) Tj
+1 0 0 1 50 209 Tm () Tj
+1 0 0 1 50 196 Tm (Explicacion:) Tj
+1 0 0 1 50 183 Tm () Tj
+1 0 0 1 50 170 Tm (La grafica 6 muestra el comportamiento de las derivadas. La primera derivada indica si el) Tj
+1 0 0 1 50 157 Tm (trafico sube o baja respecto al segundo anterior. La segunda derivada muestra si ese cambio) Tj
+1 0 0 1 50 144 Tm (se acelera o se frena.) Tj
+1 0 0 1 50 131 Tm () Tj
+1 0 0 1 50 118 Tm (Esta grafica es importante para calculo porque permite interpretar visualmente la tasa de) Tj
+1 0 0 1 50 105 Tm (cambio y la aceleracion del trafico. Si la curva se eleva mucho, puede relacionarse con) Tj
+1 0 0 1 50 92 Tm (crecimiento abrupto o ataque.) Tj
+1 0 0 1 50 79 Tm () Tj
+1 0 0 1 50 66 Tm (Resultados y analisis) Tj
+ET
 endstream
 endobj
 9 0 obj
-<< /Type /Page /Parent 12 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 8 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 11 0 R >> >> /Contents 10 0 R >>
 endobj
 10 0 obj
-<< /Length 1931 >>
+<< /Length 1195 >>
 stream
-BT /F3 8 Tf 54 738 Td (| 0 | linea base para separar subidas y bajadas |) Tj ET
-BT /F1 10 Tf 54 713 Td (Explicacion:) Tj ET
-BT /F1 10 Tf 54 685 Td (La grafica 6 muestra el comportamiento de las derivadas. La primera derivada) Tj ET
-BT /F1 10 Tf 54 671 Td (indica si el trafico sube o baja respecto al segundo anterior. La segunda) Tj ET
-BT /F1 10 Tf 54 657 Td (derivada muestra si ese cambio se acelera o se frena.) Tj ET
-BT /F1 10 Tf 54 629 Td (Esta grafica es importante para calculo porque permite interpretar visualmente la) Tj ET
-BT /F1 10 Tf 54 615 Td (tasa de cambio y la aceleracion del trafico. Si la curva se eleva mucho, puede) Tj ET
-BT /F1 10 Tf 54 601 Td (relacionarse con crecimiento abrupto o ataque.) Tj ET
-BT /F2 14 Tf 54 567 Td (Resultados y analisis) Tj ET
-BT /F1 10 Tf 54 529 Td (El resultado principal de calculo es que el sistema puede detectar cambios) Tj ET
-BT /F1 10 Tf 54 515 Td (abruptos. No solo ve cuantos paquetes hay, sino como cambian en el tiempo.) Tj ET
-BT /F1 10 Tf 54 487 Td (La limitacion es que las derivadas son discretas, no continuas. Esto es normal) Tj ET
-BT /F1 10 Tf 54 473 Td (porque el programa trabaja con datos por segundo. Aun asi, el metodo sirve para) Tj ET
-BT /F1 10 Tf 54 459 Td (analizar tendencias, subidas fuertes y aceleraciones del trafico.) Tj ET
-BT /F2 14 Tf 54 425 Td (Conclusiones) Tj ET
-BT /F1 10 Tf 54 387 Td (Calculo se justifica con la funcion de trafico, tasa de cambio, primera derivada,) Tj ET
-BT /F1 10 Tf 54 373 Td (segunda derivada y suavizado con sigmoide. Esto permite transformar datos simples) Tj ET
-BT /F1 10 Tf 54 359 Td (en indicadores de comportamiento anomalo.) Tj ET
-BT /F1 10 Tf 54 331 Td (Si se quisiera ampliar, se podrian usar datos reales de incidentes o perdidas) Tj ET
-BT /F1 10 Tf 54 317 Td (economicas para analizar crecimiento de ataques, tiempo de recuperacion o) Tj ET
-BT /F1 10 Tf 54 303 Td (evolucion del impacto en una empresa.) Tj ET
+BT
+/F1 10 Tf
+1 0 0 1 50 742 Tm () Tj
+1 0 0 1 50 729 Tm (El resultado principal de calculo es que el sistema puede detectar cambios abruptos. No solo) Tj
+1 0 0 1 50 716 Tm (ve cuantos paquetes hay, sino como cambian en el tiempo.) Tj
+1 0 0 1 50 703 Tm () Tj
+1 0 0 1 50 690 Tm (La limitacion es que las derivadas son discretas, no continuas. Esto es normal porque el) Tj
+1 0 0 1 50 677 Tm (programa trabaja con datos por segundo. Aun asi, el metodo sirve para analizar tendencias,) Tj
+1 0 0 1 50 664 Tm (subidas fuertes y aceleraciones del trafico.) Tj
+1 0 0 1 50 651 Tm () Tj
+1 0 0 1 50 638 Tm (Conclusiones) Tj
+1 0 0 1 50 625 Tm () Tj
+1 0 0 1 50 612 Tm (Calculo se justifica con la funcion de trafico, tasa de cambio, primera derivada, segunda) Tj
+1 0 0 1 50 599 Tm (derivada y suavizado con sigmoide. Esto permite transformar datos simples en indicadores de) Tj
+1 0 0 1 50 586 Tm (comportamiento anomalo.) Tj
+1 0 0 1 50 573 Tm () Tj
+1 0 0 1 50 560 Tm (Si se quisiera ampliar, se podrian usar datos reales de incidentes o perdidas economicas) Tj
+1 0 0 1 50 547 Tm (para analizar crecimiento de ataques, tiempo de recuperacion o evolucion del impacto en una) Tj
+1 0 0 1 50 534 Tm (empresa.) Tj
+ET
 endstream
 endobj
 11 0 obj
-<< /Type /Page /Parent 12 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 10 0 R >>
-endobj
-12 0 obj
-<< /Type /Pages /Kids [ 5 0 R 7 0 R 9 0 R 11 0 R ] /Count 4 >>
-endobj
-13 0 obj
-<< /Type /Catalog /Pages 12 0 R >>
-endobj
-14 0 obj
-<< /Title (ANALISIS_CALCULO) /Producer (Codex minimal PDF generator) >>
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
 endobj
 xref
-0 15
+0 12
 0000000000 65535 f 
 0000000015 00000 n 
-0000000085 00000 n 
-0000000160 00000 n 
-0000000228 00000 n 
-0000002131 00000 n 
-0000002278 00000 n 
-0000004362 00000 n 
-0000004509 00000 n 
-0000006836 00000 n 
-0000006983 00000 n 
-0000008967 00000 n 
-0000009116 00000 n 
-0000009195 00000 n 
-0000009246 00000 n 
+0000000064 00000 n 
+0000000139 00000 n 
+0000000266 00000 n 
+0000002933 00000 n 
+0000003060 00000 n 
+0000005631 00000 n 
+0000005758 00000 n 
+0000008808 00000 n 
+0000008936 00000 n 
+0000010184 00000 n 
 trailer
-<< /Size 15 /Root 13 0 R /Info 14 0 R >>
+<< /Size 12 /Root 1 0 R >>
 startxref
-9334
+10255
 %%EOF
