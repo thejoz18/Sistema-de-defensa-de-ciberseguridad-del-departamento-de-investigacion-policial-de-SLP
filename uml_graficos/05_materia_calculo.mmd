@@ -1,0 +1,25 @@
+flowchart TD
+    A["Entradas"] --> B["paquetes actuales"]
+    A --> C["paquetes anteriores"]
+    A --> D["CPU actual y anterior"]
+    A --> E["temperatura actual y anterior"]
+
+    B --> F["Tasa = actual - anterior"]
+    C --> F
+    F --> G["Derivada discreta f'(t)"]
+    G --> H["Sigmoide para suavizar cambio"]
+    H --> I["Primera derivada sigmoide"]
+    I --> J["Segunda derivada sigmoide"]
+
+    D --> K["Derivada de CPU"]
+    E --> L["Derivada de temperatura"]
+
+    I --> M["Salida: crecimiento o caida del trafico"]
+    J --> N["Salida: aceleracion del trafico"]
+    K --> O["Salida: cambio fisico de CPU"]
+    L --> P["Salida: cambio termico"]
+
+    M --> Q["Grafica 06 derivadas"]
+    N --> Q
+    O --> R["CSV e historial"]
+    P --> R

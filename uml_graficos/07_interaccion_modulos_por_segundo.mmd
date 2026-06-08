@@ -1,0 +1,37 @@
+sequenceDiagram
+    participant M00 as m00_pdi_slp
+    participant M01 as m01_servidores
+    participant M02 as m02_trafico_normal
+    participant M03 as m03_atacante
+    participant M04 as m04_logica_matematica
+    participant M05 as m05_monitor
+    participant M06 as m06_graficas
+    participant M07 as m07_reporte_tabla
+
+    M00->>M05: imprimir_inicio(centrales)
+    M00->>M00: input iniciar programa
+    loop cada segundo 1..60
+        M00->>M02: generar_trafico_normal(segundo)
+        M02->>M01: usar centrales, agentes, IPs y expedientes
+        M02-->>M00: paquete normal
+        opt si random < prob
+            M00->>M03: inyectar_ataque(paquete, segundo)
+            M03->>M01: usar IPs y usuarios sospechosos
+            M03-->>M00: paquete alterado
+        end
+        M00->>M04: calcular_metricas_calculo(paquete)
+        M00->>M04: calcular_flujo_digital(...)
+        M00->>M04: calcular_cpu_temperatura(...)
+        M00->>M04: evaluar_estado(...)
+        M00->>M04: generar y descifrar direccion
+        M00->>M04: calcular_ventilador/refrigeracion/consumo
+        M00->>M00: agregar fila al historial
+        M00->>M05: imprimir_ciclo(...)
+        opt cada 5 segundos
+            M00->>M05: imprimir_panel(...)
+        end
+    end
+    M00->>M00: input desactivar protecciones
+    M00->>M06: generar_graficas(historial)
+    M00->>M07: generar_reporte_tabla(historial)
+    M00->>M05: imprimir_resumen(...)

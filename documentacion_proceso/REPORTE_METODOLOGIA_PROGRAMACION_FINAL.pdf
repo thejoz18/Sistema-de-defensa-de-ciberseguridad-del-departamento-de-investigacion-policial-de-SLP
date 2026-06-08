@@ -1,0 +1,309 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 5 0 R 7 0 R 9 0 R 11 0 R] /Count 5 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 2583 >>
+stream
+BT
+/F1 9 Tf
+50 742 Td
+(REPORTE FINAL DE METODOLOGIA DE LA PROGRAMACION) Tj
+0 -13 Td () Tj
+0 -13 Td (1. PLANTEAMIENTO DEL PROBLEMA) Tj
+0 -13 Td () Tj
+0 -13 Td (El proyecto consiste en un programa en Python que simula un sistema de defensa de) Tj
+0 -13 Td (ciberseguridad. El sistema observa durante 60 ciclos el comportamiento de una red y clasifica el) Tj
+0 -13 Td (estado operativo como NORMAL, SOSPECHOSO, ALERTA o CRITICO.) Tj
+0 -13 Td () Tj
+0 -13 Td (El problema a resolver es detectar actividad anomala en un servidor que maneja informacion) Tj
+0 -13 Td (sensible. Para lograrlo, el programa analiza paquetes de red, intentos de login, cambios de) Tj
+0 -13 Td (archivos, salida de datos, usuario, IP, CPU, temperatura, cifrado y estado fisico del hardware.) Tj
+0 -13 Td () Tj
+0 -13 Td (El programa tambien muestra que una defensa digital no solo consiste en detectar ataques.) Tj
+0 -13 Td (Tambien registra protecciones, bloquea IPs, activa cifrado, calcula consumo y genera graficas y) Tj
+0 -13 Td (un reporte CSV.) Tj
+0 -13 Td () Tj
+0 -13 Td (2. OBJETIVO) Tj
+0 -13 Td () Tj
+0 -13 Td (Desarrollar un simulador modular en Python que use variables, condicionales, ciclos, funciones,) Tj
+0 -13 Td (listas, diccionarios, operadores logicos, operaciones matematicas, entradas de usuario y salidas) Tj
+0 -13 Td (en consola, graficas y archivo CSV.) Tj
+0 -13 Td () Tj
+0 -13 Td (3. ENTRADAS DEL PROGRAMA) Tj
+0 -13 Td () Tj
+0 -13 Td (El programa usa dos entradas manuales.) Tj
+0 -13 Td () Tj
+0 -13 Td (3.1 Entrada inicial) Tj
+0 -13 Td () Tj
+0 -13 Td (Primero muestra la pantalla de inicio y pregunta:) Tj
+0 -13 Td () Tj
+0 -13 Td (python) Tj
+0 -13 Td (respuesta_inicio = input\("Desea iniciar el programa? \(si/no\): "\).strip\(\).lower\(\)) Tj
+0 -13 Td () Tj
+0 -13 Td () Tj
+0 -13 Td (Si el usuario escribe si o s, inicia el ciclo de 60 segundos. Si escribe otra cosa, se imprime:) Tj
+0 -13 Td () Tj
+0 -13 Td (text) Tj
+0 -13 Td (Programa finalizado) Tj
+0 -13 Td () Tj
+0 -13 Td () Tj
+0 -13 Td (3.2 Entrada final de estabilizacion) Tj
+0 -13 Td () Tj
+0 -13 Td (Al terminar los 60 ciclos, el programa pregunta:) Tj
+0 -13 Td () Tj
+0 -13 Td (python) Tj
+0 -13 Td (respuesta_estabilizar = input\("Sistema estabilizado. Quiere desactivar las protecciones?) Tj
+0 -13 Td (\(si/no\): "\).strip\(\).lower\(\)) Tj
+0 -13 Td () Tj
+0 -13 Td () Tj
+0 -13 Td (Si el usuario responde si o s, el estado final se cambia a NORMAL y se apaga la refrigeracion.) Tj
+0 -13 Td (Si responde cualquier otra cosa, se conserva el estado arrastrado por el sistema, por ejemplo) Tj
+0 -13 Td (CRITICO.) Tj
+0 -13 Td () Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 2282 >>
+stream
+BT
+/F1 9 Tf
+50 742 Td
+(Esto permite explicar una decision programada:) Tj
+0 -13 Td () Tj
+0 -13 Td (| Respuesta final | Resultado |) Tj
+0 -13 Td (|---|---|) Tj
+0 -13 Td (| si o s | estado final NORMAL |) Tj
+0 -13 Td (| cualquier otra respuesta | conserva el ultimo estado importante |) Tj
+0 -13 Td () Tj
+0 -13 Td (4. ESTRUCTURA MODULAR) Tj
+0 -13 Td () Tj
+0 -13 Td (| Archivo | Funcion |) Tj
+0 -13 Td (|---|---|) Tj
+0 -13 Td (| m00_pdi_slp.py | archivo principal, ciclos, inputs, estado general y reporte final |) Tj
+0 -13 Td (| m01_servidores.py | centrales, usuarios, IPs y umbrales |) Tj
+0 -13 Td (| m02_trafico_normal.py | genera paquetes normales |) Tj
+0 -13 Td (| m03_atacante.py | altera paquetes para simular ataques |) Tj
+0 -13 Td (| m04_logica_matematica.py | calculos, reglas, cifrado, fisica y protecciones |) Tj
+0 -13 Td (| m05_monitor.py | imprime ciclos, paneles y resumen final |) Tj
+0 -13 Td (| m06_graficas.py | genera graficas PNG |) Tj
+0 -13 Td (| m07_reporte_tabla.py | genera el CSV |) Tj
+0 -13 Td () Tj
+0 -13 Td (Esta division ayuda a mantener el codigo organizado por responsabilidades.) Tj
+0 -13 Td () Tj
+0 -13 Td (5. VARIABLES Y ESTRUCTURAS DE DATOS) Tj
+0 -13 Td () Tj
+0 -13 Td (El estado principal se guarda en un diccionario:) Tj
+0 -13 Td () Tj
+0 -13 Td (python) Tj
+0 -13 Td (estado_actual = {) Tj
+0 -13 Td (    "estado": "NORMAL",) Tj
+0 -13 Td (    "estado_arrastrado": "NORMAL",) Tj
+0 -13 Td (    "cifrado": "NINGUNO",) Tj
+0 -13 Td (    "refrigeracion": False,) Tj
+0 -13 Td (    "login_bloqueado": False,) Tj
+0 -13 Td (    "ips_bloqueadas": [],) Tj
+0 -13 Td (    "historial": []) Tj
+0 -13 Td (}) Tj
+0 -13 Td () Tj
+0 -13 Td () Tj
+0 -13 Td (Tambien se usa un paquete por ciclo:) Tj
+0 -13 Td () Tj
+0 -13 Td (python) Tj
+0 -13 Td (paquete = trafico.generar_trafico_normal\(segundo\)) Tj
+0 -13 Td () Tj
+0 -13 Td () Tj
+0 -13 Td (Ese paquete contiene datos como central, usuario, IP, paquetes, intentos de login, cambios,) Tj
+0 -13 Td (salida de datos, CPU, temperatura e incidente.) Tj
+0 -13 Td () Tj
+0 -13 Td (Estructuras utilizadas:) Tj
+0 -13 Td () Tj
+0 -13 Td (| Estructura | Uso |) Tj
+0 -13 Td (|---|---|) Tj
+0 -13 Td (| variables numericas | paquetes, CPU, temperatura, flujo, presion |) Tj
+0 -13 Td (| cadenas | estado, cifrado, usuario, IP, ruta |) Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 2091 >>
+stream
+BT
+/F1 9 Tf
+50 742 Td
+(| booleanos | incidente, refrigeracion activa |) Tj
+0 -13 Td (| listas | IPs bloqueadas, historial |) Tj
+0 -13 Td (| diccionarios | paquete, estado actual, metricas |) Tj
+0 -13 Td () Tj
+0 -13 Td (6. PROCESO DEL PROGRAMA) Tj
+0 -13 Td () Tj
+0 -13 Td (El flujo general es:) Tj
+0 -13 Td () Tj
+0 -13 Td (text) Tj
+0 -13 Td (Inicio -> input inicial -> ciclo 1 a 60 -> calculos -> estado -> protecciones -> reporte cada 5) Tj
+0 -13 Td (ciclos -> input final -> resumen final) Tj
+0 -13 Td () Tj
+0 -13 Td () Tj
+0 -13 Td (En cada ciclo:) Tj
+0 -13 Td () Tj
+0 -13 Td (1. Se genera trafico normal.) Tj
+0 -13 Td (2. Se calcula probabilidad de ataque.) Tj
+0 -13 Td (3. Si hay ataque, se modifica el paquete.) Tj
+0 -13 Td (4. Se calculan tasas, flujo digital, CPU y temperatura.) Tj
+0 -13 Td (5. Se evalua el estado del sistema.) Tj
+0 -13 Td (6. Se genera ruta cifrada o normal.) Tj
+0 -13 Td (7. Se descifra la ruta del servidor como http://servidor/....) Tj
+0 -13 Td (8. Se actualizan IPs bloqueadas y protecciones.) Tj
+0 -13 Td (9. Se calcula ventilacion, refrigeracion, presion y consumo.) Tj
+0 -13 Td (10. Se agrega el ciclo al historial.) Tj
+0 -13 Td (11. Se imprime el ciclo actual.) Tj
+0 -13 Td (12. Cada 5 ciclos se imprime un panel acumulado.) Tj
+0 -13 Td () Tj
+0 -13 Td (7. CONDICIONALES Y CICLOS) Tj
+0 -13 Td () Tj
+0 -13 Td (El ciclo principal es:) Tj
+0 -13 Td () Tj
+0 -13 Td (python) Tj
+0 -13 Td (for segundo in range\(1, 61\):) Tj
+0 -13 Td () Tj
+0 -13 Td () Tj
+0 -13 Td (La probabilidad de ataque cambia por tramos:) Tj
+0 -13 Td () Tj
+0 -13 Td (text) Tj
+0 -13 Td (segundo 1       -> 0.00) Tj
+0 -13 Td (segundos 2-20   -> 0.20) Tj
+0 -13 Td (segundos 21-40  -> 0.40) Tj
+0 -13 Td (segundos 41-55  -> 0.60) Tj
+0 -13 Td (segundos 56-60  -> 0.00) Tj
+0 -13 Td () Tj
+0 -13 Td () Tj
+0 -13 Td (Los ultimos 5 ciclos se dejan sin ataques para mostrar una caida clara en la grafica y) Tj
+0 -13 Td (representar estabilizacion del sistema.) Tj
+0 -13 Td () Tj
+0 -13 Td (Tambien se usan condicionales para:) Tj
+0 -13 Td () Tj
+0 -13 Td (| Condicion | Accion |) Tj
+0 -13 Td (|---|---|) Tj
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> >> >> /Contents 10 0 R >>
+endobj
+10 0 obj
+<< /Length 2436 >>
+stream
+BT
+/F1 9 Tf
+50 742 Td
+(| usuario no autorizado | bloquear IP |) Tj
+0 -13 Td (| login critico | cerrar login remoto |) Tj
+0 -13 Td (| flujo critico | activar cifrado reforzado |) Tj
+0 -13 Td (| temperatura alta | activar refrigeracion |) Tj
+0 -13 Td (| respuesta final si | estado final normal |) Tj
+0 -13 Td () Tj
+0 -13 Td (8. SALIDAS DEL PROGRAMA) Tj
+0 -13 Td () Tj
+0 -13 Td (Las salidas son:) Tj
+0 -13 Td () Tj
+0 -13 Td (| Salida | Descripcion |) Tj
+0 -13 Td (|---|---|) Tj
+0 -13 Td (| consola por ciclo | estado, paquetes, CPU, temperatura, ruta y servidor |) Tj
+0 -13 Td (| panel cada 5 ciclos | datos globales, estado del sistema y estado fisico |) Tj
+0 -13 Td (| resumen final | totales, CPU promedio, consumo total y reportes generados |) Tj
+0 -13 Td (| graficas | archivos PNG en pdi_slp_graficas/ |) Tj
+0 -13 Td (| CSV | reportes_tabla/pdi_slp_reporte_tabla.csv |) Tj
+0 -13 Td () Tj
+0 -13 Td (El resumen final ya no imprime mensajes extras de guardado. Solo muestra las rutas finales:) Tj
+0 -13 Td () Tj
+0 -13 Td (text) Tj
+0 -13 Td (Reporte grafico : pdi_slp_graficas) Tj
+0 -13 Td (Reporte tabular : reportes_tabla/pdi_slp_reporte_tabla.csv) Tj
+0 -13 Td () Tj
+0 -13 Td () Tj
+0 -13 Td (9. RESULTADOS OBTENIDOS) Tj
+0 -13 Td () Tj
+0 -13 Td (Ultima ejecucion registrada:) Tj
+0 -13 Td () Tj
+0 -13 Td (| Resultado | Valor |) Tj
+0 -13 Td (|---|---|) Tj
+0 -13 Td (| ciclos ejecutados | 60 |) Tj
+0 -13 Td (| incidentes detectados | 27 |) Tj
+0 -13 Td (| ciclos NORMAL | 34 |) Tj
+0 -13 Td (| ciclos SOSPECHOSO | 2 |) Tj
+0 -13 Td (| ciclos ALERTA | 15 |) Tj
+0 -13 Td (| ciclos CRITICO | 9 |) Tj
+0 -13 Td (| ultimos 5 ciclos con ataque | 0 |) Tj
+0 -13 Td (| cifrado final del historial | REFORZADO |) Tj
+0 -13 Td (| CPU promedio | 39.3 % |) Tj
+0 -13 Td (| paquetes totales | 34513 |) Tj
+0 -13 Td (| login totales | 134 |) Tj
+0 -13 Td (| cambios totales | 500 |) Tj
+0 -13 Td (| salidas totales | 2291 MB |) Tj
+0 -13 Td (| consumo total | 16328.57 W |) Tj
+0 -13 Td () Tj
+0 -13 Td (Si el usuario acepta desactivar protecciones al final, el reporte final muestra Estado final:) Tj
+0 -13 Td (NORMAL. Si no acepta, conserva el estado arrastrado, por ejemplo CRITICO.) Tj
+0 -13 Td () Tj
+0 -13 Td (10. CONCLUSION) Tj
+0 -13 Td () Tj
+0 -13 Td (El programa cumple con los elementos de metodologia de la programacion porque tiene entradas,) Tj
+0 -13 Td (procesamiento, salidas, variables, ciclos, condicionales, funciones, listas, diccionarios y) Tj
+ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> >> >> /Contents 12 0 R >>
+endobj
+12 0 obj
+<< /Length 676 >>
+stream
+BT
+/F1 9 Tf
+50 742 Td
+(modularidad.) Tj
+0 -13 Td () Tj
+0 -13 Td (La solucion es clara porque separa la simulacion en archivos: uno genera datos, otro simula) Tj
+0 -13 Td (ataques, otro evalua reglas, otro imprime resultados, otro grafica y otro genera el CSV. Ademas,) Tj
+0 -13 Td (el sistema tiene decisiones programadas: arranque mediante input, deteccion de ataques, cambio) Tj
+0 -13 Td (de estado, cifrado, refrigeracion y estabilizacion final.) Tj
+0 -13 Td () Tj
+0 -13 Td (Como mejora futura, el sistema podria permitir configurar la duracion de la simulacion, guardar) Tj
+0 -13 Td (varias ejecuciones con fecha y comparar resultados entre corridas.) Tj
+0 -13 Td () Tj
+ET
+endstream
+endobj
+xref
+0 13
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000140 00000 n 
+0000000315 00000 n 
+0000002950 00000 n 
+0000003125 00000 n 
+0000005459 00000 n 
+0000005634 00000 n 
+0000007777 00000 n 
+0000007953 00000 n 
+0000010442 00000 n 
+0000010619 00000 n 
+trailer
+<< /Size 13 /Root 1 0 R >>
+startxref
+11347
+%%EOF

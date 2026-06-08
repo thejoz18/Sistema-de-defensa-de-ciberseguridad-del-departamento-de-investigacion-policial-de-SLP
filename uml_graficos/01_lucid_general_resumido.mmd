@@ -1,0 +1,40 @@
+flowchart TD
+    A["Inicio del programa"] --> B["imprimir_inicio(centrales)"]
+    B --> C["Input: Desea iniciar el programa?"]
+    C -->|No| D["Programa finalizado"]
+    C -->|Si| E["Ciclo de simulacion 1 a 60"]
+
+    E --> F["generar_trafico_normal(segundo)"]
+    F --> G["Definir probabilidad de ataque"]
+    G --> H{"random < prob?"}
+    H -->|Si| I["inyectar_ataque(paquete, segundo)"]
+    H -->|No| J["Mantener paquete normal"]
+    I --> K["calcular_metricas_calculo"]
+    J --> K
+
+    K --> L["calcular_flujo_digital"]
+    L --> M["calcular_cpu_temperatura"]
+    M --> N["senal_periodica y analisis oscilatorio"]
+    N --> O["evaluar_estado"]
+    O --> P["generar direccion cifrada o normal"]
+    P --> Q["descifrar direccion del servidor"]
+    Q --> R["bloquear IP o login si aplica"]
+    R --> S["calcular ventilador, refrigeracion y consumo"]
+    S --> T["guardar datos en historial"]
+    T --> U["imprimir_ciclo"]
+
+    U --> V{"segundo divisible entre 5?"}
+    V -->|Si| W["imprimir_panel con acumulados"]
+    V -->|No| X["continuar ciclo"]
+    W --> X
+    X --> Y{"terminaron 60 ciclos?"}
+    Y -->|No| E
+    Y -->|Si| Z["Input: desactivar protecciones?"]
+
+    Z -->|Si| AA["Estado final NORMAL"]
+    Z -->|No| AB["Conservar estado arrastrado"]
+    AA --> AC["generar_graficas(historial)"]
+    AB --> AC
+    AC --> AD["generar_reporte_tabla(historial)"]
+    AD --> AE["imprimir_resumen"]
+    AE --> AF["Fin"]
