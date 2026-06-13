@@ -224,7 +224,8 @@ if respuesta_inicio == "si" or respuesta_inicio == "s":
             total_cambios = 0
             total_salida = 0
             total_cpu = 0
-            suma_tasa = 0
+            suma_primera_derivada = 0
+            suma_segunda_derivada = 0
             suma_flujo = 0
             suma_senal = 0
             suma_indice = 0
@@ -238,7 +239,8 @@ if respuesta_inicio == "si" or respuesta_inicio == "s":
                 total_cpu = total_cpu + h["cpu"]
 
             for h in ultimos_cinco:
-                suma_tasa = suma_tasa + h["primera_derivada_paquetes"]
+                suma_primera_derivada = suma_primera_derivada + h["primera_derivada_sigmoide"]
+                suma_segunda_derivada = suma_segunda_derivada + h["segunda_derivada_sigmoide"]
                 suma_flujo = suma_flujo + h["flujo"]
                 suma_senal = suma_senal + h["senal_periodica"]
                 suma_indice = suma_indice + h["indice_oscilatorio"]
@@ -256,7 +258,8 @@ if respuesta_inicio == "si" or respuesta_inicio == "s":
             paquete["total_cambios_acumulado"] = total_cambios
             paquete["total_salida_acumulado"] = total_salida
             paquete["cpu_promedio_acumulado"] = round(total_cpu / cantidad_total, 1)
-            paquete["prom_tasa_5"] = round(suma_tasa / cantidad_promedio, 2)
+            paquete["prom_primera_derivada_5"] = round(suma_primera_derivada / cantidad_promedio, 2)
+            paquete["prom_segunda_derivada_5"] = round(suma_segunda_derivada / cantidad_promedio, 2)
             paquete["prom_flujo_5"] = round(suma_flujo / cantidad_promedio, 2)
             paquete["prom_senal_5"] = round(suma_senal / cantidad_promedio, 2)
             paquete["prom_indice_5"] = round(suma_indice / cantidad_promedio, 2)
@@ -264,7 +267,8 @@ if respuesta_inicio == "si" or respuesta_inicio == "s":
 
             mon.imprimir_panel(
                 segundo, paquete, estado_actual["estado"], estado_actual["cifrado"],
-                estado_actual["refrigeracion"], tasa, flujo, v2, P1, P2,
+                estado_actual["refrigeracion"], primera_derivada_sigmoide,
+                segunda_derivada_sigmoide, flujo, v2, P1, P2,
                 senal, indice_oscilatorio, alertas, protecciones, estado_actual["ips_bloqueadas"]
             )
     

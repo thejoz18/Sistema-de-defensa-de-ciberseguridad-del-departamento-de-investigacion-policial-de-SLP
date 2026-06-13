@@ -51,8 +51,8 @@ def imprimir_ciclo(segundo, paquete, estado, inc_txt):
           "  [" + estado + "]" +
           "  paq=" + str(paquete["paquetes"]) +
           "  datos=" + str(paquete["salida_datos"]) + "MB" +
-          "  cpu=" + str(paquete["cpu"]) + "%" +
-          "  temp=" + str(paquete["temperatura"]) + "C" +
+          "  login=" + str(paquete["intentos_login"]) +
+          "  cambios=" + str(paquete["cambios_archivos"]) +
           inc_txt)
     # Imprimimos datos generales del paquete.
     print("    Central: " + paquete["central"] +
@@ -66,7 +66,8 @@ def imprimir_ciclo(segundo, paquete, estado, inc_txt):
 
 # Esta funcion imprime un panel mas grande cada 5 segundos.
 def imprimir_panel(segundo, paquete, estado, cifrado, refrig,
-                   tasa, flujo, v2, P1, P2, senal, indice_oscilatorio,
+                   primera_derivada_sigmoide, segunda_derivada_sigmoide,
+                   flujo, v2, P1, P2, senal, indice_oscilatorio,
                    alertas, protecciones, ips_bloqueadas):
     # Convertimos los segundos a minutos.
     minutos = segundo // 60
@@ -123,8 +124,10 @@ def imprimir_panel(segundo, paquete, estado, cifrado, refrig,
     print("")
     # Imprimimos el titulo del estado del sistema.
     print("  -- ESTADO DEL SISTEMA --")
-    # Imprimimos el promedio de tasa de cambio de los ultimos ciclos.
-    print("  Prom. tasa cambio  : " + str(paquete.get("prom_tasa_5", tasa)))
+    # Imprimimos el promedio de la primera derivada sigmoide de los ultimos ciclos.
+    print("  Tasa cambio P'(t)  : " + str(paquete.get("prom_primera_derivada_5", primera_derivada_sigmoide)))
+    # Imprimimos el promedio de la segunda derivada sigmoide de los ultimos ciclos.
+    print("  Aceleracion P''(t) : " + str(paquete.get("prom_segunda_derivada_5", segunda_derivada_sigmoide)))
     # Imprimimos el promedio de flujo digital.
     print("  Prom. flujo digital: " + str(paquete.get("prom_flujo_5", flujo)))
     # Imprimimos el promedio de la senal periodica.

@@ -120,6 +120,16 @@ def generar_graficas(historial, carpeta="pdi_slp_graficas"):
         # Guardamos la ruta en la lista de rutas.
         rutas.append(ruta)
 
+    # Esta funcion deja la leyenda en la esquina superior izquierda.
+    def poner_leyenda_izquierda(ax):
+        ax.legend(
+            loc="upper left",
+            facecolor="#0d1117",
+            edgecolor="#1e2a38",
+            labelcolor="#aaa",
+            fontsize=8
+        )
+
     # Esta funcion genera una onda de referencia para comparar el trafico.
     def generar_onda_envio(tiempo, valores, max_regular=500, intervalo=5, puntos_por_intervalo=80):
         # Si no hay tiempo, regresamos listas vacias.
@@ -192,7 +202,7 @@ def generar_graficas(historial, carpeta="pdi_slp_graficas"):
     # Dibujamos el umbral critico.
     ax.axhline(y=srv.U_PAQUETES_CRIT, color="#f44336", linestyle="--", linewidth=1, label="umbral critico")
     # Mostramos la simbologia.
-    ax.legend(facecolor="#0d1117", edgecolor="#1e2a38", labelcolor="#aaa", fontsize=8)
+    poner_leyenda_izquierda(ax)
     # Guardamos la grafica 1.
     guardar(figura, "01_paquetes_vs_tiempo.png")
 
@@ -205,7 +215,7 @@ def generar_graficas(historial, carpeta="pdi_slp_graficas"):
     # Dibujamos el umbral critico.
     ax.axhline(y=srv.U_LOGIN_CRIT, color="#f44336", linestyle="--", linewidth=1, label="umbral critico")
     # Mostramos la simbologia.
-    ax.legend(facecolor="#0d1117", edgecolor="#1e2a38", labelcolor="#aaa", fontsize=8)
+    poner_leyenda_izquierda(ax)
     # Guardamos la grafica 2.
     guardar(figura, "02_intentos_login_vs_tiempo.png")
 
@@ -224,7 +234,7 @@ def generar_graficas(historial, carpeta="pdi_slp_graficas"):
         # Pintamos el espacio donde la refrigeracion redujo temperatura.
         ax.fill_between(t, temperatura, temperatura_sin_enfriamiento, where=refrigeracion_activa, color="#1de9b6", alpha=0.18, label="refrigeracion por fluidos")
     # Mostramos la simbologia.
-    ax.legend(facecolor="#0d1117", edgecolor="#1e2a38", labelcolor="#aaa", fontsize=8)
+    poner_leyenda_izquierda(ax)
     # Guardamos la grafica 3.
     guardar(figura, "03_temperatura_vs_tiempo.png")
 
@@ -250,7 +260,7 @@ def generar_graficas(historial, carpeta="pdi_slp_graficas"):
     # Dibujamos umbral de flujo critico.
     ax.axhline(y=srv.U_FLUJO_CRITICO, color="#f44336", linestyle="--", linewidth=1, label="flujo critico")
     # Mostramos la simbologia.
-    ax.legend(facecolor="#0d1117", edgecolor="#1e2a38", labelcolor="#aaa", fontsize=8)
+    poner_leyenda_izquierda(ax)
     # Guardamos la grafica 5.
     guardar(figura, "05_indice_flujo_digital_vs_tiempo.png")
 
@@ -281,7 +291,7 @@ def generar_graficas(historial, carpeta="pdi_slp_graficas"):
     # Dibujamos la segunda derivada.
     ax.plot(t, segunda_derivada_sigmoide, color="#40c4ff", linewidth=1.8, marker="o", markersize=3, label="Segunda derivada con sigmoide P''(t)")
     # Mostramos la simbologia.
-    ax.legend(facecolor="#0d1117", edgecolor="#1e2a38", labelcolor="#aaa", fontsize=8)
+    poner_leyenda_izquierda(ax)
     # Guardamos la grafica 6.
     guardar(figura, "06_derivadas_trafico_vs_tiempo.png")
 
@@ -296,7 +306,7 @@ def generar_graficas(historial, carpeta="pdi_slp_graficas"):
     # Pintamos el area de la onda.
     ax.fill_between(tiempo_onda, onda_envio, 0, color="#69f0ae", alpha=0.08)
     # Mostramos la simbologia.
-    ax.legend(facecolor="#0d1117", edgecolor="#1e2a38", labelcolor="#aaa", fontsize=8)
+    poner_leyenda_izquierda(ax)
     # Guardamos la grafica 7.
     guardar(figura, "07_analisis_oscilatorio_vs_tiempo.png")
 
