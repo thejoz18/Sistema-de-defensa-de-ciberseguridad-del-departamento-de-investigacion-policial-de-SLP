@@ -1,113 +1,117 @@
-# Importamos csv para poder crear el archivo de tabla.
+##Este modulo genera el reporte CSV final.
+##Toma el historial completo y lo convierte en una tabla editable.
+
+##Importamos csv para poder crear el archivo de tabla.
 import csv
-# Importamos os para crear la carpeta del reporte si no existe.
+##Importamos os para crear la carpeta del reporte si no existe.
 import os
 
-# Esta funcion recibe el historial y lo guarda en un archivo CSV.
+##Esta funcion recibe el historial y lo guarda en un archivo CSV.
 def generar_reporte_tabla(historial, ruta="reportes_tabla/pdi_slp_reporte_tabla.csv"):
-    # Obtenemos solo la carpeta donde se guardara el archivo.
+    ##Obtenemos solo la carpeta donde se guardara el archivo.
     carpeta = os.path.dirname(ruta)
-    # Revisamos que la ruta si tenga una carpeta.
+    ##Revisamos que la ruta si tenga una carpeta.
     if carpeta != "":
-        # Creamos la carpeta si todavia no existe.
+        ##Creamos la carpeta si todavia no existe.
         os.makedirs(carpeta, exist_ok=True)
 
-    # Esta lista define el orden de las columnas del CSV.
+    ##Esta lista define el orden de las columnas del CSV.
+    ##Se comenta el bloque completo porque son nombres de campos del reporte.
     columnas = [
-        # Segundo de la simulacion.
+        ##Segundo de la simulacion.
         "segundo",
-        # Central que genero el paquete.
+        ##Central que genero el paquete.
         "central",
-        # Usuario del paquete.
+        ##Usuario del paquete.
         "usuario",
-        # IP del paquete.
+        ##IP del paquete.
         "ip",
-        # Tipo de expediente.
+        ##Tipo de expediente.
         "expediente",
-        # Identificador de carpeta.
+        ##Identificador de carpeta.
         "carpeta_id",
-        # Cantidad de paquetes.
+        ##Cantidad de paquetes.
         "paquetes",
-        # Intentos de login.
+        ##Intentos de login.
         "intentos_login",
-        # Cambios en archivos.
+        ##Cambios en archivos.
         "cambios_archivos",
-        # Salida de datos.
+        ##Salida de datos.
         "salida_datos",
-        # Porcentaje de CPU.
+        ##Porcentaje de CPU.
         "cpu",
-        # Potencia del CPU en watts.
+        ##Potencia del CPU en watts.
         "potencia_cpu_watts",
-        # Temperatura final.
+        ##Temperatura final.
         "temperatura",
-        # Temperatura antes de enfriar.
+        ##Temperatura antes de enfriar.
         "temperatura_sin_enfriamiento",
-        # Indica si hubo refrigeracion activa.
+        ##Indica si hubo refrigeracion activa.
         "refrigeracion_activa",
-        # Velocidad del ventilador.
+        ##Velocidad del ventilador.
         "velocidad_ventilador",
-        # Velocidad del refrigerante.
+        ##Velocidad del refrigerante.
         "velocidad_refrigerante",
-        # Presion de entrada del refrigerante.
+        ##Presion de entrada del refrigerante.
         "presion_entrada_refrigerante",
-        # Presion de salida del refrigerante.
+        ##Presion de salida del refrigerante.
         "presion_salida_refrigerante",
-        # Presion usada como dato general.
+        ##Presion usada como dato general.
         "presion_refrigerante",
-        # Aumento de presion en porcentaje.
+        ##Aumento de presion en porcentaje.
         "incremento_presion_porcentaje",
-        # Consumo del enfriamiento.
+        ##Consumo del enfriamiento.
         "consumo_enfriamiento_watts",
-        # Consumo total.
+        ##Consumo total.
         "consumo_total_watts",
-        # Flujo digital.
+        ##Flujo digital.
         "flujo",
-        # Cambio de paquetes entre segundos.
+        ##Cambio de paquetes entre segundos.
         "primera_derivada_paquetes",
-        # Derivada suavizada.
+        ##Derivada suavizada.
         "primera_derivada_sigmoide",
-        # Segunda derivada suavizada.
+        ##Segunda derivada suavizada.
         "segunda_derivada_sigmoide",
-        # Cambio de CPU.
+        ##Cambio de CPU.
         "derivada_cpu",
-        # Cambio de temperatura.
+        ##Cambio de temperatura.
         "derivada_temperatura",
-        # Senal periodica esperada.
+        ##Senal periodica esperada.
         "senal_periodica",
-        # Diferencia contra la senal esperada.
+        ##Diferencia contra la senal esperada.
         "desviacion_periodica",
-        # Indice de oscilacion.
+        ##Indice de oscilacion.
         "indice_oscilatorio",
-        # Indica si hubo incidente.
+        ##Indica si hubo incidente.
         "incidente",
-        # Tipo de incidente.
+        ##Tipo de incidente.
         "tipo_incidente",
-        # Estado del sistema.
+        ##Estado del sistema.
         "estado",
-        # Estado del cifrado.
+        ##Estado del cifrado.
         "cifrado",
-        # Direccion interna normal o cifrada.
+        ##Direccion interna normal o cifrada.
         "direccion",
-        # Direccion final del servidor.
+        ##Direccion final del servidor.
         "direccion_servidor",
     ]
 
-    # Abrimos el archivo CSV en modo escritura.
+    ##Abrimos el archivo CSV en modo escritura.
     with open(ruta, "w", newline="", encoding="utf-8-sig") as archivo:
-        # Creamos el escritor del CSV usando las columnas definidas.
+        ##Creamos el escritor del CSV usando las columnas definidas.
         escritor = csv.DictWriter(archivo, fieldnames=columnas)
-        # Escribimos la primera fila con los nombres de columnas.
+        ##Escribimos la primera fila con los nombres de columnas.
         escritor.writeheader()
-        # Recorremos cada fila del historial.
+        ##Recorremos cada fila del historial.
         for fila in historial:
-            # Creamos un diccionario limpio para guardar solo las columnas que queremos.
+            ##Creamos un diccionario limpio para guardar solo las columnas que queremos.
             fila_reporte = {}
-            # Recorremos cada columna del reporte.
+            ##Recorremos cada columna del reporte.
             for columna in columnas:
-                # Guardamos el valor si existe, y si no existe dejamos vacio.
+                ##Guardamos el valor si existe, y si no existe dejamos vacio.
                 fila_reporte[columna] = fila.get(columna, "")
-            # Escribimos la fila completa en el CSV.
+            ##Escribimos la fila completa en el CSV.
             escritor.writerow(fila_reporte)
 
-    # Regresamos la ruta donde se guardo el reporte.
+    ##Regresamos la ruta donde se guardo el reporte.
     return ruta

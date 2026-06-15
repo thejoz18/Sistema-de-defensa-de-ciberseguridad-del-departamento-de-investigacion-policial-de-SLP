@@ -1,105 +1,111 @@
-# Importamos random para elegir ataques al azar.
+##Este modulo modifica paquetes normales para simular ataques.
+##No crea el paquete desde cero, solo altera valores para representar incidentes.
+
+##Importamos random para elegir ataques al azar.
 import random
-# Importamos listas de usuarios e IPs sospechosas.
+##Importamos listas de usuarios e IPs sospechosas.
 import m01_servidores as srv
 
-# Esta lista guarda los tipos de ataques que puede simular el programa.
+##Esta lista guarda los tipos de ataques que puede simular el programa.
+##Cada texto representa un tipo de incidente que puede aplicarse al paquete.
 TIPOS_ATAQUE = [
-    # Ataque donde sube mucho el trafico.
+    ##Ataque donde sube mucho el trafico.
     "ATAQUE_TRAFICO",
-    # Ataque donde hay muchos intentos de entrar.
+    ##Ataque donde hay muchos intentos de entrar.
     "FUERZA_BRUTA",
-    # Ataque donde aparece un usuario no autorizado.
+    ##Ataque donde aparece un usuario no autorizado.
     "ACCESO_NO_AUTORIZADO",
-    # Ataque donde se copia informacion.
+    ##Ataque donde se copia informacion.
     "COPIA_EXPEDIENTE",
-    # Ataque donde se modifican archivos.
+    ##Ataque donde se modifican archivos.
     "MODIFICACION_EVIDENCIA",
-    # Ataque donde se eliminan archivos.
+    ##Ataque donde se eliminan archivos.
     "ELIMINACION_ARCHIVO",
-    # Ataque donde se extrae informacion del sistema.
+    ##Ataque donde se extrae informacion del sistema.
     "EXTRACCION_INFORMACION"
 ]
 
-# Esta funcion recibe un paquete normal y lo altera para simular un ataque.
+##Esta funcion recibe un paquete normal y lo altera para simular un ataque.
 def inyectar_ataque(paquete, segundo):
-    # El factor hace que el ataque crezca conforme avanzan los segundos.
+    ##El factor hace que el ataque crezca conforme avanzan los segundos.
     factor = segundo / 10
-    # Elegimos un tipo de ataque al azar.
+    ##Elegimos un tipo de ataque al azar.
     tipo   = TIPOS_ATAQUE[random.randint(0, len(TIPOS_ATAQUE) - 1)]
-    # Elegimos una IP sospechosa para simular el origen del ataque.
+    ##Elegimos una IP sospechosa para simular el origen del ataque.
     ip_ext = srv.ips_sospechosas[random.randint(0, len(srv.ips_sospechosas) - 1)]
-    # Elegimos un usuario sospechoso para simular acceso no autorizado.
+    ##Elegimos un usuario sospechoso para simular acceso no autorizado.
     usr_ext = srv.usuarios_sospechosos[random.randint(0, len(srv.usuarios_sospechosos) - 1)]
 
-    # Si el ataque es de trafico, aumentamos mucho los paquetes.
+    ##A partir de aqui se cambia el paquete segun el ataque elegido.
+    ##No se comentan todos los campos como diccionario, solo cada caso de ataque.
+    ##Si el ataque es de trafico, aumentamos mucho los paquetes.
     if tipo == "ATAQUE_TRAFICO":
-        # Cambiamos los paquetes para que se note el ataque.
+        ##Cambiamos los paquetes para que se note el ataque.
         paquete["paquetes"]       = int(650 * factor)
-        # Cambiamos la IP por una IP sospechosa.
+        ##Cambiamos la IP por una IP sospechosa.
         paquete["ip"]             = ip_ext
 
-    # Si el ataque es de fuerza bruta, aumentamos los intentos de login.
+    ##Si el ataque es de fuerza bruta, aumentamos los intentos de login.
     elif tipo == "FUERZA_BRUTA":
-        # Aumentamos los intentos de login.
+        ##Aumentamos los intentos de login.
         paquete["intentos_login"] = int(7 * factor)
-        # Cambiamos la IP por una externa sospechosa.
+        ##Cambiamos la IP por una externa sospechosa.
         paquete["ip"]             = ip_ext
-        # Cambiamos el usuario por uno sospechoso.
+        ##Cambiamos el usuario por uno sospechoso.
         paquete["usuario"]        = usr_ext
 
-    # Si el ataque es acceso no autorizado, alteramos usuario, IP y trafico.
+    ##Si el ataque es acceso no autorizado, alteramos usuario, IP y trafico.
     elif tipo == "ACCESO_NO_AUTORIZADO":
-        # Aumentamos paquetes para que se note actividad rara.
+        ##Aumentamos paquetes para que se note actividad rara.
         paquete["paquetes"]       = int(380 * factor)
-        # Aumentamos intentos de login.
+        ##Aumentamos intentos de login.
         paquete["intentos_login"] = int(4 * factor)
-        # Cambiamos la IP.
+        ##Cambiamos la IP.
         paquete["ip"]             = ip_ext
-        # Cambiamos el usuario.
+        ##Cambiamos el usuario.
         paquete["usuario"]        = usr_ext
 
-    # Si el ataque es copia de expediente, aumenta la salida de datos.
+    ##Si el ataque es copia de expediente, aumenta la salida de datos.
     elif tipo == "COPIA_EXPEDIENTE":
-        # Aumentamos los datos que salen del sistema.
+        ##Aumentamos los datos que salen del sistema.
         paquete["salida_datos"]   = int(35 * factor)
-        # Aumentamos paquetes porque se esta transfiriendo informacion.
+        ##Aumentamos paquetes porque se esta transfiriendo informacion.
         paquete["paquetes"]       = int(420 * factor)
-        # Cambiamos la IP por una sospechosa.
+        ##Cambiamos la IP por una sospechosa.
         paquete["ip"]             = ip_ext
 
-    # Si se modifica evidencia, aumentamos cambios de archivos.
+    ##Si se modifica evidencia, aumentamos cambios de archivos.
     elif tipo == "MODIFICACION_EVIDENCIA":
-        # Aumentamos el numero de cambios.
+        ##Aumentamos el numero de cambios.
         paquete["cambios_archivos"] = int(7 * factor)
-        # Cambiamos el expediente para indicar evidencia digital.
+        ##Cambiamos el expediente para indicar evidencia digital.
         paquete["expediente"]       = "evidencia_digital"
-        # Cambiamos el usuario por uno sospechoso.
+        ##Cambiamos el usuario por uno sospechoso.
         paquete["usuario"]          = usr_ext
 
-    # Si se elimina un archivo, hay cambios y tambien salida de datos.
+    ##Si se elimina un archivo, hay cambios y tambien salida de datos.
     elif tipo == "ELIMINACION_ARCHIVO":
-        # Aumentamos cambios de archivos.
+        ##Aumentamos cambios de archivos.
         paquete["cambios_archivos"] = int(10 * factor)
-        # Aumentamos salida de datos.
+        ##Aumentamos salida de datos.
         paquete["salida_datos"]     = int(18 * factor)
-        # Cambiamos el usuario.
+        ##Cambiamos el usuario.
         paquete["usuario"]          = usr_ext
 
-    # Si no fue ningun caso anterior, usamos extraccion de informacion.
+    ##Si no fue ningun caso anterior, usamos extraccion de informacion.
     else:
-        # Aumentamos paquetes.
+        ##Aumentamos paquetes.
         paquete["paquetes"]       = int(550 * factor)
-        # Aumentamos salida de datos.
+        ##Aumentamos salida de datos.
         paquete["salida_datos"]   = int(55 * factor)
-        # Aumentamos intentos de login.
+        ##Aumentamos intentos de login.
         paquete["intentos_login"] = int(5 * factor)
-        # Cambiamos la IP.
+        ##Cambiamos la IP.
         paquete["ip"]             = ip_ext
 
-    # Marcamos que el paquete ya tiene un incidente.
+    ##Marcamos que el paquete ya tiene un incidente.
     paquete["incidente"]      = True
-    # Guardamos el tipo de incidente que se aplico.
+    ##Guardamos el tipo de incidente que se aplico.
     paquete["tipo_incidente"] = tipo
-    # Regresamos el paquete alterado para que m00 lo analice.
+    ##Regresamos el paquete alterado para que m00 lo analice.
     return paquete
